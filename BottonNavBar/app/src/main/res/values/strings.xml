@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">BottonNavBar</string>
-    <string name="title_activity_search">Search</string>
-    <string name="title_activity_bottom_nav_bar">BottomNavBarActivity</string>
-</resources>
