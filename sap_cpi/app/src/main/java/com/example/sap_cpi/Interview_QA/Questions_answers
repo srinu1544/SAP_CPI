@@ -1,0 +1,152 @@
+1. Introduce yourself
+Hint: Your experience details, your previous organizations, projects, roles and responsibilities ..etc
+(No need of personal details family details and academic marks)
+
+
+2. Differences between PIPO and SAP CPI
+Ans :
+
+
+
+3. Differences between NEO and Cloud foundry environments
+
+
+
+4. On which frame work CPI works
+5. What is SAP CPI
+6. Difference between Onpremise and cloud systems
+7. What are all the adapters on which you worked
+8. What is CPI landscape in your project?
+9. Do you have any experience in working with BTP cockpit?
+10. What is the need of having multiple sub accounts
+11. What are the capabilities of integration suite
+12. What is the architecture of SAP CPI
+13. Where we can find SAP CPI in BTP?
+14. How you can configure mail adapter?
+15. What is the differance between editable and configure only interfaces?
+16. How to connect CPI with mail system?
+17. What is the port of mail?
+18. What is the port of SAP CPI
+19. What are different log configurations in SAP CPI?
+20. What is trace mode? how long trace will be enabled and how long traced data will be enabled?
+21. What are all different pallete functions you worked on?
+22. How you can call local integration process?
+23. How you can establish error handling mechanism in SAP CP?
+24. What are all the events available in sap CPI pallete functions ? eleborate each event.
+25. How you can schedule the job? ( timer event)
+26. What is content modifier?
+27. What is the differnace between Exchange properties and Message Header.
+28. what are the different source types available in Content modifier?
+29. What is the number range and how we can configure?
+30. What are all the converters available in SAP CPI? How you can configure them?
+31. How to allow headers from external system to SAP CPI?
+32. What are encoders and decoders? what is the need of encoding and decoding
+33. What is streaming of Data?
+34. What is Zip compression ?
+35. What is filter? what are differnet value types available in filter? what format of data can be filtered using filter step?
+36. What kinds mappings you are aware of in SAP CPI?
+37. Have you worked on message mapping?
+38. On which functions of message mapping you worked?
+39. What is the differnace between Value mapping and Fix values? what are the onfaillure options we are having ?
+40. Have you worked on Node functions of message mapping?
+41. What are all Node funtions you know in SAP CPI?
+42. What is the Differance between Remove context and collapse context?
+43. If any node is not coming in the request payload which is expected by target, what should we do in the mapping to avoid the error?
+44. If we are not getting value for a particular field which is expected by target structure, what should we do in the mapping to avaid error?
+45. What is split by value ?
+46. What is Use One As Many node function of SAP CPI?
+47. What is Format By Example in SAP CPI?
+48. What is Aggregator?
+49. What is the differnace between Aggregator and Gather?
+50. What is the differance bwtween Join and Gather? where we can use each?
+51. What are the aggregation alogorithms avalable in aggregator?
+52. What formats of data can be aggregated?
+53. What is correlation expression and last message condition in aggragator configuration?
+54. What is Request reply?
+55. What is Content enricher?
+56. what is the differnce between content enricher and content modifier?
+57. What is the difference between content enricher and request reply?
+58. Have you worked on Odata adapetr?
+59. What are the authentications you aware of in Odata adapter configuration?
+60. What are the different Operational methods available in Odata Call?
+61. What is the differnace between OdataV2 and OdataV4?
+62. What is GET, PUT, POST, DELETE ,PATCH operations?
+63. How you can filter required data in Odata Call?
+64. How we can get XSD for mapping after getting data from Odata call?
+65. If you need to get two entities information, for example Orders information and product information , what will you do?
+66. What are the different Aggragation algorithms available for content enricher?
+67. What is the difference between SEND and Request Reply?
+68. What is poll enrich ?
+69. What is the differance between parallel multicasting and sequesntial multicasting?
+70. What is the function of router? what are the different expression types and eloborate each.
+71. What does a splitter do? What is the differance between General splitter and Iterative splitter?
+72. What are different Data store operations?
+73. What does write variable do?
+74. What is the differnce between Select and Get data store operations?
+75. How we can select records from the data in data store?
+76. How to perform Delete operation?
+77. What is Global variable and Local variable?
+78. What is the default retention period of variable?
+79. Explain about configuration of process direct adapter and use cases.
+80. What is the information required to configure SFTP /FTP adapter?
+81. What are the ports of FTP and SFTP?
+82. How to test the connectivity of SFTP adapter?
+83. What can we do at sender Folder of SFTP once the data is posted successfully to the target or what are the available options post processing of the data from SFTP.
+84. What is the role of checking change directories step wise in SFTP configuration?
+85. what should we do if we need to pick all available files in SFTP folder?
+86. What should we do if there is no need of changing the name of a file at reciever side of SFTP folder? (Flatten File names)
+87. what we should do if we want to place the file at main location not in any sub folders?
+88. What is JMS adapter?
+89. How we can establish retry mechanism using JMS adapter?
+90. What is the differance between HTTP, Process direct and JMS adapters in forming the connection between different Iflows?
+91. Explain the configuration of SOAP adapter ?
+92. what are all the details need to be collected to configure SOAP adapter?
+93. Differance between SOAP RM and SOAP 1.x
+94. Differance between Robust and WS standard processing settings of SOAP?
+95. How we can get the WSDL to upload at reciever side configuration of  SOAP ?
+96. Have you worked on SOAP UI ?
+97. What are the two options available at Service Definition of SOAP configuration?( Manual and WSDL)
+98. Have you worked on API Management?
+99. Explain how to configure API and How to connect CPI wotyh API?
+100. How to configure IDOC adapter?
+101. How to connect S4Hana or ECC system with CPI to process IDOCS?
+( ALE settings )
+102. What is the structure of IDOC?
+103. What are open connectors? How CPI can be connected to open connectors? on which open connector you worked?
+104. What is encryption and decryption?
+105. What is PGP encryption and PGP Decryptor ? How we can configure?
+106. How can you rate yourself in Groovy out of 5?
+( Better to rate your self as 3, mostly no body will ask to write groovy , be confident )
+107. What situations made you to go with groovy? or what are all the requiremnts you full filled by writing groovy?
+108. What are all the systems you connected with SAP CPI till now in your last projects?
+109. What is making to migrate PIPO to CPI  ( we need to tell the advantages of CPI over PIPO)
+110. do you know the list of cloud computing services? ( HINT: IAAS, PAAS, SAAS, FAAS )
+111. Differance between DELTA and FUll load
+112. Have you worked on EDI and B2B scenarios
+113. What si synchrnous and Asynchronius way of message processing?
+114. Can we use headers and properties of one path in to other path after sequential multicasting? if not how can we call properties or headers of one path to other path?
+115. What is the differance between corelation ID and Message ID?
+116. What isPublic  key based authentication in SFTP Adapter configuration.
+117. Where to upload Private key and Public key?
+118. What is Looping process call?
+119. What is the Application of Write Variables?
+120. How to merge different files from SFTP?
+121. What is Parser and Slurper in groovy?
+122. What is SSH key , How we can get it in SFTP configurations?
+123. What is pagination of Data in data processingwith SAP CPI?
+124. How we can dispatch the IDOCS to different IFlows using process direct adapter?
+125. How we can establish Transaction Handling at aggregator?
+126. Types of mappings in SAP CPI?
+127. Types of Scripting Languages in SAP CPI?
+128. What are transport mechanisms in SAP CPI?
+129. Explain any I flow which you feel more challenged in your developments?
+130. How many I flows have you Developed till now in career?
+131. How to do Oauth authentication?
+132. How to implement certificate based Authentication?
+133. How many implementation and support projects you dealt with till now?
+( Always better to potray yourself as a Developer )
+134. What si synchrnous and Asynchronius way of message processing?
+135. What are camel expressions we have to get error details and message processing log ID and name of the Flow?
+136. How to get client ID and Client Secret for a service in SAP CPI from BTP cockpit?
+137. What are different testing Phases of Iflows of SAP CPI?
+
