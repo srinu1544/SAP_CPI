@@ -1,38 +1,34 @@
 package com.example.sap_cpi.pallet_functions.Call.External_Call
 
-/*Poll Enrich is a message processing step in SAP CPI (Cloud Platform Integration) that allows an integration flow (IFlow) to poll data from an external source and merge it with an existing message.
-It is commonly used when an integration requires additional data from another system during processing
-
-it supports only SFTP adapter
-it is used to pick the file and send the file to next step
-
-
-
- How Poll Enrich Works
-It retrieves data from an external system (e.g., SFTP).
-It enriches the existing message by merging the retrieved data with the original message.
-The original message remains the main message, while the polled data is used as enrichment.
+import android.graphics.drawable.Drawable
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.sap_cpi.R
+import com.example.sap_cpi.image.LoadImage
 
 
- When to Use Poll Enrich?
-Use Poll Enrich when:
-✅ You need to fetch additional data before sending the final message.
-✅ The data must be retrieved dynamically from another system.
-✅ You want to poll data periodically within an integration flow.
-
-Example use cases:
-
-Fetching customer details from an external system before sending an order request.
-Retrieving exchange rates from an API before processing a financial transaction.
-Fetching a file from SFTP and merging it with another message payload.
+@Preview
+@Composable
+fun composable() {
+    LoadImage(R.drawable.pollenrich)
+}
+/*
 
 
- How to Configure Poll Enrich in SAP CPI
-Open your IFlow in SAP CPI.
-Drag & Drop the Poll Enrich step from the palette.
-Choose the Adapter Type (e.g., SFTP, HTTP, SOAP, OData).
-Configure the connection settings (e.g., URL, credentials, polling frequency).
-Define the merge strategy (how the fetched data should be merged with the original message).
+
+-> it supports only SFTP adapter only
+-> it is used to pick the file and send the file to next step
+->  it is used for only received the files
+->  it is used fot get the data from the SFTP only
+->  if their requirement wants to get the dara from the SFTP folder in between the flow we can use the poll enrich
+-> it will be connected to only sender system
+
+when file pics
+once the sender sends the data to the iflow (data process initiate) poll enrich activate get the data from SFTP
+
+
+
+
 
 
 
