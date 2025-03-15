@@ -1,4 +1,4 @@
-package com.example.sap_cpi.image
+package com.example.sap_cpi.ui.theme.image
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth

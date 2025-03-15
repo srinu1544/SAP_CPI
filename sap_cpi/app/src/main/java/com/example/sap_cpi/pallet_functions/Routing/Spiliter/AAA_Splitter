@@ -1,0 +1,15 @@
+Splitter :
+----------
+This is a message routing step that splits a message into multiple messages based on a condition.
+you can use splitter in scenario where you need to process each part of the message separately or in parallel.
+
+we have 7 types of splitters :
+-> EDI Splitter
+-> General Splitter
+-> The Idoc splitter
+-> iterating splitter
+-> pkcs#7/cms splitter
+-> Tar splitter
+-> Zip Splitter
+
+

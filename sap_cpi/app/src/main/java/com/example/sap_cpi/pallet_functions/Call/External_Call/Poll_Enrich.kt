@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.sap_cpi.R
-import com.example.sap_cpi.image.LoadImage
+import com.example.sap_cpi.ui.theme.image.LoadImage
 
 
 @Preview

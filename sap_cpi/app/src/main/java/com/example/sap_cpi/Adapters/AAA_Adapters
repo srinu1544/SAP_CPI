@@ -1,0 +1,59 @@
+
+important adapters in sap cpi
+--------------------------------
+HTTP Adapter : (hyper text transport protocol)
+Connecting to REST/SOAP APIs using HTTP calls.
+Sending/Receiving data between SAP CPI and external systems.
+
+SOAP Adapter : (simple object access protocol)
+Integrating with web services that use SOAP protocol.
+Connecting SAP S/4HANA or SAP ECC using SOAP-based services.
+
+Mail Adapter : (Message and Information Logging)
+Sending/Receiving emails via SMTP/IMAP protocols.
+Used for email notifications in integration flows.
+
+OData Adapter : (Open data)
+Connecting SAP CPI with SAP S/4HANA, SAP SuccessFactors, or SAP C4C using OData Services.
+Real-time data fetch/update from SAP systems.
+
+SuccessFactors :
+-> Connecting SAP CPI with SAP SuccessFactors for Employee Data, Payroll, etc.
+-> Uses OData & SFAPI (SOAP-based API).
+
+SFTP Adapter : (secure file transport protocol)
+Sending/Receiving files (CSV, XML, JSON) via SFTP (Secure File Transfer Protocol).
+Integrating with banks, vendors, or third-party applications.
+
+JMS : (java message service)
+Asynchronous messaging and message queuing.
+Helps in decoupling systems and handling high message load
+Works with SAP Event Mesh, Apache ActiveMQ, IBM MQ, etc.
+
+AS2 Adapter : (Applicability Statement 2)
+Secure EDI (Electronic Data Interchange) communication between businesses.
+Commonly used in B2B transactions (e.g., Retail, Healthcare, and Banking).
+Supports Message Encryption & Digital Signatures.
+
+IDoc Adapter : (Intermediate Document)
+-> (For SAP ECC/S4HANA integration)
+-> Used for SAP-to-SAP communication.
+
+JDBC Adapter : (java data base connectivity)
+Database communication.
+Integration between SAP CPI and databases (SAP HANA, MySQL, SQL Server, Oracle, etc.)
+Fetching master data (e.g., Product, Customer, Employee data)
+Storing API logs or transactional data into a database
+Triggering SQL queries from SAP applications
+
+SAP Concur Adapter :
+Expense & Travel Management Integration with SAP Concur.
+Helps in automating reimbursement processes & employee expense tracking.
+
+XI Adapter : (Exchange Infrastructure)
+Connecting SAP PI/PO with SAP CPI
+Migrating integrations from SAP PI/PO to SAP CPI
+Handling SOAP-based XI messages
+
+Ariba Adapter :
+For SAP Ariba procurement   and supply chain management integrations.

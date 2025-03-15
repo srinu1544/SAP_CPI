@@ -1,0 +1,12 @@
+multicast
+----------
+
+-> This is a message routing step that sends a copy of the same messaged to the multiple routes.
+-> you can use multicast in scenarios where you need to distribute or broadcast the same message to
+   different systems or services
+-> Without Multicast, you needed multiple integration processes to perform this task.
+
+we have two types in multicast :
+--------------------------------
+-> parallel multicast
+-> sequential  multicast

@@ -1,0 +1,14 @@
+https://help.sap.com/docs/cloud-integration/sap-cloud-integration/use-custom-header-properties-to-search-for-message-processing-logs?q=SAP_Sender
+https://www.sprintegrate.com/cpi/sap-cpi-message-monitoring-standard-out-of-the-box-features-to-use-in-your-iflows/
+
+Standard headers
+-----------------
+SAP_Sender: Identifies the sender system
+SAP_Receiver: Identifies the receiving system
+SAP_MessageType: Identifies the message type
+SAP_ApplicationID: An XPath to read the business identifier
+
+
+SAP_MessageProcessingLogCustomStatus: A constant that specifies the custom status
+
+JMS - SAPJMSRetries -- get retries count in jms adapter

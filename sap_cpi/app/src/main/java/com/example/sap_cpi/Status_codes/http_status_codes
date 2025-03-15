@@ -1,0 +1,104 @@
+please refer : https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+
+1xx – Informational Responses
+
+These codes indicate that the request is being processed but is not yet completed.
+100 Continue – The server received the initial request and asks the client to continue.
+102 Processing – The server has received the request and is still processing it.
+✅ Useful in long-running API requests where the server acknowledges but takes time to respond.
+
+2xx – Success
+--------------
+These indicate that the request was successfully received, understood, and processed.
+200 OK – The request was successful, and the response contains the requested data.
+201 Created – A new resource was successfully created.
+202 Accepted – The request has been accepted for processing but is not yet completed.
+✅ Common in asynchronous APIs (e.g., sending messages to a queue in SAP CPI).
+204 No Content – The request was successful, but no response body is returned (useful in REST services when no data needs to be returned).
+206 Partial Content – Only part of the requested resource is returned.
+✅ Happens when downloading large files in chunks (e.g., paginated API responses).
+
+3xx – Redirection
+-----------------
+These codes tell the client that further action is required to complete the request.
+301 Moved Permanently – The requested resource has a new URL permanently.
+302 Found – The requested resource is temporarily available at a different URL.
+307 Temporary Redirect – Used in OAuth token-based authentication, where authentication servers redirect requests.
+308 Permanent Redirect – Similar to 301, but strictly enforces the HTTP method.
+✅ Can occur in OAuth 2.0 authentication, where endpoints move permanently.
+
+4xx – Client Errors
+-------------------
+These indicate that the request has an error, usually due to invalid input from the client.
+
+400 Bad Request – The request is malformed or has missing parameters.
+✅ Common in SAP CPI when calling APIs with incorrect headers or payloads.
+
+401 Unauthorized – Authentication credentials are missing or incorrect.
+✅ Occurs if SAP CPI does not provide correct OAuth tokens or API keys.
+
+403 Forbidden – The user is authenticated but does not have permission to access the resource.
+✅ Occurs in SAP CPI when an API restricts access based on roles or IP whitelisting.
+
+404 Not Found – The requested resource does not exist.
+✅ Occurs if an API endpoint is incorrect, deprecated, or unavailable.
+
+405 Method Not Allowed – The HTTP method (GET, POST, PUT, DELETE) is not supported by the API.
+✅ Occurs in SAP CPI when using an incorrect HTTP method in a Request-Reply step.
+
+406 Not Acceptable – The server cannot provide the response in the requested format.
+✅ Happens if SAP CPI requests XML but the API only supports JSON.
+
+409 Conflict – The request conflicts with the current state of the resource.
+✅ Occurs when trying to update a resource that has already been modified (e.g., optimistic locking in APIs).
+
+408 Request Timeout – The client took too long to send the request.
+✅ Can happen if an API takes too long to respond, causing SAP CPI to timeout.
+
+410 Gone – The resource was available before but no longer exists.
+✅ Indicates deprecated API endpoints in SAP CPI integrations.
+
+417 Expectation Failed – The server cannot meet the expectations of the request.
+✅ Can occur when a client sends an Expect header in an API request, but the server doesn’t support it.
+
+415 Unsupported Media Type – The server does not support the format of the request (e.g., sending XML when JSON is expected).
+✅ Common in SAP CPI when integrating with APIs that require specific content types.
+
+418 I'm a Teapot ☕ – Originally an April Fool’s joke, but some APIs return it for blocked requests.
+✅ Rare, but fun to know! 😆
+
+422 Unprocessable Entity – The request is well-formed but contains invalid data.
+✅ Happens in APIs when data validation fails (e.g., missing required fields).
+
+428 Precondition Required – The server requires preconditions (e.g., If-Match header).
+✅ Can occur in ETag-based updates to prevent overwriting changes.
+
+429 Too Many Requests – The API has rate limits and has blocked further requests.
+✅ Occurs in SAP CPI when making frequent API calls beyond allowed limits (e.g., SAP Ariba or SAP SuccessFactors APIs).
+
+5xx – Server Errors
+-------------------
+
+500 Internal Server Error – A generic error message when the backend fails.
+✅ Occurs when SAP S/4HANA, Ariba, or any backend system has internal failures.
+
+502 Bad Gateway – The API gateway or middleware (like SAP API Management) received an invalid response.
+✅ Occurs when SAP CPI interacts with an intermediary service that fails.
+
+503 Service Unavailable – The server is down or overloaded.
+✅ Occurs when SAP backend systems (S/4HANA, Ariba) are undergoing maintenance or facing heavy traffic.
+
+504 Gateway Timeout – The upstream server took too long to respond.
+✅ Common when SAP CPI connects to slow APIs, causing timeout errors.
+
+507 Insufficient Storage – The server cannot store the requested resource.
+✅ Can happen in file-based integrations where storage limits are exceeded.
+
+511 Network Authentication Required – The client must authenticate with the network.
+✅ Rare, but can appear if SAP CPI is behind a proxy that requires authentication.
+
+📌 Special or Uncommon HTTP Status Codes
+418 I'm a teapot – An April Fool's joke from the Hyper Text Coffee Pot Control Protocol (HTCPCP).
+451 Unavailable for Legal Reasons – Used when access to a resource is restricted due to legal reasons (e.g., government censorship).
+511 Network Authentication Required – Indicates that network access requires authentication (e.g., login on public WiFi).

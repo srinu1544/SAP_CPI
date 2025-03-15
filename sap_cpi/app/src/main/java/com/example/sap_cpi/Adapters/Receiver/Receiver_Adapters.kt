@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.dp
 
 Receiver Side adapters
 ----------------------
-
 1.Advanced eventMesh
 2.Amazon DynamoDB
 3.Amazon EventBridge
@@ -215,8 +214,9 @@ Allows SAP CPI to interact with Twitter APIs for social media automation.
 Connects SAP CPI with Workday, a cloud-based HCM and finance application.
 
 47. X1
-Likely refers to a custom or proprietary adapter (Needs clarification).
-
+The XI (Exchange Infrastructure) Adapter in SAP CPI is primarily used to integrate with SAP
+Process Integration (PI) / Process Orchestration (PO) systems. It helps in exchanging messages
+between SAP Cloud Integration (CPI) and on-premise SAP PI/PO systems.
 
 
 

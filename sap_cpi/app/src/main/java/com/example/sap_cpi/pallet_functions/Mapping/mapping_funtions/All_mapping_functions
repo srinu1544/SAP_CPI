@@ -1,0 +1,94 @@
+Arithmetic
+==========
+  add :
+  subtract :
+  equals (number) :
+  absolute :
+  sqrt :
+  square :
+  sign :
+  neg :
+  inv :
+  power :
+  multiply :
+  divide :
+  max :
+  min :
+  ceil :
+  round :
+  counter :
+  formatNumber :
+
+Boolean
+=======
+ and :
+ or :
+ not :
+ equals(boolean) :
+ notEquals :
+ if :
+ its :
+ ifWithoutElse :
+ ifsWithoutElse :
+ isNil :
+
+Constant
+=========
+constant :
+copyValue :
+xsi:nil :
+
+Conversions
+===========
+fixValue :
+valueMapping :
+
+Data
+====
+currentDate :
+dateTrans :
+dateBefore :
+dateAfter :
+compareDates :
+
+Node Functions
+==============
+exists :
+getHeader :
+getProperty :
+splitByValue  :
+collapseContext :
+useOneAsMany :
+sort :
+sortByKey :
+mapWithDefault :
+formatByExample :
+
+Statistic
+=========
+sum :
+average :
+count :
+index :
+
+Text
+====
+subString :
+concat :
+equals(String) :
+indexOf(2) :
+indexOf(3) :
+lastIndexOf(2) :
+lastIndexOf(3) :
+compare :
+replaceString :
+length :
+endWith(2) :
+startWith(2) :
+startWith(3) :
+toUpperCase :
+trim :
+toLowerCase :
+
+
+

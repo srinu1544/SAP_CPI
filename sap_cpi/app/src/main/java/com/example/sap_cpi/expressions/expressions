@@ -1,0 +1,69 @@
+1️⃣ General Message Details
+${id}  -- 	                    Unique Exchange ID for the message
+${routeId}	--                  Route (iFlow) ID
+${exchangeId} -- 	            Same as ${id} (Exchange ID)
+${header.CamelCorrelationId} -- Correlation ID (Used to group related messages like local integration process ,
+                                another iflow connected with process direct adapter)
+${header.CamelMessageId}	 -- Message ID (Similar to Exchange ID)
+${header.CamelHttpResponseCode} --	HTTP Response Code (e.g., 200, 400, 500)
+${camelId}                      --  for iflow name
+
+
+
+2️⃣ Headers & Properties
+
+${header.<HeaderName>}	   -- Retrieves a specific header value
+${property.<PropertyName>} -- Retrieves a specific property value
+${headers}	               -- Displays all message headers
+${properties}	           -- Displays all message properties
+${header.OrderID}          -- If a header OrderID is set, retrieve it using:
+
+
+
+3️⃣ Exception Handling & Error Tracking
+
+${exception.message}	-- Retrieves the exception message
+${exception.class}	    -- Retrieves the exception type (class)
+${exception.stacktrace}	-- Retrieves the full stack trace
+
+4️⃣ Body (Message Content)
+
+${body}	           -- Retrieves the entire message body
+${bodyAs(String)}  -- Converts the body to a String format
+${bodyAs(java.util.Map)}  -- Converts the body to a Map object
+${bodyAs(org.w3c.dom.Document)}	-- Converts the body to an XML Document
+
+
+5️⃣ Date & Time Expressions
+${date:now:yyyy-MM-dd}	Current Date (Format: 2025-03-06)
+${date:now:HH:mm:ss}	Current Time (Format: 14:30:45)
+${date:now:yyyyMMdd_HHmmss}	Timestamp Format (Example: 20250306_143045)
+
+6️⃣ HTTP & API-Specific Expressions
+${header.CamelHttpMethod}	-- HTTP Method (GET, POST, etc.)
+${header.CamelHttpUri}      -- Full HTTP URL of the request
+${header.CamelHttpQuery}	-- Query Parameters from the URL
+${header.CamelHttpPath}	Extracted path parameters
+
+
+7️⃣ File Handling (If Using File Adapter)
+
+${file:name}	Retrieves the filename
+${file:name.noext}	Retrieves the filename without extension
+${file:ext}	Retrieves the file extension
+
+8️⃣ Conditional Expressions
+${header.OrderID} != null	Checks if OrderID exists
+${body} contains 'Success'	Checks if the body contains "Success"
+${header.Amount} > 1000	Checks if Amount is greater than 1000
+${header.OrderStatus} == 'Completed'
+
+
+9️⃣ String Manipulation
+${body.toLowerCase()}	Converts body to lowercase
+${body.toUpperCase()}	Converts body to uppercase
+${body.trim()}	Removes leading/trailing spaces
+${header.OrderID.replaceAll('ORD', '')}	Replaces ORD in OrderID
+
+
+

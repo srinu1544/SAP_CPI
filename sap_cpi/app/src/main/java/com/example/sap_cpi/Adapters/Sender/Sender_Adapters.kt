@@ -17,7 +17,7 @@ Sender Side adapters
 2.AMQP
 3.Ariba -- imp
 4.AS2
-5.AS$
+5.AS4
 6.AzureStorage
 7.DataStore
 8.DropBox
@@ -39,8 +39,6 @@ Sender Side adapters
 24.splunk
 25.SucccessFactory  -- imp
 26.X1
-
-
 
 
 
@@ -146,9 +144,10 @@ Useful in security and operational intelligence.
 Connects SAP CPI with SAP SuccessFactors for HR process integration.
 Used for employee data synchronization and payroll processing.
 
-26. X1
-Likely refers to a custom or specialized adapter (Needs clarification).
-
+26.X1
+The XI (Exchange Infrastructure) Adapter in SAP CPI is primarily used to integrate with SAP
+Process Integration (PI) / Process Orchestration (PO) systems. It helps in exchanging messages
+between SAP Cloud Integration (CPI) and on-premise SAP PI/PO systems.
 
 
 
