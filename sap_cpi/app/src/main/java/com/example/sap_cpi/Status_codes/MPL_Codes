@@ -12,3 +12,24 @@ SAP_ApplicationID: An XPath to read the business identifier
 SAP_MessageProcessingLogCustomStatus: A constant that specifies the custom status
 
 JMS - SAPJMSRetries -- get retries count in jms adapter
+
+it is from free apis :
+MessageGuid,
+CorrelationId,
+ApplicationMessageId,
+ApplicationMessageType,
+IntegrationFlowName,
+IntegrationArtifact,
+Status,
+CustomStatus,
+LogLevel,
+LogStart,
+LogEnd,
+Sender,
+Receiver,
+AlternateWebLink,
+ArchivingStatus,
+ArchivingSenderChannelMessages,
+ArchivingReceiverChannelMessages,
+ArchivingLogAttachments,
+ArchivingPersistedMessages

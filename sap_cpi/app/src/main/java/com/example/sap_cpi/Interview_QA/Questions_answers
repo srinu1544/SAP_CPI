@@ -612,7 +612,7 @@ A. Process Integration (PI) / Cloud Integration
    Integration Advisor
    Data Services & Security
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-Q. what is the different between API Creation (api management) and http adapter
+Q. what is the different between API Creation (api management) and http adapter?
 Feature	      HTTP Adapter	                                                                   API Creation in SAP CPI
 Purpose    	  Connects to external APIs or exposes an endpoint within an integration flow.	   Creates and manages a full API service that external applications can consume.
 Security	  Basic Authentication, OAuth, or certificates (handled manually).	               API Key, OAuth, JWT, and policy-based security (managed).
@@ -1013,10 +1013,53 @@ A. TODO -- explore
 A. TODO -- explore
 ------------------------------------------------------------------------------------------------------------
 43. If any node is not coming in the request payload which is expected by target, what should we do in the mapping to avoid the error?
+A. for this we have two ways :
+ 1. Use Default Values
+ In the Message Mapping, you can set a default value for the target field using the mapping functions.
+ Example: Use the Constant or FixValue function to provide a default value when the source node is missing.
+ 2. Use If-Else or Conditional Mapping
+ You can use the Existence Check or If Without Else function to check whether the source field exists.
+ If it doesn't exist, map a default value or leave it blank based on the requirement.
+---------------------------------------------------------------------------------------------------------------------------------------------
 44. If we are not getting value for a particular field which is expected by target structure, what should we do in the mapping to avaid error?
+A. for this we have two ways
+    1. Use Default Values
+   If the field is missing, you can provide a default value to prevent errors.
+   Use the Constant or FixValues function to supply a default value.
+   Example:
+   If PhoneNumber is missing, map "0000000000" as a default value using Constant.
+
+   ✅ 2. Use If-Else Condition
+   Check if the field exists using the IfWithoutElse or Existence function.
+   Provide a default value if the field is absent.
+---------------------------------------------------------------------------------------------------------------------------------
 45. What is split by value ?
+A.In SAP CPI (Cloud Platform Integration), "Split by Value" is a feature used in the Message Mapping step to split a single
+  message into multiple messages based on a specific field value.
+✅ Purpose of Split by Value
+It is used when you have a source message with multiple repeating records (like an array or list) and you want to generate
+separate messages for each record or a group of records.
+This is particularly useful when the target system expects one message per record instead of a batch of data.
+---------------------------------------------------------------------------------------------------------------
 46. What is Use One As Many node function of SAP CPI?
+A.In SAP CPI (Cloud Platform Integration), the "Use One As Many" function is a mapping function available in Message Mapping.
+   It is used when you need to map a single source value to multiple target values, typically in scenarios involving repeating
+   or multi-instance nodes.
+✅ Purpose of "Use One As Many"
+It allows you to replicate a single value from a source field across multiple target nodes.
+This is useful when the source contains a single value, but the target system requires multiple records with that value.
+It ensures that the value is applied to each occurrence of a repeating target node.
+------------------------------------------------------------------------------------------------------------------
+
 47. What is Format By Example in SAP CPI?
+A.In SAP CPI (Cloud Platform Integration), "Format By Example" is a feature available in the Message Mapping step that helps you generate
+ a sample output structure by providing an example of how the data should look.
+ ✅ Purpose of "Format By Example"
+ It is used to define complex output formats without manually writing all the mapping logic.
+ Instead of creating the structure from scratch, you provide a sample output, and SAP CPI will
+  try to infer how the source data should be mapped to match that format.
+  It is especially useful for mapping data to text-based formats such as CSV, Fixed-Length, or Custom Delimited formats.
+------------------------------------------------------------------------------------------------------------------
 48. What is Aggregator?
 49. What is the difference between Aggregator and Gather?
 50. What is the differance between Join and Gather? where we can use each?

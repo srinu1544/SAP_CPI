@@ -6,7 +6,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.sap_cpi.R
 import com.example.sap_cpi.ui.theme.image.LoadImage
 
-
 @Preview
 @Composable
 fun JmsSender() {

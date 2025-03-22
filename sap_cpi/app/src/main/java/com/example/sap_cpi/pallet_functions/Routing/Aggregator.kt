@@ -26,6 +26,10 @@ You want to combine related individual messages so that they can be processed in
 Using an Aggregator pattern, you can collect and store individual messages until a
 complete set of related messages has been received. The aggregated message is then sent to the actual receiver.
 
+aggregator strategies
+---------------------
+combine and combine in sequence
+
 Use Case
 --------
 You want to collect individual product items related to the same order.

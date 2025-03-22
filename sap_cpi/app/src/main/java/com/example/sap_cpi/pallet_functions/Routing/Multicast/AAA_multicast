@@ -1,6 +1,5 @@
 multicast
 ----------
-
 -> This is a message routing step that sends a copy of the same messaged to the multiple routes.
 -> you can use multicast in scenarios where you need to distribute or broadcast the same message to
    different systems or services
@@ -10,3 +9,17 @@ we have two types in multicast :
 --------------------------------
 -> parallel multicast
 -> sequential  multicast
+
+parallel multicast :
+--------------------
+This is a message routing step that sends a copy of the same message to multiple routes at the same time.
+you can use parallel multicast in scenarios where you need to perform multiple operations on the same message in parallel or
+where the order of execution in not important.
+
+
+sequential multicast :
+---------------------
+This is a message routing step that sends a copy of the same message to multiple routes in a specific order.
+you can use parallel multicast in scenarios where you need to perform multiple operations on the same message in parallel or
+where the order of execution in important. it is used when one path dependent on another path
+-> Only after the first path is finished (successfully or with an error), the second branch starts.*/

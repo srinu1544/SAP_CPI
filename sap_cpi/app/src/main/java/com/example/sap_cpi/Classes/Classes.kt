@@ -36,7 +36,10 @@ class 25 completed (node functions , change context , remove context , sort , sp
 class 26 completed (collapse context , remove context) - imp
 class 27 completed (Routing (route), 3rd party helper tool, trace, Terminate message) -- imp
 class 28 (router, Aggregator ) -- vvimp for aggregator
-class 29 ()
+class 29 (general splitter, iterating splitter, parallel multicast, sequential multicast)
+class 30 (join,gather) - not fullfill
+class 31 (Request Replay, odata (receiver Adapter) , odata Receiver adapter north wind)
+class 32 (CONTENT ENRICHER , )
 
 class 37 (data store operations write , get , select , delete)
 class 38 (data store operations select , delete)

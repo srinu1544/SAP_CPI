@@ -28,6 +28,9 @@ package com.example.sap_cpi.Abbrivations
 -D
  DS (Data Store),
  DSL (Data Store Level)
+ DN (Distinguished Name)
+
+
 
 -E
  ECC (ERP Central Component),
@@ -93,6 +96,7 @@ EDMX (Entity Data Model XML) -- EDMX is the XML representation of the Entity Dat
 -R
  REST (Representational State Transfer),
  RFC (Remote Function Call)
+ RDNs (Relative Distinguished Names)
 
 -S
  SFTP - Secure File Transfer Protocol - secure file transfer

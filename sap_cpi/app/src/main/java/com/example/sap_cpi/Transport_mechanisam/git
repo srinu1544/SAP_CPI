@@ -1,0 +1,41 @@
+To use Git with SAP CPI (Cloud Platform Integration), you can synchronize your CPI content (iFlows, scripts, mappings)
+to a Git repository using tools like Figaf IRT or CPISync, enabling version control, collaboration, and easier deployment.
+Here's a breakdown of the process:
+
+1. Choose a Git Integration Tool:
+Figaf IRT (Integration Repository Tool):
+This tool, part of the Figaf DevOps suite, facilitates synchronization of CPI artifacts to a Git repository.
+CPISync:
+An open-source tool that allows you to sync CPI content to Git and create backups.
+SAP Business Application Studio:
+While not a direct Git integration tool, it allows you to work with Git repositories for CPI development,
+enabling you to manage your code and artifacts.
+
+2. Set up a Git Repository:
+Create a repository: Establish a Git repository on a platform like GitHub, GitLab, or Bitbucket.
+Clone the repository: Clone the repository locally to your development environment.
+
+3. Configure the Integration Tool:
+Connect to CPI: Configure the chosen tool to connect to your SAP CPI system.
+Configure Git Repository: Specify the Git repository URL and credentials.
+Define Artifacts: Specify which CPI artifacts (e.g., iFlows, scripts, mappings) should be synchronized.
+
+4. Synchronize CPI Content:
+Download Artifacts: Use the tool to download the selected CPI artifacts from your CPI system to the Git repository.
+Push Changes: When you make changes to your CPI artifacts, commit and push them to the Git repository.
+Pull Changes: Other developers can pull the latest changes from the Git repository.
+
+5. Workflow Example (using Figaf IRT):
+Developer:
+Opens an iFlow in the CPI UI, makes changes, and then commits and pushes the changes to the Git repository using Figaf IRT.
+Figaf IRT:
+Pulls the changes from the Git repository, updates the iFlow in CPI, and deploys it.
+CI/CD:
+You can integrate Git with your CI/CD pipeline to automate the deployment process.
+
+6. Key Considerations:
+Version Control: Git enables you to track changes, revert to previous versions, and collaborate effectively.
+Code Reviews: Use Git for code reviews before deploying changes to production.
+Testing: Integrate Git with your testing framework to automate testing of your CPI artifacts.
+Security: Ensure that your Git repository and credentials are securely managed.
+One-way Integration: SAP Cloud Application Studio (C4C) uses a "one-way integration" approach, where you can commit and push changes to your Git repository, but not pull changes from it.
