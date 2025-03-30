@@ -1,0 +1,56 @@
+TCPMUX (TCP Port Service Multiplexer) - 1
+CompressNET Management Utility - 2
+CompressNET Compression Process - 3
+RJE (Remote Job Entry) - 5
+Echo Protocol - 7
+Discard Protocol - 9
+SYSTAT (System Status) - 11
+Daytime Protocol - 13
+Netstat - 15
+QOTD (Quote of the Day) - 17
+CHARGEN (Character Generator Protocol) - 19
+FTP Data (File Transfer Protocol - Data) - 20
+
+IMPORTANT PROTOCOL
+--------------------
+FTP (File Transfer Protocol) - 21
+SFTP (Secure File Transfer Protocol) - 22
+SSH (Secure Shell) - 22
+SMTP (Simple Mail Transfer Protocol) - 25
+HTTP (Hypertext Transfer Protocol) - 80
+HTTPS (HTTP Secure) - 443
+DNS (Domain Name System) - 53
+POP3 (Post Office Protocol) - 110
+IMAP (Internet Message Access Protocol) - 143
+LDAP (Lightweight Directory Access Protocol) - 389
+LDAPS (LDAP Secure) - 636
+SNMP (Simple Network Management Protocol) - 161
+RDP (Remote Desktop Protocol) - 3389
+MySQL - 3306
+PostgreSQL - 5432
+MongoDB - 27017
+Oracle Database - 1521
+MS SQL Server - 1433
+NTP (Network Time Protocol) - 123
+DHCP (Dynamic Host Configuration Protocol) - 67/68
+Telnet - 23
+TFTP (Trivial File Transfer Protocol) - 69
+BGP (Border Gateway Protocol) - 179
+ICMP (Internet Control Message Protocol) - No port (uses IP protocol 1)
+
+
+PORTS USING TLS (Transport layer security)
+------------------------------------------
+HTTPS (HTTP over TLS) → Port 443
+FTPS (FTP Secure using TLS) → Ports 989 and 990
+IMAPS (IMAP over TLS) → Port 993
+POP3S (POP3 over TLS) → Port 995
+SMTPS (SMTP over TLS) → Port 465
+SMTP with STARTTLS → Port 587
+LDAPS (LDAP Secure over TLS) → Port 636
+NNTP (Network News Transfer Protocol over TLS) → Port 563
+MySQL (MySQL Secure over TLS) → Port 3306
+PostgreSQL (PostgreSQL Secure over TLS) → Port 5432
+RDP (Remote Desktop Protocol over TLS) → Port 3389
+DNS over TLS (DoT) → Port 853
+

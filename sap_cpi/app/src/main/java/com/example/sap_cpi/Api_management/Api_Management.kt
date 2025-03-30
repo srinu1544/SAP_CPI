@@ -54,7 +54,13 @@ API protocols in sap cpi :
                  the target system or to design our api where we design all those things.
                  -> their can be multiple proxys for api providers
                  ->  you can combine all the api proxies to the api product
- -> api product   
+ -> api product
+
+
+
+
+
+
 
 
 

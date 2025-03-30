@@ -10,7 +10,7 @@ import com.example.sap_cpi.ui.theme.image.LoadImage
 
 @Preview
 @Composable
-fun Http(){
+fun Http() {
     Column {
         LoadImage(imageRes = R.drawable.http1)
         LoadImage(imageRes = R.drawable.http2)

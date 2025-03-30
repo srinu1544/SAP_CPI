@@ -1,0 +1,18 @@
+What is the difference between Request Replay and content Enricher :
+
+Request Reply:
+--------------
+-> It sends the data to the receiver system and gets the data back from the receiver system, like a synchronous call.
+-> The response coming from the receiver system replaces the previous payload from the step before the Request Reply,
+   meaning the new data overwrites the old data.
+-> Commonly used when a confirmation, validation, or additional information is required from the receiver system.
+
+Content Enricher:
+-----------------
+->  we can connect content enricher from only receiver.
+-> It sends the data to an external system to fetch additional information without replacing the original payload.
+-> The response from the external system is merged with the original payload instead of overwriting it.
+-> Useful when the existing data is incomplete, and additional data is required to enrich it for further processing.
+-> Content enrichment can be done using XPath, JSONPath, or Groovy scripting for data merging.
+-> Mainly used in asynchronous flows where enrichment is necessary before further processing.
+

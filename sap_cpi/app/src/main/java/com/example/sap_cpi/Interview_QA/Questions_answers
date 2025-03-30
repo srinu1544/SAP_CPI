@@ -1006,13 +1006,13 @@ Q. Have you worked on message mapping?
 Q. On which functions of message mapping you worked?
 A. TODO -- explore
 ----------------------------------------------------------------------------------------------------------------
-40. Have you worked on Node functions of message mapping?
+Q. Have you worked on Node functions of message mapping?
  yes TODO -- explore
  ---------------------------------------------------------------------------------------------------------
-41. What are all Node functions you know in SAP CPI?
+Q. What are all Node functions you know in SAP CPI?
 A. TODO -- explore
 ------------------------------------------------------------------------------------------------------------
-43. If any node is not coming in the request payload which is expected by target, what should we do in the mapping to avoid the error?
+Q. If any node is not coming in the request payload which is expected by target, what should we do in the mapping to avoid the error?
 A. for this we have two ways :
  1. Use Default Values
  In the Message Mapping, you can set a default value for the target field using the mapping functions.
@@ -1021,7 +1021,7 @@ A. for this we have two ways :
  You can use the Existence Check or If Without Else function to check whether the source field exists.
  If it doesn't exist, map a default value or leave it blank based on the requirement.
 ---------------------------------------------------------------------------------------------------------------------------------------------
-44. If we are not getting value for a particular field which is expected by target structure, what should we do in the mapping to avaid error?
+Q. If we are not getting value for a particular field which is expected by target structure, what should we do in the mapping to avaid error?
 A. for this we have two ways
     1. Use Default Values
    If the field is missing, you can provide a default value to prevent errors.
@@ -1033,7 +1033,7 @@ A. for this we have two ways
    Check if the field exists using the IfWithoutElse or Existence function.
    Provide a default value if the field is absent.
 ---------------------------------------------------------------------------------------------------------------------------------
-45. What is split by value ?
+Q. What is split by value ?
 A.In SAP CPI (Cloud Platform Integration), "Split by Value" is a feature used in the Message Mapping step to split a single
   message into multiple messages based on a specific field value.
 ✅ Purpose of Split by Value
@@ -1041,7 +1041,7 @@ It is used when you have a source message with multiple repeating records (like 
 separate messages for each record or a group of records.
 This is particularly useful when the target system expects one message per record instead of a batch of data.
 ---------------------------------------------------------------------------------------------------------------
-46. What is Use One As Many node function of SAP CPI?
+Q. What is Use One As Many node function of SAP CPI?
 A.In SAP CPI (Cloud Platform Integration), the "Use One As Many" function is a mapping function available in Message Mapping.
    It is used when you need to map a single source value to multiple target values, typically in scenarios involving repeating
    or multi-instance nodes.
@@ -1051,7 +1051,7 @@ This is useful when the source contains a single value, but the target system re
 It ensures that the value is applied to each occurrence of a repeating target node.
 ------------------------------------------------------------------------------------------------------------------
 
-47. What is Format By Example in SAP CPI?
+Q. What is Format By Example in SAP CPI?
 A.In SAP CPI (Cloud Platform Integration), "Format By Example" is a feature available in the Message Mapping step that helps you generate
  a sample output structure by providing an example of how the data should look.
  ✅ Purpose of "Format By Example"
@@ -1060,101 +1060,508 @@ A.In SAP CPI (Cloud Platform Integration), "Format By Example" is a feature avai
   try to infer how the source data should be mapped to match that format.
   It is especially useful for mapping data to text-based formats such as CSV, Fixed-Length, or Custom Delimited formats.
 ------------------------------------------------------------------------------------------------------------------
-48. What is Aggregator?
-49. What is the difference between Aggregator and Gather?
-50. What is the differance between Join and Gather? where we can use each?
-51. What are the aggregation algorithms available in aggregator?
-52. What formats of data can be aggregated?
-53. What is correlation expression and last message condition in aggregator configuration?
-54. What is Request reply?
-55. What is Content enricher?
-56. what is the difference between content enricher and content modifier?
-57. What is the difference between content enricher and request reply?
-58. Have you worked on Odata adapter?
-59. What are the authentications you aware of in Odata adapter configuration?
-60. What are the different Operational methods available in Odata Call?
-62. What is GET, PUT, POST, DELETE ,PATCH operations?
-63. How you can filter required data in Odata Call?
-64. How we can get XSD for mapping after getting data from Odata call?
-65. If you need to get two entities information, for example Orders information and product information , what will you do?
-66. What are the different Aggregation algorithms available for content enricher?
-67. What is the difference between SEND and Request Reply?
-68. What is poll enrich ?
-69. What is the differance between parallel multicasting and sequential multicasting?
-70. What is the function of router? what are the different expression types and elaborate each.
-71. What does a splitter do? What is the differance between General splitter and Iterative splitter?
-72. What are different Data store operations?
-73. What does write variable do?
-74. What is the difference between Select and Get data store operations?
-75. How we can select records from the data in data store?
-76. How to perform Delete operation?
-77. What is Global variable and Local variable?
-78. What is the default retention period of variable?
-79. Explain about configuration of process direct adapter and use cases.
-80. What is the information required to configure SFTP /FTP adapter?
-81. What are the ports of FTP and SFTP?
-82. How to test the connectivity of SFTP adapter?
-83. What can we do at sender Folder of SFTP once the data is posted successfully to the target or what are the available options post processing of the data from SFTP.
-84. What is the role of checking change directories step wise in SFTP configuration?
-85. what should we do if we need to pick all available files in SFTP folder?
-86. What should we do if there is no need of changing the name of a file at receiver side of SFTP folder? (Flatten File names)
-87. what we should do if we want to place the file at main location not in any sub folders?
-88. What is JMS adapter?
-89. How we can establish retry mechanism using JMS adapter?
-90. What is the differance between HTTP, Process direct and JMS adapters in forming the connection between different Iflows?
-91. Explain the configuration of SOAP adapter ?
-92. what are all the details need to be collected to configure SOAP adapter?
-93. Differance between SOAP RM and SOAP 1.x
-94. Differance between Robust and WS standard processing settings of SOAP?
-95. How we can get the WSDL to upload at receiver side configuration of  SOAP ?
-96. Have you worked on SOAP UI ?
-97. What are the two options available at Service Definition of SOAP configuration?( Manual and WSDL)
-98. Have you worked on API Management?
-99. Explain how to configure API and How to connect CPI wotyh API?
-100. How to configure IDOC adapter?
-101. How to connect S4Hana or ECC system with CPI to process IDOCS?
-( ALE settings )
-102. What is the structure of IDOC?
-103. What are open connectors? How CPI can be connected to open connectors? on which open connector you worked?
-104. What is encryption and decryption?
-105. What is PGP encryption and PGP Decryptor ? How we can configure?
-106. How can you rate yourself in Groovy out of 5?
+Q. what is the difference between content enricher and content modifier? --vvimp
+A. Content Enricher:
+ -> we can connect content enricher from only receiver.
+ -> It sends a request to an external system to fetch additional data and enrich the existing message.
+  -> Mainly used when the message does not have sufficient information and requires data from other sources.
+  -> The external data is merged with the original payload, keeping both datasets intact.
+  -> Supports both synchronous and asynchronous communication.
+  -> Often used in scenarios where additional data lookup is necessary, like fetching customer or product details.
+
+  Content Modifier:
+  -> It is used to modify, add, or remove data within the message without involving any external system.
+  -> Mainly used for internal message transformations, adding static values, or setting headers, properties, or body content.
+  -> No external call is made; all modifications happen within the integration flow.
+  -> Supports operations like adding XML, JSON, or plain text to the message.
+  -> Frequently used to format data for compatibility with other systems or for logging purposes.
+-------------------------------------------------------------------------------------------------------------------------
+Q. What is the difference between content enricher and request reply? -- vvimp
+ Request Reply:
+-> It sends the data to the receiver system and gets the data back from the receiver system, like a synchronous call.
+-> The response coming from the receiver system replaces the previous payload from the step before the Request Reply,
+   meaning the new data overwrites the old data.
+-> Commonly used when a confirmation, validation, or additional information is required from the receiver system.
+
+ Content Enricher:
+ -> we can connect content enricher from only receiver.
+-> It sends the data to an external system to fetch additional information without replacing the original payload.
+-> The response from the external system is merged with the original payload instead of overwriting it.
+-> Useful when the existing data is incomplete, and additional data is required to enrich it for further processing.
+-> Content enrichment can be done using XPath, JSONPath, or Groovy scripting for data merging.
+-> Mainly used in asynchronous flows where enrichment is necessary before further processing.
+-------------------------------------------------------------------------------------------------------------------------
+✅ Difference Between SFTP and FTPS
+SFTP (SSH File Transfer Protocol) and FTPS (File Transfer Protocol Secure) are two secure methods for transferring files
+over a network. While both provide encrypted file transfers, they have different underlying technologies and characteristics.
+
+📌 SFTP (SSH File Transfer Protocol)
+Protocol: Uses SSH (Secure Shell) for secure file transfers.
+Encryption: Provides end-to-end encryption using SSH.
+Port: Uses Port 22 by default.
+Authentication: Supports password-based authentication, SSH keys, or certificates.
+Firewall-Friendly: Uses a single port (22) for all communication, making firewall management easier.
+Data Transfer: Supports robust data management with features like pause, resume, and file permissions.
+✅ Best For: Secure file transfers over untrusted networks, especially when SSH access is already established.
+
+📌 FTPS (File Transfer Protocol Secure)
+Protocol: Uses the standard FTP with SSL/TLS encryption.
+Encryption: Secures data using TLS (Transport Layer Security) or SSL (Secure Sockets Layer).
+Port: Uses Port 21 for commands and Port 990 for implicit FTPS. Additional ports are used for data transfer.
+Authentication: Supports username-password authentication and SSL/TLS certificates.
+Firewall Management: More complex because it uses multiple ports for data and control channels.
+Data Transfer: Ideal for compliance with security standards like PCI DSS.
+✅ Best For: Organizations with strict regulatory compliance requirements.
+--------------------------------------------------------------------------------------------------------------
+Q. How to data from one interface to another interface?
+A. process direct adapter  TODO - EXPLORE MORE
+----------------------------------------------------------------------------------------------------------------
+Q.Difference bw synchronous and  asynchronous in sap cpi ?
+A.In SAP CPI, synchronous communication involves immediate two-way communication, where the sender waits for
+  a response, while asynchronous communication is one-way, with the sender not waiting for an immediate response,
+  and the message is queued for later processing
+------------------------------------------------------------------------------------------------------------------
+Q. what is load balancer in sap cpi ?
+A. In SAP Cloud Platform Integration (CPI), a load balancer acts as a traffic proxy, distributing incoming requests
+ and messages across multiple worker instances to ensure high availability and scalability of integration flows
+ ------------------------------------------------------------------------------------------------------------------
+Q. how load balancer works in jms adapter in sap cpi ?
+A. In SAP CPI's JMS adapter, load balancing is handled by the underlying message broker (e.g., IBM MQ)
+and not directly by the adapter itself. The adapter uses message queues for asynchronous communication,
+and the message broker ensures messages are distributed and processed efficiently.
+-------------------------------------------------------------------------------------------------------------------
+Q.what is message broker ?
+A message broker is software that acts as an intermediary, facilitating communication and data exchange between
+different applications, systems, or services by transmitting messages, allowing them to interact without direct connections.
+------------------------------------------------------------------------------------------------------------------------
+Q.In process direct adapter if producer i flow fails consumer iflow also fails?
+A. YES it will fails
+----------------------------------------------------------------------------------------------------------------------
+Q.can we use multiple consumers in one process direct adapter in sap cpi?
+A.you cannot use multiple consumers with the same endpoint address in a single ProcessDirect adapter
+----------------------------------------------------------------------------------------------------------------------
+Q.What is CSRF Protect in https adapter?
+A.CSRF (CB)-- Cross-Site Request Forgery (CSRF)
+This option prevents Cross-Site Request Forgery (CSRF), which is a malicious online attack. Such attacks exposes user
+content without their authorization.
+----------------------------------------------------------------------------------------------------------------------
+Q. what is the difference between jms and process direct adapter? -- IMP
+A.JMS (Java Message Service) facilitates asynchronous, decoupled communication using message queues,
+  while the ProcessDirect adapter provides synchronous, direct communication between integration
+   flows within the same tenant, reducing latency and network overhead.
+
+  JMS (Java Message Service):
+  ----------------------------
+  Purpose: Enables asynchronous communication between applications using a message queue.
+  Mechanism: Uses message queues as an intermediary for sending and receiving messages.
+  Communication Style: Asynchronous, loosely coupled.
+  Use Cases: Scenarios where applications don't need to wait for a response immediately, or when handling events or notifications.
+  Example: Sending an email asynchronously after a user registers on a website.
+
+  ProcessDirect Adapter:
+  ----------------------
+  Purpose:
+  Enables direct communication between integration flows within the same tenant.
+  Mechanism:
+  Establishes a direct connection between integration flows, bypassing the load balancer.
+  Communication Style:
+  Synchronous, tightly coupled.
+  Use Cases:
+  Calling another integration flow from within the current one, or splitting a large integration flow into smaller,
+  manageable parts.
+  Example:
+  Calling a separate integration flow to process payment after a user places an order.
+-----------------------------------------------------------------------------------------------------------------------------------
+Q. What is Aggregator?
+You want to combine related individual messages so that they can be processed in bulk.
+Using an Aggregator pattern, you can collect and store individual messages until a
+complete set of related messages has been received. The aggregated message is then sent to the actual receiver.
+---------------------------------------------------------------------------------------------------------------------------------
+Q. What is the difference between Aggregator and Gather?
+In SAP CPI, the "Gather" step reassembles parts of a single message, while the "Aggregator" step combines multiple
+individual messages into a single message for processing.
+
+Gather:
+-------
+Used to reassemble parts of a message that were split into multiple messages.
+Combines these parts back into a single, complete message.
+Useful when you need to reconstruct a message that was intentionally split for processing or transport.
+
+Aggregator:
+-----------
+Used to combine multiple, independent messages into a single message.
+Collects individual messages until a complete set of related messages has been received.
+Useful when you need to process multiple messages as a batch or create a summary message from different sources.
+------------------------------------------------------------------------------------------------------------------
+Q. What is the differance between Join and Gather? where we can use each?
+A. The Join element enables you to bring together messages from different routes before combining them into a single message.
+You use this step in combination with the Gather element. Join only brings together messages from different routes without
+affecting the content of messages.
+---------------------------------------------------------------------------------------------------------------------------
+
+Q. What are the aggregation algorithms available in aggregator?
+combine and combine in sequence
+
+Combine:
+--------
+This algorithm concatenates or appends all collected messages in the order they are received, creating a single
+message.
+
+Combine in Sequence:
+--------------------
+This algorithm orders or sorts the collected messages based on a field specified in the "Message Sequence Expression" parameter,
+creating a single aggregated message with the messages in a specific sequence.
+------------------------------------------------------------------------------------------------------------------------------
+Q. What formats of data can be aggregated?
+In SAP CPI, you can aggregate data in XML (Same Format), XML (Different Format), Plain Text, or Any format.
+XML (Same Format) : This option requires that the incoming messages are in the same XML format.
+XML (Different Format) : This option allows you to combine messages that are in different XML formats.
+Plain Text : If messages from different routes are in plain text format.
+Any : If you want to combine any incoming messages independent of their format.
+-------------------------------------------------------------------------------------------------------------------
+Q. What is correlation expression and last message condition in aggregator configuration?
+In aggregator configuration, the "correlation expression" identifies the element used to group incoming messages,
+while the "last message condition" defines when the aggregator should stop waiting for further messages and
+complete the aggregation.
+
+Correlation Expression (XPath):
+Purpose:
+This XPath expression determines which incoming messages belong together and should be part of the same aggregated message.
+How it works:
+The aggregator uses this expression to extract a value from each incoming message. Messages with the same value for this
+extracted element are considered related and will be grouped together.
+Example:
+In an order processing scenario, the correlation expression might be //Order/OrderID to group all order items belonging
+to the same order.
+
+Last Message Condition (XPath):
+------------------------------
+Purpose:
+This XPath expression defines the condition that, when met, signals the aggregator to stop waiting for further messages
+and complete the aggregation process.
+
+How it works:
+The aggregator evaluates this expression for each incoming message. When the condition is met, the aggregator knows
+that all related messages have been received, and it can proceed to combine them into a single aggregated message.
+Example:
+In the order processing scenario, the last message condition might be not(boolean(/OrderItem/NextOrderItemId))
+to indicate that all order items for a particular order have been received.
+
+Alternative to Last Message Condition:
+Some configurations also allow for a completion timeout, which specifies the maximum time the aggregator will wait for
+further messages before completing the aggregation, regardless of whether the last message condition is met.
+---------------------------------------------------------------------------------------------------------------------
+Q. What is Request reply?
+A.In SAP Cloud Platform Integration (CPI), "Request-Reply" refers to a synchronous communication pattern where a system
+  sends a request to another and waits for an immediate response before continuing its processing flow.
+  Synchronous Communication:
+  Unlike asynchronous patterns where messages are sent and processed independently, Request-Reply requires the sender
+  to wait for a response from the receiver before proceeding.
+  Purpose:
+  This pattern is useful in scenarios where immediate feedback or data is needed from an external system to continue the
+  integration flow.
+  How it works:
+  The integration flow initiates a request to an external system.
+  The external system processes the request and sends back a response.
+  The integration flow waits for the response and then processes it further.
+  Use Cases:
+  Retrieving data from an external system.
+  Posting, deleting, or updating data in an external system.
+  Performing actions that require immediate feedback from an external system.
+  Implementation:
+  In CPI, you can implement Request-Reply using different adapters, such as HTTP, SOAP, or OData.
+  You configure the integration flow to send a request to the external system and wait for a response.
+  Example:
+  An ERP system sends a request to an HR system to retrieve employee data. The HR system responds with the employee
+  data, which the ERP system then uses to process a transaction.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Q.Request-Reply vs Content Enricher ?
+A.While both Request-Reply and Content Enricher allow making external calls, Request-Reply replaces the current payload
+with the response, whereas Content Enricher merges the response into the original payload.
+-------------------------------------------------------------------------------------------------------------------------------------
+Q. What is Content enricher?
+A. In SAP CPI, the Content Enricher is a message transformation pattern that adds content from an external system to an
+   incoming message, creating a single enhanced payload. It enables you to make external calls during an integration process
+   to obtain additional data.
+   Function:
+   The Content Enricher combines the content of a payload with the original message during an integration process, resulting
+   in a single, enhanced payload.
+   Purpose:
+   It allows you to enrich messages with data from external systems, such as databases or other applications, by making a
+   synchronous call to the external system.
+   How it Works:
+   The Content Enricher matches key elements of the original message with key elements of the "lookup message"
+   (the message from the external system).
+   It then adds the missing information from the lookup message to the original message at the appropriate location.
+   Example:
+   You might use a Content Enricher to add customer details (like address or contact information) to an order message,
+   where the customer details are stored in a CRM system.
+   Aggregation Algorithm:
+   You can choose between two aggregation algorithms:
+   Combine: Appends the lookup message to the original message.
+   Enrich: Merges the lookup message with the original message using a common field.
+   Limitations:
+   Only supports XML data format.
+   Only supports SuccessFactors, Soap1.x, and OData adapter types.
+   Alternatives:
+   Content Modifier: Modifies the content of a message by changing the content of the data containers
+   involved in message processing.
+   Request-Reply: A different pattern for making external calls, where the integration flow waits for a response
+   from the external system.
+--------------------------------------------------------------------------------------------------------------------------
+Q. Have you worked on Odata adapter?
+A. In SAP Cloud Platform Integration (CPI), the OData adapter facilitates communication with OData APIs using the
+   OData protocol, enabling integration with systems exposing data through OData services, supporting both ATOM and JSON formats.
+   Here's a more detailed explanation:
+   Functionality:
+   The OData adapter enables CPI to interact with systems that expose data via OData services, allowing for integration
+   scenarios using the OData protocol.
+   Protocol:
+   It uses the OData protocol for communication, which is a RESTful protocol for accessing and manipulating data.
+   Message Formats:
+   It supports both ATOM and JSON message formats for data exchange.
+   Sender and Receiver:
+   The OData sender adapter enables the sender system to invoke the integration scenario using the OData protocol
+   and works on the sender channel.
+   The OData V2 and OData V4 receiver adapters communicate with target systems using the OData protocol and work
+   on the receiver channel.
+   Purpose:
+   The OData adapter simplifies integration with OData services, handling tasks like automated token handling and entity management, making it ideal for standard SAP services with XML payloads.
+   Example:
+   You can use an OData adapter to connect to a SuccessFactors system and interact with its OData entities using the OData
+   message protocol.
+   Limitations:
+   The OData adapter doesn't support incoming payloads in JSON format, only XML. It also doesn't support the word "link"
+    in your payload, as it's reserved for creating reference links.
+   -----------------------------------------------------------------------------------------------------------------------------------
+Q. What are the authentications you aware of in Odata adapter configuration?
+A. In OData adapter configuration, common authentication methods include Basic Authentication (username/password),
+    OAuth 2.0 (using tokens), and Client Certificate-based authentication.
+   Here's a more detailed breakdown:
+   Common Authentication Methods:
+   Basic Authentication: Uses a username and password for authentication.
+   OAuth 2.0:
+   Requires an endpoint token for the service to call the endpoint.
+   Examples include obtaining a token from Azure Active Directory (AD) v2.0 to call Microsoft Graph API v4.
+   Requires obtaining information like Client ID, Scope (permissions), Client secret
+   (if Grant Type is set to client-credentials), Username and Password (if Grant Type is set to Password).
+   Client Certificate-Based Authentication: Uses digital certificates for authentication.
+   Other Authentication Types:
+   API Key Authentication: Uses an API key for authentication, often specified in the header.
+   SAML: An XML-based standard for exchanging authentication and authorization data between parties.
+   Principal Propagation: Allows authentication information to be passed from one system to another.
+   SASL: A generic mechanism for authentication and authorization.
+   Public Key Authentication: Uses public and private keys for authentication.
+   None: Some adapters might support anonymous access or no authentication.
+   OData Adapter Configuration Considerations:
+   OData Version: Specify the OData version (V2 or V4).
+   Service Definition: You can use a remote service definition or a local EDMX file.
+   HTTP Proxy: Configure HTTP proxy settings if necessary.
+   HTTPS Communication: Use SSL certificates for secure communication.
+   HTTP Destinations: Use HTTP destinations created in NetWeaver Administrator.
+   Pagination: Handle server-side or client-side pagination.
+   Operations: The OData adapter supports various operations like Query, Read, Create, Update, Merge, and Delete.
+   Upsert Function: Modifies existing entities or adds new ones.
+   Batch Processing: Supports batch operations for efficient data transfer.
+   Request/Response Headers: Configure request and response headers.
+   Query Parameters: Use query parameters like $filter, $orderby, $top, $skip, $select, $expand, $count, and $format.
+----------------------------------------------------------------------------------------------------------------------------
+Q. What are the different Operational methods available in Odata Call?
+In OData, the core operational methods map to standard CRUD operations (Create, Retrieve, Update, Delete) using
+HTTP methods: POST for Create, GET for Retrieve, PUT/MERGE for Update, and DELETE for Delete. Additionally,
+OData supports custom operations like Actions and Functions.
+Here's a more detailed breakdown:
+Standard CRUD Operations:
+Retrieve (GET): Used to read data from a resource, corresponding to the HTTP GET method.
+Create (POST): Used to create a new resource, corresponding to the HTTP POST method.
+Update (PUT/MERGE): Used to update an existing resource, corresponding to the HTTP PUT or MERGE method.
+Delete (DELETE): Used to delete a resource, corresponding to the HTTP DELETE method.
+Custom Operations:
+Actions:
+Operations that may have side effects (e.g., modifying data or triggering processes).
+Functions:
+Operations that must return data and have no observable side effects.
+Bound Operations:
+Actions and functions that are bound to an entity type, primitive type, complex type, or a collection.
+Unbound Operations:
+Actions and functions that are invoked as static operations on the service.
+----------------------------------------------------------------------------------------------------------
+Q. What is GET, PUT, POST, DELETE ,PATCH operations?
+A. In web development, GET retrieves data, POST creates new resources, PUT replaces existing resources, PATCH partially updates resources, and DELETE removes resources.
+   Here's a more detailed explanation of each HTTP method:
+   GET: Retrieves data from a server, often used for reading information.
+   POST: Submits data to be processed to a specified resource, typically used for creating new resources.
+   PUT: Replaces an existing resource with new data, updating the entire resource.
+   PATCH: Applies partial modifications to an existing resource, updating specific fields without replacing the entire resource.
+   DELETE: Removes a specified resource from the server.
+-------------------------------------------------------------------------------------------------------------------------
+Q. How you can filter required data in Odata Call?
+A. To filter data in an OData call, use the $filter query option, specifying a filter expression that evaluates to true for
+   the desired records. This expression uses comparison operators and logical operators to select data based on specific criteria.
+   Here's a breakdown:
+   The $filter Option: Add $filter= to your OData URL to enable filtering.
+   Filter Expression: The expression following $filter= determines which records are returned.
+   Comparison Operators: Use operators like eq (equal to), ne (not equal to), gt (greater than), ge (greater than or equal to),
+   lt (less than), and le (less than or equal to).
+   Logical Operators: Combine multiple conditions using and and or.
+   Example: ?$filter=ID eq 123 and Name eq 'John'.
+   String Operators: Use startsWith, endsWith, and contains for string comparisons.
+   Nested Functions: Some OData versions support nested function calls in filter clauses, allowing for more complex filtering.
+   $select: Use $select to specify which fields to return, even with filtering.
+   Example Scenario:
+   Let's say you have an OData service that returns a list of products, and you want to filter for products that are in stock
+   and have a price greater than $10.
+   1. Identify the Relevant Fields:
+   You need to know the names of the fields in your OData service (e.g., InStock, Price).
+   2. Construct the Filter Expression:
+   The filter expression would look like this: ?$filter=InStock eq true and Price gt 10.
+   3. Include the Filter in the OData URL:
+   Append this filter to your OData URL: https://your-odata-service/products?$filter=InStock eq true and Price gt 10
+--------------------------------------------------------------------------------------------------------------------------------
+Q. How we can get XSD for mapping after getting data from Odata call?
+   we have option for check box for creating XSD of getting odata data in odata configurations
+------------------------------------------------------------------------------------------------------------------------------
+Q. If you need to get two entities information, for example Orders information and product information , what will you do?
+A. we can use content enrich getting two entities information and combine the data
+------------------------------------------------------------------------------------------------------------------------------
+Q. What are the different Aggregation algorithms available for content enricher?
+A. For content enrichment, you can use two primary aggregation algorithms: "Combine" which appends the lookup message to the original, and "Enrich" which merges the lookup message with the original using a common field.
+   Here's a more detailed breakdown:
+   Combine:
+   Appends the lookup message (the enriched data) to the original message.
+   Essentially, it creates a combined message containing both the original data and the enriched data.
+   Enrich:
+   Merges the lookup message with the original message based on a common field (or key).
+   This means that the enriched data will be incorporated into the original message, replacing or updating specific fields based on the common key.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q. What is the difference between SEND and Request Reply?
+A. Request Replay :
+   ----------------
+   -> It is send the data to the receiver system and get the data back from the receiver system like a synchronous call
+   -> the new response coming from the receiver system is collapsing with coming from the before request reply step like the new data is
+   collapsing with the old data.
+
+   Send :
+   ------
+   -> It is send the data to the receiver system and did not get the data back from the receiver system like a asynchronous call
+   -> In the no response from the receiver so the new data is not collapsing with the old data. which is send directly to the next step
+   of send also.
+   -> If you want to send the data in between the flow we can go with the send.
+---------------------------------------------------------------------------------------------------------------------------------------
+Q. What is poll enrich ?
+A. In SAP Cloud Platform Integration (CPI), "Poll Enrich" is a pattern that allows you to retrieve data from an external
+   system (like an SFTP server) and incorporate it into the current message being processed, enhancing the message's context.
+   Here's a more detailed explanation:
+   What it does:
+   The Poll Enrich pattern reads data from an external component (e.g., a file on an SFTP server) and adds this content to
+   the original message being processed within an integration flow.
+   Use Cases:
+   Enriching a message payload with data from a file on an SFTP server.
+   Polling from an SFTP server triggered by an external event (e.g., an HTTP call).
+   Dynamically defining SFTP adapter configuration from a partner directory.
+   How it works:
+   You use a polling sender adapter (like the SFTP sender adapter) with a Poll Enrich step.
+   The Poll Enrich step actively polls for messages from the external component.
+   An aggregation strategy is used to combine the original message and the retrieved data.
+   Example:
+   Imagine you have an integration flow that processes customer orders. You can use Poll Enrich to read a file from
+   an SFTP server containing discounts or promotions, and then incorporate that data into the order message.
+   Important Considerations:
+   When using Poll Enrich with SFTP, it's important to note that it typically polls only one file at a time.
+   If you need to poll multiple files, you might need to implement a loop or call another integration flow via ProcessDirect
+   adapter.
+---------------------------------------------------------------------------------------------------------------------------------------
+Q. What is the differance between parallel multicasting and sequential multicasting?
+A. In the context of integration flows or message processing, parallel multicasting sends the same message to multiple routes
+   simultaneously, while sequential multicasting sends it to multiple routes one after another, in a defined order.
+   Here's a more detailed explanation:
+   Parallel Multicasting:
+   All outgoing routes are executed concurrently (at the same time).
+   This allows for performing multiple operations on the same message in a single process, potentially speeding up overall execution.
+   If one route fails, it doesn't necessarily stop the execution of other routes.
+   More customizable and provides better error handling.
+   Sequential Multicasting:
+   Routes are executed in a predefined order, one after another.
+   If a route fails, the processing stops, and an exception is thrown.
+   Less customizable and has limitations in error handling.
+-------------------------------------------------------------------------------------------------------------------------------------
+Q. What is the function of router? what are the different expression types and elaborate each.
+Q. What does a splitter do? What is the differance between General splitter and Iterative splitter?
+Q. What are different Data store operations?
+Q. What does write variable do?
+Q. What is the difference between Select and Get data store operations?
+Q. How we can select records from the data in data store?
+Q. How to perform Delete operation?
+Q. What is Global variable and Local variable?
+Q. What is the default retention period of variable?
+Q. Explain about configuration of process direct adapter and use cases.
+Q. What is the information required to configure SFTP /FTP adapter?
+Q. What are the ports of FTP and SFTP?
+Q. How to test the connectivity of SFTP adapter?
+Q. What can we do at sender Folder of SFTP once the data is posted successfully to the target or what are the available options post processing of the data from SFTP.
+Q. What is the role of checking change directories step wise in SFTP configuration?
+Q. what should we do if we need to pick all available files in SFTP folder?
+Q. What should we do if there is no need of changing the name of a file at receiver side of SFTP folder? (Flatten File names)
+Q. what we should do if we want to place the file at main location not in any sub folders?
+Q. What is JMS adapter?
+Q. How we can establish retry mechanism using JMS adapter?
+Q. What is the differance between HTTP, Process direct and JMS adapters in forming the connection between different Iflows?
+Q. Explain the configuration of SOAP adapter ?
+Q. what are all the details need to be collected to configure SOAP adapter?
+Q. Differance between SOAP RM and SOAP 1.x
+Q. Differance between Robust and WS standard processing settings of SOAP?
+Q. How we can get the WSDL to upload at receiver side configuration of  SOAP ?
+Q. Have you worked on SOAP UI ?
+Q. What are the two options available at Service Definition of SOAP configuration?( Manual and WSDL)
+Q. Have you worked on API Management?
+Q. Explain how to configure API and How to connect CPI wotyh API?
+Q. How to configure IDOC adapter?
+Q. How to connect S4Hana or ECC system with CPI to process IDOCS?( ALE settings )
+Q. What is the structure of IDOC?
+Q. What are open connectors? How CPI can be connected to open connectors? on which open connector you worked?
+Q. What is encryption and decryption?
+Q. What is PGP encryption and PGP Decryptor ? How we can configure?
+Q. How can you rate yourself in Groovy out of 5?
 ( Better to rate your self as 3, mostly no body will ask to write groovy , be confident )
-107. What situations made you to go with groovy? or what are all the requirements you full filled by writing groovy?
-108. What are all the systems you connected with SAP CPI till now in your last projects?
-109. What is making to migrate PIPO to CPI  ( we need to tell the advantages of CPI over PIPO)
-110. do you know the list of cloud computing services? ( HINT: IAAS, PAAS, SAAS, FAAS )
-111. Differance between DELTA and FUll load
-112. Have you worked on EDI and B2B scenarios
-113. What si synchronous and Asynchronous way of message processing?
-114. Can we use headers and properties of one path in to other path after sequential multicasting? if not how can we call properties or headers of one path to other path?
-115. What is the differance between correlation ID and Message ID?
-116. What isPublic  key based authentication in SFTP Adapter configuration.
-117. Where to upload Private key and Public key?
-118. What is Looping process call?
-119. What is the Application of Write Variables?
-120. How to merge different files from SFTP?
-121. What is Parser and Slurper in groovy?
-122. What is SSH key , How we can get it in SFTP configurations?
-123. What is pagination of Data in data processing with SAP CPI?
-124. How we can dispatch the IDOCS to different IFlows using process direct adapter?
-125. How we can establish Transaction Handling at aggregator?
+Q. What situations made you to go with groovy? or what are all the requirements you full filled by writing groovy?
+Q. What are all the systems you connected with SAP CPI till now in your last projects?
+Q. What is making to migrate PIPO to CPI  ( we need to tell the advantages of CPI over PIPO)
+Q. do you know the list of cloud computing services? ( HINT: IAAS, PAAS, SAAS, FAAS )
+Q. Differance between DELTA and FUll load
+Q. Have you worked on EDI and B2B scenarios
+Q. What si synchronous and Asynchronous way of message processing?
+Q. Can we use headers and properties of one path in to other path after sequential multicasting? if not how can we call properties or headers of one path to other path?
+Q. What is the differance between correlation ID and Message ID?
+Q. What isPublic  key based authentication in SFTP Adapter configuration.
+Q. Where to upload Private key and Public key?
+Q. What is Looping process call?
+Q. What is the Application of Write Variables?
+Q. How to merge different files from SFTP?
+Q. What is Parser and Slurper in groovy?
+Q. What is SSH key , How we can get it in SFTP configurations?
+Q. What is pagination of Data in data processing with SAP CPI?
+Q. How we can dispatch the IDOCS to different IFlows using process direct adapter?
+Q. How we can establish Transaction Handling at aggregator?
 Q.How to connect our cpi with api management ?
-129. Explain any I flow which you feel more challenged in your developments?
-130. How many I flows have you Developed till now in career?
-131. How to do Oauth authentication?
-132. How to implement certificate based Authentication?
-133. How many implementation and support projects you dealt with till now?
+Q. Explain any I flow which you feel more challenged in your developments?
+Q. How many I flows have you Developed till now in career?
+Q. How to do Oauth authentication?
+Q. How to implement certificate based Authentication?
+Q. How many implementation and support projects you dealt with till now?
 ( Always better to portray yourself as a Developer )
-134. What is synchronous and Asynchronous way of message processing?
-135. What are camel expressions we have to get error details and message processing log ID and name of the Flow?
-136. How to get client ID and Client Secret for a service in SAP CPI from BTP cockpit?
-137. What are different testing Phases of Iflows of SAP CPI?
-138. how to configure success factory adapter
+Q. What is synchronous and Asynchronous way of message processing?
+Q. What are camel expressions we have to get error details and message processing log ID and name of the Flow?
+Q. How to get client ID and Client Secret for a service in SAP CPI from BTP cockpit?
+Q. What are different testing Phases of Iflows of SAP CPI?
+Q. how to configure success factory adapter
 Q.what is ES Repository in sap cpi  -- imp
 Q.What is difference bw FTP and sftp
 Q.how to add email attachments
 Q. How you can schedule the job? ( timer event)
+Q.Why use transaction handling? → To ensure consistency when dealing with JMS or databases.
+Q.What happens if not enabled? → Partial processing might occur, leading to data inconsistency.
+Q.Can both JMS & JDBC be handled together? → No, CPI does not support distributed transactions across JMS and JDBC.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 

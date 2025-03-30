@@ -16,12 +16,26 @@ fun IntegationProcee(){
 
  Integration Process
  --------------------
+ This is the component that allows you to define the main process of your integration flow, which contains the sender,
+ receiver and other flow element , you can use this component to orchestrate the message processing logic and and
+ call other integration flow or local integration.
+
+-> using an integration process to define the main flow of your integration scenario and call a local integration process
+or another integration flow using the process direct adapter.
 
 
-refer : https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-integration-processes?q=integration+process
--> You use an Integration Process to define the steps to process the message transfer between the sender and receiver systems.
-here we have 3 options
+ config : (General , Processing )
+ TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-integration-processes?q=integration+process
 
+ General : name
+ ---------------
+ Processing :
+ ------------
+ TRANSACTION MANAGEMENT (TV)
+ Transaction handling (DD)
+      Not Required
+      Required for JDBC
+      Required for JMS
 
 
 Transaction Handling in SAP CPI
@@ -45,16 +59,14 @@ When to Use Which Option?
 ✅ Use "Required for JDBC" → If you have database (JDBC) operations and want transaction control.
 ✅ Use "Required for JMS" → If using JMS queues and need reliable message delivery.
 
-Key Interview Points
-Why use transaction handling? → To ensure consistency when dealing with JMS or databases.
-What happens if not enabled? → Partial processing might occur, leading to data inconsistency.
-Can both JMS & JDBC be handled together? → No, CPI does not support distributed transactions across JMS and JDBC.
+ NOte : if select this time out DD will come the default time is 30 Min
 
-Not Required
-Required for JDBC
-Required for JMS
+      note --  for time out read in integration process
 
--> if select jdbc or jms time out option will come
+      caution  : The maximum timeout setting is 12 hours.
+                 It's recommended that the timeout setting doesn't exceed 1 hour
+                 (because long running transactions can cause issues with the system database).
+                 In future, transactions that take longer than 1 hour is stopped.
 
 
 SAP CPI లో Transactional Processing అంటే ఏమిటి?

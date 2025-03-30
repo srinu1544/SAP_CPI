@@ -2,12 +2,6 @@ package com.example.sap_cpi.Classes
 
 /*
 
-filters
-mappings
-storage
-
-
-
 class 1 -- completed (introduction)
 class 2 -- completed (introduction)
 class 3 -- completd (introduction)
@@ -39,11 +33,24 @@ class 28 (router, Aggregator ) -- vvimp for aggregator
 class 29 (general splitter, iterating splitter, parallel multicast, sequential multicast)
 class 30 (join,gather) - not fullfill
 class 31 (Request Replay, odata (receiver Adapter) , odata Receiver adapter north wind)
-class 32 (CONTENT ENRICHER , )
-
+class 32 (CONTENT ENRICHER)
+class 33 (send ,poll enrich)
+class 34 (Process direct)
+class 35 (process direct )
+class 36 (JMS theory)
 class 37 (data store operations write , get , select , delete)
 class 38 (data store operations select , delete)
 class 39 (write variables local variable , global variable)
+class 40 (local integration process)
+class 41 (exception sub process error mechanism  )
+class 42 (exception sub process)
+class 43 (Retry)
+class 44 (Retry mechanism)
+class 45 (Retry intervals)
+class 46 (API management not full fill)
+class 47 (API management)
+class 48 (open connectors) --
+
 
 
 

@@ -1,0 +1,23 @@
+What is the different between SMTP and STARTTLS ?
+
+ Port 587 (SMTP with STARTTLS)
+ -----------------------------
+Used for email submission from client to server.
+Starts as a plain text connection and upgrades to TLS using STARTTLS.
+Uses SMTP protocol with added encryption.
+Officially assigned for email submission by IANA.
+Supports both encrypted and unencrypted communication.
+Recommended for modern email clients like Gmail and Outlook.
+Provides strong security with TLS after the handshake.
+Compliant with RFC 6409 as the preferred standard.
+
+Port 465 (SMTPS - SMTP with Implicit TLS)
+------------------------------------------
+Used for email submission with immediate encryption using TLS.
+Connection is encrypted from the start (Implicit TLS).
+Uses the SMTPS protocol, a legacy version of secure SMTP.
+Historically assigned for SMTPS but is now deprecated.
+Only supports encrypted communication.
+Sometimes used by legacy systems or outdated email clients.
+Provides strong encryption with fewer risks but lacks flexibility.
+Deprecated by RFC 8314, though still used in specific cases.
