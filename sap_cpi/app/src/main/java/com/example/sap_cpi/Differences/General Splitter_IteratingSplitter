@@ -1,0 +1,16 @@
+General Splitter:
+---------------
+Splits a composite message into individual messages, but retains the enveloping elements (like the root node)
+ in each of the split messages .
+Each split message contains the original message's structure, including the surrounding tags or elements .
+Useful when the context of the enveloping elements is important for subsequent processing .
+
+Iterating Splitter:
+-------------------
+Splits a composite message into individual messages, but discards the enveloping elements .
+Each split message contains only the content of the split entity, without the surrounding tags or elements .
+Useful when the context of the enveloping elements is not needed for subsequent processing, and you want to focus on the individual elements themselves .
+
+In essence:
+General Splitter: "Splits the message and keeps the wrapper".
+Iterating Splitter: "Splits the message and discards the wrapper".
