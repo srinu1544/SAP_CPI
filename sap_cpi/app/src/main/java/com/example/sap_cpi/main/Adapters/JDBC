@@ -1,0 +1,17 @@
+JDBC Adapter : (java data base connectivity)
+--------------------------------------------------------------------------------------------------
+Database communication.
+Integration between SAP CPI and databases (SAP HANA, MySQL, SQL Server, Oracle, etc.)
+Fetching master data (e.g., Product, Customer, Employee data)
+Storing API logs or transactional data into a database
+Triggering SQL queries from SAP applications
+
+JDBC URL format :
+jdbc:sqlserver://<virtualHost>:<virtualPort>;DatabaseName=<databaseName>;
+Oracle uses jdbc:oracle:thin:@<host>[:<port>]:<SID>
+
+--------------------------------------------------------------------------------------------------
+The JDBC adapter in SAP Cloud Platform Integration (CPI) enables integration flows to interact with database
+systems, allowing for data exchange and manipulation. Key points include connecting to various databases
+(cloud or on-premise), handling JDBC drivers and data sources, and supporting SQL operations and
+stored procedures. It also facilitates error handling and recovery, including fallbacks to backup databases.

@@ -14,11 +14,11 @@ class 9 -- completed
 class 10 -- (MAIL ADAPTER)
 class 11 -- completed (connectivity test , trace) completed
 class 12 -- completed (content modifier, trace , debug , versioning)
-class 13 -- completed (artifacts download , copy , versioning, revert , moveing one envinorment to another envinorment , view metadata (browse) - vvimp
+class 13 -- completed (artifacts download , copy , versioning, revert , moving one environment to another environment , view metadata (browse) - vvimp
 class 14 -- completed(content modifier , header )
 class 15 -- completed (content modifier , property (xpath, number range, etc) , header) -- vvimp
 class 16 -- completd (new instance creation , again new iflow creation , property to header conversion and content modifier confugurations)
-class 17 -- completed (configure externalized perameters , configure , externalized ) -- vvimp
+class 17 -- completed (configure externalized parameters , configure , externalized ) -- vvimp
 class 18 -- completed  (csv to xml converter) - vvimp  -  notes prepare pending
 class 19 -- havae to start (converters )
 class 20 -- have to start (filters )
@@ -50,6 +50,7 @@ class 45 (Retry intervals)
 class 46 (API management not full fill)
 class 47 (API management)
 class 48 (open connectors) --
+class 49 ()
 
 
 

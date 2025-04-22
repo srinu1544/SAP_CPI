@@ -92,3 +92,97 @@ toLowerCase :
 
 
 
+Arithmetic
+-----------
+add | Adds two numbers | add(5, 3) → 8
+subtract | Subtracts second number from first | subtract(10, 4) → 6
+equals(number) | Checks if numbers are equal | equals(5, 5) → true
+absolute | Returns absolute value | absolute(-7) → 7
+sqrt | Square root of a number | sqrt(16) → 4
+square | Square of a number | square(5) → 25
+sign | Returns 1 (positive), -1 (negative), or 0 | sign(-9) → -1
+neg | Negates a number | neg(6) → -6
+inv | Inverse of a number | inv(2) → 0.5
+power | Exponential power | power(2, 3) → 8
+multiply | Multiplies two numbers | multiply(4, 5) → 20
+divide | Divides first by second | divide(10, 2) → 5
+max | Maximum of two numbers | max(3, 7) → 7
+min | Minimum of two numbers | min(3, 7) → 3
+ceil | Rounds up | ceil(4.2) → 5
+round | Normal round | round(4.6) → 5
+counter | Returns position in iteration | counter() → 1, 2, 3…
+formatNumber | Formats number with pattern | formatNumber(1234.567, "#.00") → 1234.57
+
+Boolean ->
+----------
+and | Logical AND | and(true, false) → false
+or | Logical OR | or(true, false) → true
+not | Logical NOT | not(true) → false
+equals(boolean) | Boolean equality | equals(true, true) → true
+notEquals | Opposite of equals | notEquals(true, false) → true
+if | If-else logic | if(true, "yes", "no") → yes
+its | Returns second param if condition is true | its(true, "value") → value
+ifWithoutElse | If logic without else | ifWithoutElse(false, "ok") → null
+ifsWithoutElse | Multiple ifs | ifsWithoutElse(true, "A", false, "B") → A
+isNil | Checks if value is null or empty | isNil("") → true
+
+Constant ->
+-------------
+constant | Fixed constant value | constant("SAP") → SAP
+copyValue | Copies existing value | copyValue(Input1) → Input1
+xsi:nil | Marks value as nil/null | xsi:nil() → nil
+
+Conversions
+-----------
+fixValue | Replace value based on condition | fixValue("M", "Male", "F", "Female")
+valueMapping | Uses external value mapping table | valueMapping("Gender", "M") → Male
+
+Data (Date/Time)
+----------------
+currentDate | Current date/time | currentDate() → 2025-04-16T12:00
+dateTrans | Convert date formats | dateTrans("16-04-2025", "dd-MM-yyyy", "yyyy/MM/dd") → 2025/04/16
+dateBefore | Is date1 before date2? | dateBefore("2024-01-01", "2025-01-01") → true
+dateAfter | Is date1 after date2? | dateAfter("2025-01-01", "2024-01-01") → true
+compareDates | Compare two dates | compareDates("2024-01-01", "2025-01-01") → -1
+
+Node Functions
+---------------
+exists | Checks if node exists | exists(/root/name) → true
+getHeader | Get header value | getHeader("Content-Type") → application/json
+getProperty | Get property value | getProperty("Country") → IN
+splitByValue | Split array by value | splitByValue(List, "Tag")
+collapseContext | Remove context levels | Use after splitByValue()
+useOneAsMany | Repeats a value for mapping | Useful in 1:n mappings
+sort | Sorts values | sort(List)
+sortByKey | Sort by a key value | sortByKey(List, "ID")
+mapWithDefault | Map with fallback | mapWithDefault(Input, "default")
+formatByExample | Format as per example | formatByExample("12345", "XXXXX-XX") → 12345--
+
+Statistic
+----------
+sum | Adds values | sum(List) → 100
+average | Mean of values | average(List) → 20
+count | Count of items | count(List) → 5
+index | Returns index of item | index() → 0, 1, 2...
+
+Text
+----
+subString | Substring from string | subString("Hello", 1, 3) → ell
+concat | Joins strings | concat("SAP", "CPI") → SAPCPI
+equals(String) | Compare strings | equals("A", "a") → false
+indexOf(2) | Position of string | indexOf("hello", "l") → 2
+indexOf(3) | With start index | indexOf("hello", "l", 3) → 3
+lastIndexOf(2) | Last index of char | lastIndexOf("hello", "l") → 3
+lastIndexOf(3) | With start index | lastIndexOf("hello", "l", 2) → 2
+compare | Compare strings | compare("A", "B") → -1
+replaceString | Replace text | replaceString("hello", "l", "x") → hexxo
+length | String length | length("SAP") → 3
+endWith(2) | Ends with check | endWith("data.xml", ".xml") → true
+startWith(2) | Starts with check | startWith("SAP CPI", "SAP") → true
+startWith(3) | Starts with + ignore case | startWith("SAP", "sap", true) → true
+toUpperCase | Convert to upper | toUpperCase("sap") → SAP
+trim | Trim spaces | trim("  hello ") → hello
+toLowerCase | Convert to lower | toLowerCase("SAP") → sap
+
+
+

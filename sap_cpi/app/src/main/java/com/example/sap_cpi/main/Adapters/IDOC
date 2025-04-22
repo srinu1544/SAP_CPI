@@ -1,0 +1,17 @@
+
+IDoc Adapter : (Intermediate Document)
+-> (For SAP ECC/S4HANA integration)
+-> Used for SAP-to-SAP communication.
+
+
+
+IDOC Sender :
+----------------------------------------------------------------------------------------------------
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/configure-idoc-sender-adapter?q=IDOC+sender+
+
+IDOc Receiver :
+TODO - TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/configure-idoc-receiver-adapter?q=IDOC+receiver+
+
+
+blog reference :
+TODO - https://community.sap.com/t5/technology-blogs-by-members/sap-s4h-idoc-to-sap-cpi-inbound-idoc-interface/ba-p/13484455

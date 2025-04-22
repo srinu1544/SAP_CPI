@@ -1,0 +1,3 @@
+Mail Adapter : (Message and Information Logging)
+Sending/Receiving emails via SMTP/IMAP protocols.
+Used for email notifications in integration flows.

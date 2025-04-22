@@ -1,0 +1,3 @@
+FTP Adapter : (File Transfer protocol)
+Sending/Receiving files (CSV, XML, JSON) via SFTP (File Transfer Protocol).
+port number - 21

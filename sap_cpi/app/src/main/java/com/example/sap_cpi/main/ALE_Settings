@@ -1,0 +1,127 @@
+
+IN SAP SYSTEM GOTO
+-------------------
+
+1 - LOGICAL SYSTEM --  T-Code -  BD54
+2 - upload CPI SSL certificates - T-Code - Trust
+3 - RFC Destination - T-Code - sm59
+ Type G and go to technical settings
+ -> Target System settings : host&port of our cpi
+ -> path prefix address of IDOC like /Abc_IDoc
+
+ goto login and security
+ -> select basic auth
+ give user name of CPI
+ give password of CPI
+
+ connection test
+ if http 500 means connection success
+
+ 4) Create Port (we21)
+ give RFC destination details by select
+ select port type (DD)
+ select content type : (text,xml)
+
+ 5) partner profile (we20)
+
+ 6) send idocs (we19)
+
+ 7) trace messages or status of idocs (we02)
+
+ success code of outbound message in S/4Hana - 03
+ success code of inbound message in S/4Hana - 53
+
+ QCLNT100: Logical system for sender system (Q Client 100) - Sender
+ PCLNT100: Logical system for receiver system (P Client 100) - Receiver
+
+
+ ALE IDOCS
+ ---------
+ It will help to transfer the data from one system to another system
+
+ Idoc structure  :
+ -----------------
+ 1. Control Record
+ It consists of receiver information, sender information, port information and RFC connection information
+ 2. Data record
+ It consists of Actual data which we are transferring from one system to another system
+ 3. Status record
+ It consists of status of Idoc whether it is which status failed or success or in process
+
+ Tables :
+ -------
+ 1. Control date-EDIDC
+ 2. Data record ---EDID4
+ 3. Status record-EDIDS
+
+ Standard basic types:
+ ---------------------
+ Customer master: DEBMAS06
+ Material master: MATMAS03
+ Orders: ORDERSOS
+ Delivery: DELVRY01
+ Invoice: INVOIC02
+ Vendor: CREMAS05
+ Accounting doc: FIDCCP02
+
+ Standard Message types :
+ ------------------------
+ Customer master: DEBMAS
+ Material master: MATMAS
+ PO to Orders: ORDERS.
+ Order to PO: ORDRSP
+ Delivery: DESADV
+ Invoice: INVOIC
+ Vendor: CREMAS
+
+ Inbound Idoc message number :
+ -----------------------------
+ 50-Idoc Added
+ 64-Ready to proceed
+ 62-Idoc passed application
+ 53-IDOC successfully updated
+ 51-Idoc failed
+ 69-edit and ready to process
+ 68-Idoc deleted
+
+ Outbound Idoc message numbers :
+ ------------------------------
+ 01-Idoc generated
+ 30-Ready to proceed
+ 03-Idoc successful
+ 02-Idoc failed
+
+ Configuration
+ --------------
+ 1. SALE to define logical system--- Basis consultant responsible
+ 2. SALE-to assign logical system --- Basis consultant responsible
+ 3. SM59-To maintain RFC connection -- Basis consultant responsible
+ 4. WE21-To define PORT  --- Basis consultant responsible
+ 5. BD64 - To maintain distribution model -- Functional consultant responsible
+ 6. WE20-To generate partner profile --- Functional consultant responsible
+
+ -> WE31-To create new segment
+ -> WE30-To create new basic types
+ -> WE81-To create new message types
+ -> WE82-assign message type to basic types
+ -> WE57-Assign functional module to message type and basic type
+ -> WE41-Outbound Process code
+ -> WE42-Inbound Process code
+
+ Idoc t-codes for monitor or reprocess :
+ ---------------------------------------
+ 1. WE19-To change the data in segment or add new segment
+ 2. BD87- To reprocess the IDOC
+ 3. WE02- To check the Idoc status
+ 4. WE05-To check the Idoc status
+ 5. WE09- To check IDOC business content
+ 6. BD10- To transfer material
+ 7. BD12-To transfer customer
+
+
+
+ sap community - reference
+ TODO - https://community.sap.com/t5/enterprise-resource-planning-blogs-by-members/application-link-enabling-ale/ba-p/13653098
+ video reference - imp
+ TODO - https://www.youtube.com/watch?v=5gRrGQxHwqU
+ TODO - https://www.youtube.com/watch?v=I8-ec4FPpYU

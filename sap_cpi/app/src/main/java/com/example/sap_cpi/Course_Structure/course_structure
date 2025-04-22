@@ -2,13 +2,16 @@
 -> integration flow  -- ✅
 -> integration process  -- ✅
 -> All pallet functions
--> error handling (log payload  , using local integration )
+-> error handling (log payload, using local integration)
 -> sender side adapters
 -> receiver side adapters
 -> API Managements (config , added in iflow)
--> open connectors (one drive, )
--> connectors
--> monitor (all tiles )
+-> camel launguage - https://camel.apache.org/components/next/languages/simple-language.html
+-> open connectors (one drive,)
+-> cloud connectors - imp
+-> monitor (all tiles)
+-> about files like (EDMX, WSDL,etc)
+-> port numbers?
 -> security, storage options etc.
 -> logging (trace,log, debug, info etc)
 -> transport mechanism (CTMS, CAS, git, manual import and export)
@@ -16,6 +19,10 @@
 -> all questions and answers
 -> real time scenarios
 -> facing complications
+
+language have to learn
+XML, xslt , xpath , camel,
+
 
 
 most important Adapters to learn
@@ -34,10 +41,6 @@ JDBC Sender           JDBC Receiver
 AS2 Adapter
 XI Adapter
 Ariba
-
-
-
-
 
 
 📌 Module 1: Introduction to SAP CPIl
@@ -151,7 +154,8 @@ Non-SAP Systems (AWS, Azure, etc.)
 ✅ Real-Time Project Scenarios & Case Studies
 
 🎯 Conclusion
-This course structure covers everything from basic to expert level in SAP CPI. Would you like detailed hands-on exercises or sample projects to practice? 🚀
+This course structure covers everything from basic to expert level in SAP CPI. Would you like detailed hands-on
+exercises or sample projects to practice?
 
 
 
