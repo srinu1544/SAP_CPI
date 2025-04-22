@@ -1,0 +1,26 @@
+introduction :
+----------------
+
+Introduction – SAP CPI Consultant
+----------------------------------
+Hi, my name is Srinivas. I have 7 years of experience in the IT industry, with the last 3 years focused on SAP Cloud Platform Integration (CPI).
+I specialize in designing and developing end-to-end integrations between SAP and non-SAP systems, both cloud and on-premise.
+I have hands-on experience with iFlow development using tools like Groovy scripting, XSLT/JSON transformations, and graphical message mapping.
+
+I’ve worked on integration scenarios involving systems like S/4HANA, SuccessFactors, Concur, Salesforce, and Ariba, using a wide range of adapters
+such as SFTP, HTTP, SOAP, OData, IDoc, JDBC, Mail, AS2, and SuccessFactors Adapter.
+
+My key responsibilities include:
+===============================
+
+Designing, developing, and deploying integration flows in SAP CPI.
+Using key integration patterns: Content Modifier, Router, Splitter/Gather, Enricher, Exception Handling, and ProcessDirect.
+Handling dynamic configurations, secure authentication (OAuth, Basic Auth, Client Certs), and modular integration design.
+Promoting artifacts across landscapes using TMS.
+Monitoring and troubleshooting through CPI Monitor, Logs, and Trace.
+I follow best practices for reusability, performance, and error handling. I'm passionate about clean integration design and
+continuously stay updated with the latest SAP technologies and integration trends.
+
+I’m passionate about clean and scalable integration design, and I always focus on optimizing performance and
+ensuring smooth monitoring and exception handling. I stay updated with SAP’s latest integration innovations
+and best practices to bring added value to the projects I work on.
