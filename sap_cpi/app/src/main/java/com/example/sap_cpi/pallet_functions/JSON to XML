@@ -1,0 +1,34 @@
+JSON to XML :
+-------------
+Description: Converts JSON-formatted payload into XML format.
+
+
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-json-to-xml-converter?q=Json+To+XML+
+config : (General , Processing)
+
+General : Name
+
+Processing :
+Use Namespace Mapping (CB) :
+-> use name space mapping to define json prefix and xml namespace
+
+NameSpace Mapping :  (only if the option Use Namespace Mapping is selected)
+JSON Prefix      XML Namespace
+
+JSON Prefix Separator (DD) : (colon , comma , dot , pipe , semicolon , space)
+
+Add XML Root Element  (CB) :
+
+Name (ET) :  (only if the option Add XML Root Element is selected)
+-> Enter the name of the XML root element. The name must comply with the NCName rules:
+
+   The name must begin with a letter or an underscore.
+   The valid characters for the remainder of the name are:
+   Letters
+   Digits
+   Period
+   Hyphen
+   Underscore
+
+Name Space Mapping (Select)  : (only if the option Add XML Root Element is selected)
+-> Enter the namespace of the XML root element that you have configured in the integration flow.

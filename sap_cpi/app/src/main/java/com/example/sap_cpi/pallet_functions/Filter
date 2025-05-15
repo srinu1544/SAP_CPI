@@ -1,0 +1,30 @@
+
+ Filter ->
+ ---------------------------------------------------------------------------------------------------------
+ You use Filter to extract information from an incoming message. In other words, you filter out parts of the
+ message that you do not want and extract only the data that you want.
+ -> The Filter component is used to evaluate conditions and selectively route or process messages based on
+    specified criteria.
+    It enables conditional routing or filtering of messages within an integration flow.
+
+    config :  (General, Processing)
+
+    General :  Name
+    Processing :
+
+    XPath Expression (ET) :
+    -> Specify Xpath to the message node that contains information to be extracted
+
+  Value Type (DD) :  (String,Integer,Boolean,Node,Nodelist)
+
+   ->  specify the value extract from the xml
+
+      String-  The output of filter is of type string
+      Integer- The output of filter is of type integer
+      Boolean - The output of filter is of type boolean
+      Node - The output of filter is of type node
+      Nodelist - The output of filter is a collection of nodes.
+
+
+
+

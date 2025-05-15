@@ -1,0 +1,63 @@
+
+ Operation Mapping ->
+---------------------------------------------------------------------------------------------------------
+  This is a type of mapping that defines the relationship between the operations of different interfaces.
+  For example, you can map a request operation of one interface to a response operation of another interface.
+  You can use operation mapping in scenarios where you need to orchestrate multiple interfaces or services in
+  a sequence or parallel manner. You can create operation mappings using graphical, XSLT or Groovy tools.
+
+
+  In SAP CPI (Cloud Platform Integration), operation mapping is the process of connecting a sender system's
+  outbound service operation to a receiver system's inbound service operation, or an IDoc/RFC interface to
+  a service operation. This mapping allows for data transformation and conversion between different systems
+  and formats during integration scenarios.
+
+  Here's a more detailed explanation:
+  1. Purpose of Operation Mapping:
+
+  Connecting Systems:
+  It establishes the link between the sending system's outbound operation (e.g., a service operation in a WSDL)
+  and the receiving system's inbound operation.
+
+  Data Transformation:
+  Operation mapping is often used in conjunction with mapping programs (like Message Mapping or XSLT)
+  to transform data from one format to another as it passes between systems.
+
+  Handling Different Interfaces:
+  It can also map IDoc and RFC interfaces to service operations, providing flexibility in connecting
+  various SAP and non-SAP systems.
+
+  2. How Operation Mapping Works:
+
+  Definition:
+  You define an operation mapping object, specifying the sender and receiver operations or interfaces.
+
+  Mapping Program:
+  You associate a mapping program (like Message Mapping or XSLT) with the operation mapping to handle the
+  data transformation.
+
+  Runtime Execution:
+  When a message is routed through the integration flow, the defined operation mapping ensures the correct mapping
+  program is executed, transforming the data as needed.
+
+  3. Examples of Operation Mapping:
+
+  Mapping a WSDL operation:
+  You might map a WSDL operation from a SAP system (sender) to a WSDL operation in a third-party
+  system (receiver) using a Message Mapping.
+
+  Mapping an IDoc to a JSON payload:
+  You could map an IDoc from an SAP system to a JSON payload in a cloud service, using XSLT for the transformation.
+
+  Mapping an RFC function module to a WSDL service:
+  You could map an RFC function module in an SAP system to a WSDL service in another SAP system or a third-party system.
+
+
+  config : (General , Processing)
+  TODO -  https://help.sap.com/docs/cloud-integration/sap-cloud-integration/operation-mapping?q=operation+mapping+
+
+  General : Name
+
+  Processing :
+  Resource (select) :
+  -> choose Select and assign the resource (.opmap file) to the operation mapping step.

@@ -1,0 +1,14 @@
+image41
+
+parallel multicast ->
+-----------------------------------------------------------------------------------------
+This is a message routing step that sends a copy of the same message
+to multiple routes at the same time.you can use parallel multicast in
+scenarios where you need to perform multiple operations on the same message in parallel or
+where the order of execution in not important.
+
+config : (General)
+General : Name
+
+
+

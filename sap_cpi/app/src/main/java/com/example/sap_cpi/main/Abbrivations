@@ -35,7 +35,10 @@
  DSL (Data Store Level)
  DN (Distinguished Name)
  DTD (document type definition)
- DSA (Digital Signature Algorithm) - is an algorithm designed for creating digital signatures. It's based on the discrete logarithm problem, which is another computationally difficult problem. DSA is often favored in situations where speed is a priority.
+ DSA (Digital Signature Algorithm) - is an algorithm designed for creating digital signatures.
+                                     It's based on the discrete algorithm problem, which is another
+                                     computationally difficult problem. DSA is often favored in
+                                     situations where speed is a priority.
 
 -E
  ERP - Enterprise Resource planing
@@ -44,8 +47,13 @@
  ESB (Enterprise Service Bus)
  EDI – Electronic Data Interchange
  ELK – Elasticsearch, Logstash, Kibana (used for monitoring/log analysis)
- ETL (Extract, Transform, Load) is a data integration process used to collect data from different sources, transform it into the required format, and load it into a target system. In SAP Cloud Platform Integration (CPI), ETL functionalities are implemented using integration flows.
- EDMX (Entity Data Model XML) -- EDMX is the XML representation of the Entity Data Model (EDM), which describes the structure of data exposed by an OData service.
+ ETL (Extract, Transform, Load) -  is a data integration process used to collect data from different
+                                   sources, transform it into the required format, and load it into
+                                   a target system. In SAP Cloud Platform Integration (CPI), ETL
+                                   functionalities are implemented using integration flows.
+
+ EDMX (Entity Data Model XML) -- EDMX is the XML representation of the Entity Data Model (EDM),
+                                  which describes the structure of data exposed by an OData service.
 
 -F
  FSM – Function Security Module
@@ -62,14 +70,17 @@
  IDoc (Intermediate Document),
  iFlow (Integration Flow),
  ITR (Integration Runtime)
+ ICOs (Integration Communication Objects)
 
 -J
  JMS (Java Message Service),
  JWT (JSON Web Token)
  JSON – JavaScript Object Notation (data format)
- JDBC - Java Database Connectivity. -- (is an API (Application Programming Interface) that allows Java applications to interact with databases. It provides a standardized way to establish a connection between a Java program and a relational database (such as MySQL, Oracle, PostgreSQL, etc.)).
-
-
+ JDBC - Java Database Connectivity. -- (is an API (Application Programming Interface) that allows
+                                       Java applications to interact with databases. It provides
+                                        a standardized way to establish a connection between a
+                                        Java program and a relational database (such as MySQL,
+                                        Oracle, PostgreSQL, etc.)).
 
 -K
  KMS – Key Management Service
@@ -109,12 +120,15 @@
  REST (Representational State Transfer),
  RFC (Remote Function Call)
  RDNs (Relative Distinguished Names)
- RFC (Remote Function Call)
- RSA (Rivest–Shamir–Adleman) is a widely used public-key cryptosystem based on the mathematical difficulty of factoring large numbers. It's commonly used for encryption, decryption, and digital signatures. In CPI, RSA is the default key type for creating key pairs in the keystore.
+ RSA (Rivest–Shamir–Adleman) is a widely used public-key cryptosystem based on the mathematical
+                             difficulty of factoring large numbers. It's commonly used for encryption,
+                              decryption, and digital signatures. In CPI, RSA is the default key type
+                              for creating key pairs in the keystore.
 
 -S
  SFTP - Secure File Transfer Protocol - secure file transfer
- SOAP - Simple Object Access Protocol - (used for exchanging structured information between web services. It is based on XML and operates over HTTP or HTTPS.)
+ SOAP - Simple Object Access Protocol - (used for exchanging structured information between web
+                                       services. It is based on XML and operates over HTTP or HTTPS.)
  SAML (Security Assertion Markup Language)
  SAP (Systems, Applications, and Products in Data Processing),
  S/4HANA (Business Suite 4 HANA),
@@ -123,7 +137,8 @@
  SSL (Secure Sockets Layer)
  SM59 – SAP transaction code for RFC connections
  SCP – SAP Cloud Platform (now called BTP)
- SSH - Secure Shell - (It is a cryptographic network protocol used for securely accessing and managing network devices, remote servers, and systems over an unsecured network.)
+ SSH - Secure Shell - (It is a cryptographic network protocol used for securely accessing
+                       managing network devices, remote servers, and systems over an unsecured network.)
 
 -T
  TID (Transaction ID),
@@ -136,13 +151,14 @@
 
 -W
  WSDL – Web Services Description Language (used in SOAP services)
- W3C - world wide web consortium (XML (eXtensible Markup Language) is a W3C standard — officially maintained by the World Wide Web Consortium (W3C) since 1998).
+ W3C - world wide web consortium (XML (eXtensible Markup Language) is a W3C standard — officially
+                                    maintained by the World Wide Web Consortium (W3C) since 1998).
 
 -X
  X.509 (Public Key Infrastructure Certificate Standard)
  XSL - Extensible stylesheet language
  XSLT – Extensible Stylesheet Language Transformations (used for XML transformation)
- XPI – Exchange Infrastructure (technical component in SAP PI/PO)
+ XI – Exchange Infrastructure (technical component in SAP PI/PO)
 
 -Y
  YAML - yet another markup language

@@ -1,0 +1,7 @@
+SuccessFactors :
+-> Connecting SAP CPI with SAP SuccessFactors for Employee Data, Payroll, etc.
+-> Uses OData & SFAPI (SOAP-based API).
+
+
+config :
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/configure-successfactors-soap-receiver-adapter?q=successFactors+Receiver+Adapter+

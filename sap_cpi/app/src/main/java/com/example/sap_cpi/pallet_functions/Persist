@@ -1,0 +1,61 @@
+package com.example.sap_cpi.pallet_functions
+
+
+/*
+
+ Persist ->
+-----------------------------------------------------------------------------------------------------------------------------
+In an integration flow, you add a Persist step to store a message at a specific point in the process.
+The message storage feature is useful for auditing purposes.
+
+To imagine a use case for this feature, think of the following situation: Your integration flow
+receives orders for products by a sender system, processes these orders and, finally, updates a
+product catalog according to the received order. To meet certain compliance requirements,
+your IT department is asked to be able to prove (for a dedicated point in time):
+
+Which message has been received by the sender
+Which message has been sent to the receiver component to update the product catalog
+To meet these requirements, you can add two Persist steps to your integration flow:
+One Persist step after the message start event that receives the message from the sender component
+Another Persist step before or after the Send or Request Reply step that sends the message to the receiver component
+
+The logical storage location used by the Persist step is the message store. Physically, the message store
+uses the same tenant database as the data store (see also: Using Data Storage Features When Designing Integration Flows).
+
+This component stores data on your tenant. Note that there is an overall disk space limit of 32 GB.
+However, other than for the data store, there is no user interface-based option to access the content of
+the message store. To get its content, you need to use the Cloud Integration OData API.
+
+There is also no option to access a message store entry during the execution of the integration flow
+that writes the entry. You can only access the message store content written by an integration flow
+after the integration flow has been processed.
+
+In SAP CPI, the "Persist" function allows you to store message payloads at specific points in an integration flow for later
+analysis, auditing, or debugging. This function creates a permanent record of the message data, including its GUID,
+timestamp, and payload. The persisted data can be accessed and retrieved using the SAP Cloud Integration OData API.
+The "Persist" step is a core part of message traceability and helps ensure the integrity of the data flow.
+
+TODO help reference - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/persist-messages?q=persist
+TODO -- config ref  -- https://help.sap.com/docs/cloud-integration/sap-cloud-integration/persist-messages?q=persist+
+
+config : (General, Processing)
+General : Name
+
+Processing :
+Step ID (ET) :
+-> Provide a unique Step ID, which can be a descriptive name or a step number. For example, for a persistence
+   step configured after a mapping step it could be MessageStoredAfterMapping.
+   When analyzing the message store entry at a later point in time using the OData API, the Step ID
+   of a dedicated Persist step is provided by the MessageStoreId element in the OData API response.
+
+Encrypt Stored Message (CB) :
+->  To store the message encrypted, keep the checkbox selected.
+-> If selected, the stored message is encrypted with an encryption key
+   that is unique for each tenant (using AES and a key length of 128 bits).
+    The encryption key is generated automatically, stored in a different
+    database than the encrypted data, and periodically regenerated (to increase security).
+
+
+*/
+
+

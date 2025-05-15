@@ -1,0 +1,13 @@
+package com.example.sap_cpi.pallet_functions
+
+/* join ->
+-------------------------------------------------------------------------------------------------------------
+This is a message routing step that brings together messages from different routes without affecting the
+content of the messages. you use join in combine with gather to synchronize the messages from different routes
+before combining them into a single message.You can use join in scenarios where you need to wait for all
+the messages from different routes to arrive before merging them.
+
+config : (General)
+General : Name
+
+*/

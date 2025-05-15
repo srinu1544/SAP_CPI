@@ -1,0 +1,30 @@
+
+ XSLT Mapping ->
+------------------------------------------------------------------------------------------------------------------------------
+   This is a type of mapping that uses XSLT (Extensible Stylesheet Language Transformations) to transform the structure
+   and content of an XML message from one format to another. For example, you can use XSLT to filter, sort, aggregate
+   or modify the elements and attributes of an XML message. You can use XSLT mapping in scenarios where you need to
+   apply complex transformations or logic to an XML message. You can create XSLT mappings using graphical or
+   text-based tools.
+
+
+  config : (General, Processing)
+
+  General : Name
+
+  Processing :
+  Source (DD) : (Integration flow, Header)
+
+  Header (ET) : (configure only if select header in source)
+  -> provide mapping reference from header
+
+  Resource (select) :
+  -> If you select integration flow as source, then Select to choose the
+     xslt or xsl file from Resource folder or file system.
+
+  Output Format (DD) : (String , Bytes)
+  -> output format of the mapping
+
+
+
+

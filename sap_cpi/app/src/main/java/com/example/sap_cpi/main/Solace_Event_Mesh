@@ -1,0 +1,25 @@
+first needs to create queue with give proper name
+
+cluster manager -> connect ->  view by protocol
+elaborate solace messaging ->  click on -> solace java api ->
+copy the host uri in connection details
+copy details and configure advance event mesh adapter in iflow
+create user credentials in security material with copy of user name and password in connection details.
+
+
+
+important question from solace :
+---------------------------------
+
+Q.Difference between queue and topic
+Queues are primarily used for point-to-point communication, where a single consumer processes messages from a queue.
+Topics are used for publish-subscribe scenarios, where messages are broadcast to multiple subscribers interested in the topic.
+
+Difference between Exclusive and non Exclusive?
+how to see payloads in solace?
+
+
+
+
+
+

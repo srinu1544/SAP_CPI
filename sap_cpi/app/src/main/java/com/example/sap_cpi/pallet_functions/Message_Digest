@@ -1,0 +1,80 @@
+package com.example.sap_cpi.pallet_functions
+
+ Message Digest ->
+ ---------------------------------------------------------------------------------------------------------
+The Message Digest element calculates a cryptographic hash value or message digest of a message payload.
+It is commonly used for message integrity checks and to ensure data integrity during message exchange.
+
+In SAP Cloud Integration (CPI), a Message Digest is a fixed-size representation of a message's content,
+used to verify message integrity. It's essentially a "fingerprint" of the message, created using a
+cryptographic hash function. This digest ensures that the message hasn't been altered during transmission or processing.
+
+
+1. Purpose:
+Integrity Check:
+The primary purpose is to detect if a message has been tampered with. If the digest calculated from a received
+message doesn't match the digest sent with the message, it indicates a potential alteration.
+Data Uniqueness:
+A message digest can also be used to check if a message is a duplicate or if it's a new message.
+Data Store Verification:
+The digest can be stored along with the message in a data store for later verification.
+
+
+2. How it Works:
+Hash Function:
+The message digest is calculated using a cryptographic hash function (e.g., SHA-256).
+One-Way:
+Hash functions are designed to be one-way, meaning it's computationally infeasible to reverse
+engineer the original message from the digest.
+Fixed Length:
+Regardless of the message's size, the digest will always be of a fixed length.
+
+
+3. Implementation in SAP CPI:
+Message Digest Step:
+CPI provides a built-in step called "Message Digest" in integration flows to calculate and store the digest.
+Header:
+The digest is typically stored in a message header, making it readily accessible for verification at a later point in the flow.
+Example:
+You can use the Message Digest step to calculate the digest of a received message, store it in a header,
+and then compare it with a digest received from a different system to ensure the message hasn't been changed.
+
+
+4. Benefits:
+Security: Message digests enhance the security of messages by ensuring their integrity.
+Data Validation: They help in validating the accuracy of received data.
+Duplication Detection: They can be used to identify and handle duplicate messages.
+
+config :  (General, Processing)
+General : Name
+
+Processing :
+Filter (XPath) (ET) :
+-> Enter the xpath Expression to select from the message
+
+Canonicalization Method (DD) :  (Canonical XML Version 1.0, Canonical XML with Comments Version 1.0,
+                                 Exclusive XML Canonicalization Version 1.0,
+                                 Exclusive XML Canonicalization with Comments Version 1.0,
+                                 XML Canonicalization Version 1.1,
+                                 XML Canonicalization with Comments Version 1.1,
+                                 None)
+
+ Digest Algorithm : (MD5,SHA1,SHA256,SHA384,SHA512)
+                    Select the hash algorithm to be used to calculate the digest (mandatory attribute).
+                    You can choose between the following hash algorithms:
+                    MD5
+                    SHA1
+                    SHA256
+                    SHA384
+                    SHA512
+                    Default value: SHA512
+
+Target Header (ET) :
+-> Enter the name of the target header element, which is to contain the hash value (mandatory attribute).
+   The value of this header contains the base64-encoded message digest.
+   By default, the header has the name SAPMessageDigest, but you can also define another header name.
+
+
+
+
+

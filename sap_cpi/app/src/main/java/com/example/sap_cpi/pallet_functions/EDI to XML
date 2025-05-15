@@ -1,0 +1,14 @@
+EDI To XML :
+------------
+
+Description: Converts standard EDI (e.g., X12, EDIFACT) messages into XML for easier processing.
+
+TODO -- https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-edi-to-xml-converter?q=EDI+To+XML+
+
+Configuration:
+Use EDI Converter (only available with B2B Add-on).
+Adapter: EDI Separator in the Sender Channel.
+Configure:
+EDI Type: X12 or EDIFACT
+Version, Message Type, Schema Path
+CPI will parse and output as XML using mapping structures.

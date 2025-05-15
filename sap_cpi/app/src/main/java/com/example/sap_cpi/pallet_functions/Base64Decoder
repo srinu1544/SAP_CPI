@@ -1,0 +1,15 @@
+package com.example.sap_cpi.pallet_functions
+
+ Base64 Decoder ->
+---------------------------------------------------------------------------------------------------------
+In SAP Cloud Platform Integration (CPI), the Base64 Decoder is used to convert a Base64 encoded string
+back into its original binary form. This is often necessary when transmitting binary data
+(like images or files) over systems that only support text-based communication
+
+use case :
+Assume that you like to add an image to a product details message and you like to transfer this message to
+a medium that only works with textual data.
+
+
+config : (General)
+General : Name

@@ -1,0 +1,83 @@
+
+In SAP Cloud Platform Integration (CPI), credentials are authentication details used to
+securely connect to external systems. They ensure that integrations can access APIs,
+databases, and services without exposing sensitive information.
+
+
+Types :
+- Basic Authentication – Uses a username and password for authentication.
+- OAuth 2.0 Credentials – Supports various OAuth grant types like Client Credentials and Authorization Code.
+- Certificate-Based Authentication – Uses digital certificates for secure communication.
+- API Key Authentication – Uses a unique API key for access.
+- SAML Authentication – Uses Security Assertion Markup Language (SAML) for authentication.
+- Custom Credentials – Allows defining custom authentication mechanisms.
+- PGP Encryption Credentials – Used for encrypting and decrypting messages with Pretty Good Privacy (PGP).
+- Secure Parameters – Allows storing sensitive data securely within CPI.
+- OAuth2 JWT Bearer Token – Uses JSON Web Tokens (JWT) for authentication.
+- OAuth2 SAML Bearer Token – Combines OAuth2 with SAML for secure authentication.
+- Destination-Based Authentication – Uses SAP BTP destinations to manage credentials centrally.
+
+- OAuth2 SAML Bearer Assertion - is an authentication method that combines OAuth 2.0 and
+  SAML (Security Assertion Markup Language) to securely access APIs without requiring direct
+   user credentials. It is commonly used in SAP Cloud Platform Integration (CPI) to
+   authenticate API calls to systems like SAP SuccessFactors.
+
+
+OAuth 2.0
+---------
+OAuth 2.0 in SAP Cloud Platform Integration (CPI) is a secure authentication and authorization
+protocol that enables applications to access protected resources without requiring users to
+share their credentials. It's a widely used standard for allowing clients to request access
+to resources on behalf of a user, granting them access to specific functionalities or data
+without revealing their login details.
+
+Granting Access:
+OAuth 2.0 allows users to grant clients limited access to their data or protected resources without revealing their credentials.
+
+Authorization:
+It provides a mechanism for clients to obtain an access token, which grants them temporary access to the protected resource.
+
+Security:
+OAuth 2.0 enhances security by avoiding the sharing of passwords and enabling secure access delegation.
+
+Grant Types:
+Different grant types like authorization code, client credentials, and implicit grant are available,
+ each suitable for different application scenarios.
+
+Client Credentials:
+In SAP CPI, OAuth 2.0 is often used with client credentials to allow applications to access data without
+ requiring user authentication.
+
+Integration with SAP Cloud Platform:
+OAuth 2.0 is integrated into SAP BTP (Business Technology Platform), enabling secure authentication and
+authorization across various applications and services.
+
+How it works in CPI:
+1. Client Registration:
+The client application (e.g., an integration flow) registers with the authorization server in SAP BTP.
+2. Access Token Request:
+The client requests an access token from the authorization server, typically using client credentials or authorization code.
+3. Access Token Grant:
+The authorization server verifies the client's credentials and, if valid, grants an access token.
+4. Resource Access:
+The client uses the access token to access the protected resources on the resource server (e.g., SAP CPI system).
+
+Benefits of using OAuth 2.0 in CPI:
+
+Enhanced Security: Avoids storing credentials at the third-party location, limiting access permissions,
+and enabling easy permission revocation.
+
+Simplified Authentication: Reduces the complexity of managing user credentials, especially for applications
+accessing data on behalf of users.
+
+Secure API Access: Enables secure access to APIs and other protected resources.
+
+Integration with SAP BTP: Streamlines authentication and authorization across the SAP BTP ecosystem.
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+package com.example.sap_cpi.pallet_functions
+
+/*
+ GZIP Decompression ->
+---------------------------------------------------------------------------------------------------------
+GZIP Decompression:
+Purpose: Reverses the compression process, expanding the GZIP-compressed data back to its original format.
+
+Algorithm: Uses the same DEFLATE algorithm as GZIP compression, but in reverse.
+Benefits: Ensures that the original message content is restored accurately.
+
+How it works:
+Reads the compressed data, identifies the short codes and their corresponding references.
+Uses the dictionary to reconstruct the original data by expanding the short codes back to their corresponding sequences of bytes.
+Example in CPI: The GZIP Decoder can be used to uncompress a GZIP-compressed message during an integration flow.
+
+config : (General)
+General : Name

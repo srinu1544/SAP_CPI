@@ -1,0 +1,40 @@
+SFTP Adapter : (secure file transport protocol)
+Sending/Receiving files (CSV, XML, JSON) via SFTP (Secure File Transfer Protocol).
+Integrating with banks, vendors, or third-party applications.
+port number : 22
+
+free cloud -- https://app.sftpcloud.io/register
+free on-premise -- https://www.rebex.net/tiny-sftp-server/
+
+
+
+
+SFTP Adapter
+---------------------------------------------------------------------------------------------
+
+
+SFTP sender :
+configure :
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/configure-sftp-sender-adapter?q=SFTP+sender+adapter+
+
+
+SFTP Receiver :
+configure :
+TODO -- https://help.sap.com/docs/cloud-integration/sap-cloud-integration/configure-sftp-receiver-adapter?q=SFTP+Receiver+Adapter+
+
+FOR SFTP Public key generation :
+monitor -> manage keystore -> create -> SSH key -> fill details with name like (SFTP_Public)
+-> IN SFTP_Public (...) 3 dots click on download public open ssh key
+This key we want to give server side person.
+
+
+configuration process  :
+---------------------
+first need to do test connection with using
+Go to test connection -> SSH
+host and port
+put authentication none
+send then if success copy the know host key
+save with out file extension
+goto security material save the credentials and upload know host file
+now check the directories access

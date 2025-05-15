@@ -78,7 +78,7 @@ Using an Escalation End Event to end the vel message with an escalated status an
   Start Event ->
 ------------------------------------------------------------------------------------------------------------------------------
 -> This is the component that allows you to start an integration process or a local integration process and may not
-have any incoming sequence flows. You can use this component to indicate the initiation of a process End
+have any incoming sequence flows. You can use this component to indicate the initiation of a process.
 
 -> Using a Start Event to start a local integration process that performs some error handling logic and returns
 the control to the exception subprocess
@@ -87,14 +87,15 @@ the control to the exception subprocess
  Start Message ->
 ------------------------------------------------------------------------------------------------------------------------------
 -> This is the component that allows you to receive a message from a sender when an integration process starts.
-   You can use this component to trigger a process based on an incoming message End
+   You can use this component to trigger a process based on an incoming message.
 -> Using a Start Message event to receive a message from an HTTP sender and trigger the main integration flow
 ------------------------------------------------------------------------------------------------------------------------------
 
  Terminate Message ->
 ------------------------------------------------------------------------------------------------------------------------------
 This is the component that allows you to stop further processing of a message within an integration flow.
-You can use this component to indicate that the message has reached its final destination or does not match any processing conditions
+You can use this component to indicate that the message has reached its final destination or does not match any processing
+conditions
 
 Using a Terminate Message event to stop further processing of a message that does not match any routing conditions
 in a content router
@@ -112,9 +113,9 @@ Using a Timer event to start an integration flow that polls data from SuccessFac
 
 --------------------------------------------------- Connectors (-> ) --------------------------------------------
 
-------------------------------------------------------Mappings------------------------------------------------------------------------
+------------------------------------------------------Mappings---------------------------------------------------
   mapping functions
-------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
 
 Arithmetic
 -----------
@@ -370,7 +371,8 @@ set of characters (A-Z, a-z, 0-9, +, /) and padding with '='.
  ---------------------------------------------------------------------------------------------------------
  You use Filter to extract information from an incoming message. In other words, you filter out parts of the
  message that you do not want and extract only the data that you want.
- -> The Filter component is used to evaluate conditions and selectively route or process messages based on specified criteria.
+ -> The Filter component is used to evaluate conditions and selectively route or process messages based on
+    specified criteria.
     It enables conditional routing or filtering of messages within an integration flow.
 ---------------------------------------------------------------------------------------------------------
 
@@ -493,6 +495,8 @@ Throw Exception if no Message Found : (CB)
     message is found. By default, this option is disabled.
    -> If you keep this option disabled, the header SAP_PollEnrichMessageFound
      is set to false and processing continues even if there’s no message.
+
+
 ----------------------------------------------------------------------------------------------------
 Request Reply ->
 ----------------------------------------------------------------------------------------------------
@@ -507,8 +511,8 @@ or response from the receiver system.
  Configure : (General)
  -----------
  General (only can change name)
-
 -------------------------------------------------------------------------------------------------------------
+
 SEND ->
 ---------------------------------------------------------------------------------------
 This is a process step that allows you to send a message to one or more receiver system without
@@ -528,6 +532,7 @@ TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-
 Their is no config
 General : Name
 ----------------------------------------------------------------------------------------------------
+
 Idempotent process call ->
 ----------------------------------------------------------------------------------------------------
 -> The idempotent process call element is used to invoke a process in a way that ensures idempotency
@@ -535,14 +540,19 @@ Idempotent process call ->
    result, regardless of the number of invocations
 -> it helps to prevent duplicate processing and ensure that the result remains consistent even if the
    process is called multiple times.
+
 TODO - implementation --https://community.sap.com/t5/technology-blogs-by-sap/step-by-step-for-implementing-idempotent-process-call-sap-cloud-integration/ba-p/13543161
+
 config : (General, Processing)
 General : Name
 Processing :
+
 Local Integration Process (SB) :
 -> select local integration process call
+
 IDEMPOTENT CONDITION DETAILS (T)
 Message ID  (ET) :
+
 -> To check against, enter a unique message Id . use ${header.headername} 0r ${property.name} to
   dynamically read the value from a header or a property.
 Skip process call for duplicates (CB):
@@ -551,8 +561,8 @@ Skip process call for duplicates (CB):
   -> DESELECT : if you deselect this option you always run the local integration process, use the
      following non-xml condition to check if youre processing a duplicate message
      ${property.CamelDuplicateMessage} = 'true'
-
 ---------------------------------------------------------------------------------------------------
+
 Looping Process Call
 ---------------------------------------------------------------------------------------------------
 This step uses generates the following property: CamelLoopIndex
@@ -570,34 +580,37 @@ with this looping call
 config : (General, Processing)
 General : Name
 Processing :
-Lopping integarion process (SB) :
----------------------------
+
+Lopping integration process (Select) :
 -> select the name of the local integration process
+
 LOOPING CONDITION DETAILS (TV)
 Expression Type (DD) : NON-XML , XML
---------------------
+
 -> XML : for XPath expressions, for example: //customerName = ‘Smith’.
 -> Non-XML : for Camel Simple Expression Language.
+
 Note
 Examples:
 ${header.SenderId}, which indicates the SenderId header field.
 ${in.body}, which indicates the body of the incoming message.
+
 Condition Expression (ET) :
----------------------
 -> Enter an expression to specify a routing condition. As long as the condition is true, the loop processing is executed.
    Example of XML conditions: /bank_name/bank_id = 'mybank', //BankId = 'ABC'
    Example of Non-XML conditions: ${header.SenderId} = '001'
 
 Max Numbers of iteration (ET) :
------------------------------
 -> Specify the maximum number of iterations the loop is to be executed. Even if the condition is still
    met, the loop ends afterwards.
 
 Action when Max. Iterations Reached (DD) : (Throw Exception , End Loop)
------------------------------------------
+
 -> Select to throw an exception when the maximum number of iterations has been reached or to exit the
   loop and continue with the main process without error even if the looping condition continues to be true.
 --------------------------------------------------------------------------------------------------------------
+
+
 Process Call ->
 --------------------------------------------------------------------------------------------------------------
 Context
@@ -614,12 +627,14 @@ or logic in separate process
 
 config : (General, Processing)
 General : Name
---------
+
 Processing :
------------
-Local Integration process (SB) :
+Local Integration process (Select) :
 -> here we want to select local integration process name
 -----------------------------------------------------------------------------------------------------------------
+
+
+
                                              Routing
 Aggregator ->
 -----------------------------------------------------------------------------------------------------------------
@@ -642,9 +657,9 @@ as one single order with multiple items.
 
 config (General, Correlation, Aggregation Strategy)
 General : Name
---------
+
 Correlation
-------------
+
 Correlation Expression (XPath) (ET) :
 ----------------------
 -> here we can give the correlation Expression like all the company data aggregate you can give the
@@ -683,6 +698,8 @@ Last Message Condition (XPath) (ET) :
 Data Store Name (ET) :
 ->  Enter the name of the transient data store where the aggregated message is to be stored.
 -----------------------------------------------------------------------------------------------------
+
+
 Gather->
 ----------------------------------------------------------------------------------------------------
 This is a message routing step that merges messages from different routes into a single message with
@@ -748,6 +765,8 @@ Incoming formats (DD): (Any, Plain Text, XMl (Different format) , XML (Same form
   For all three incoming formats, you can also choose the strategy Zip that allows you to merge the input into a single
   archive (.zip) file. In that case, you need to specify a file name pattern.
 -------------------------------------------------------------------------------------------------------------
+
+
 join ->
 -------------------------------------------------------------------------------------------------------------
 This is a message routing step that brings together messages from different routes without affecting the
@@ -758,6 +777,8 @@ the messages from different routes to arrive before merging them.
 config : (General)
 General : Name
 ------------------------------------------------------------------------------------------------------------------
+
+
  Multicast ->
  parallel multicast
  ----------------------------------------------------------------------------------------------------------------
@@ -768,6 +789,8 @@ where the order of execution in not important.
 config : (General)
 General : Name
 ----------------------------------------------------------------------------------------------------------------------------
+
+
 sequential multicast ->
 ---------------------------------------------------------------------------------------------------------------------------
 This is a message routing step that sends a copy of the same message to multiple routes in a specific order.
@@ -786,8 +809,9 @@ Note :  No configurations only we can change  sequential order
   Sequence Order                Sequence Name
   1                              Branch 1
   2                              Branch 2
-
 ------------------------------------------------------------------------------------------------------
+
+
 router ->
 ------------------------------------------------------------------------------------------------------
 This is a message routing step that sends a message to one of the possible routes based on a condition
@@ -802,7 +826,7 @@ when  click on the particular path we have options
 config :  (General, Processing)
 TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-router?q=router+
 General : Name
--------
+--------------
 
 Processing
 ----------
@@ -823,12 +847,16 @@ Default route (CB) :
 -> if check default route means Expression and condition visibility (all) will GONE.
 -> this path will default path.
 ----------------------------------------------------------------------------------------------------
+
+
 Splitter ->
-----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 This is a message routing step that splits a message into multiple messages based on a condition.
 you can use splitter in scenarios where you need to process each part of the message separately or
 in parallel.
 ---------------------------------------------------------------------------------------------------
+
+
 EDI Splitter ->
 -------------------------------------------------------------------------------------------------
 -> The Edi splitter is specifically designed to splitEDI messages into individual segments or transactions
@@ -837,6 +865,8 @@ EDI Splitter ->
 config : (General, processing , EDIFACT , X12 , TRADACOM)
 General : Name
 -----------------------------------------------------------------------------------------------------------
+
+
 General Splitter ->
 -----------------------------------------------------------------------------------------------------------
 The General splitter is a versatile component used to split messages based on a specified delimiter or criteria
@@ -851,8 +881,8 @@ each containing 1 message with the enveloping elements of the composite message.
 elements refers to these elements including the split point. Note elements that follow the one that
 is indicated as split point in the original message (but on the same level), are'nt counted as enveloping
 elements. They won't be part of the resulting messages.
-
 --------------------------------------------------------------------------------------------------------------
+
 IDoc splitter ->
 --------------------------------------------------------------------------------------------------------------
 The Idoc splitter is used to split SAP IDoc messages into individual segments or sub-documents.
@@ -860,6 +890,8 @@ The Idoc splitter is used to split SAP IDoc messages into individual segments or
 config : (General)
 General  : Name
 ------------------------------------------------------------------------------------------------------------
+
+
 Iterating Splitter ->
 -----------------------------------------------------------------------------------------------------------
 The iterating splitter is used to split a message into multiple parts based on an iterative process or loop.
@@ -868,8 +900,9 @@ message.
 -> Splits a composite message into individual messages, but discards the enveloping elements .
 -> Each split message contains only the content of the split entity, without the surrounding tags or elements .
 -> Useful when the context of the enveloping elements is not needed for subsequent processing, and you want
-   to focus on the individual elements themselves .
+   to focus on the individual elements themselves.
 -----------------------------------------------------------------------------------------------------
+
 PKCS#7/CMS Splitter ->
 ----------------------------------------------------------------------------------------------------
 The pkcs#7/cms splitter is used specifically for splitting PKCS#7#/CMS (cryptographic message syntax)
@@ -877,6 +910,8 @@ formatted messages.
 -> It allows for the extraction and processing of individual components or parts within pkcs#7 or cms
 messages.
 --------------------------------------------------------------------------------------------------
+
+
 Tar Splitter ->
 -------------------------------------------------------------------------------------------------
 The tar splitter is used to split tar archive files into individual files or segments.
@@ -896,8 +931,9 @@ Stop on Exception (CB) :
 -> Select this option to stop file processing if an exception occurs.
    If you deselect this option, splitting the archive and processing of
    the individual files continues, even if processing one of them fails.
-
 ----------------------------------------------------------------------------------------------------
+
+
 Zip Splitter ->
 ---------------------------------------------------------------------------------------------------
 The zip splitter is used to split zip archive files into individual files or segments.
@@ -910,6 +946,7 @@ The zip splitter is used to split zip archive files into individual files or seg
  a tenant. You can use descriptor in scenarios  where you need to secure the communication with a participant
  on the cloud using encryption standards such as PGP or PKCS7#7/cms
  ----------------------------------------------------------------------------------------------------
+
  PGP Decryptor
  ---------------------------------------------------------------------------------------------------
  The PGP (pretty good privacy) Decryptor is used to decrypt or decode data that has been encrypted using
@@ -924,6 +961,8 @@ The zip splitter is used to split zip archive files into individual files or seg
  To make sure that the right private key is used for decryption, the encrypted message (processed by the decryptor)
  contains a reference that enables the system to uniquely identify the right key.
  --------------------------------------------------------------------------------------------------------
+
+
  PKCS#7 Decryptor->
  -----------------------------------------------------------------------------------------------------
  The public key cryptography standards #7 decryptor is used to decrypt or decode data that has
@@ -931,12 +970,15 @@ The zip splitter is used to split zip archive files into individual files or seg
  -> it allows for the decryption of pkcs#7- encrppted messages or files enabling the extraction of the
  original plaintext data.
  -----------------------------------------------------------------------------------------------------
+
+
  Encrypter
  ----------------------------------------------------------------------------------------------------
  This is the message transformation step that encrypts a message using a private key that is deployed on
  a tenant. You can use encryptor in scenarios  where you need to secure the communication with a participant
  on the cloud using encryption standards such as PGP or PKCS7#7/cms
  ---------------------------------------------------------------------------------------------------
+
  PGP Encrypter
   ---------------------------------------------------------------------------------------------------
   This is a message transformation step that encrypts a message using public key that is deployed
@@ -944,6 +986,7 @@ The zip splitter is used to split zip archive files into individual files or seg
   signing data you can use PGP encryptor in scenarios where you need to secure the communication with
   a participant on the cloud using PGP encryption
   --------------------------------------------------------------------------------------------------------
+
   PKCS#7 Encrypter->
   -----------------------------------------------------------------------------------------------------
  This is a message transformation step that encrypts a message using public key that is deployed
@@ -951,11 +994,13 @@ The zip splitter is used to split zip archive files into individual files or seg
  which is widely used method for encryting and signing data you can use PGP encryptor in scenarios
  where you need to secure the communication with  a participant on the cloud using PKCS#7 encryption
   -----------------------------------------------------------------------------------------------------
+
   -> Signer
   This is a message transformation step that signs a message using private key that is deployed on the tenant.
   You can use signer in scenarios where you need to ensure that authenticity and integrity of the message using
   digital signature standards such as PGP or PKCS#7/cms.
   -------------------------------------------------------------------------------------------------------------
+
   PKCS7 Signer ->
   -------------------------------------------------------------------------------------------------------------
   This is message transformation step that signs a message using a private key that is deployed on the tenant.
@@ -963,6 +1008,7 @@ The zip splitter is used to split zip archive files into individual files or seg
   and signing data.You can use pkcs7 signer in scenarios where you need to ensure the authenticity and integrity
   of the message using pkcs7/cms digital signature.
   -------------------------------------------------------------------------------------------------------------
+
   Simple Signer ->
   -------------------------------------------------------------------------------------------------------------
   This is message transformation step that signs a message using a private key that is deployed on the tenant.
@@ -970,6 +1016,7 @@ The zip splitter is used to split zip archive files into individual files or seg
   document. You can use simple signer in scenarios where you need to ensure the authenticity and integrity
   of the message using xml digital signature.
   -----------------------------------------------------------------------------------------------------------
+
   XML Digital Signer ->
   -------------------------------------------------------------------------------------------------------------
   This is message transformation step that signs and xml element or attribute using a private key that is deployed on the tenant.
@@ -977,23 +1024,27 @@ The zip splitter is used to split zip archive files into individual files or seg
   document. You can use simple signer in scenarios where you need to sign a specific element or attribute with an xml
   document.
   ------------------------------------------------------------------------------------------------------------------
-  Verifier->
+
+  -> Verifier
   This is a message transformation step that verifies the signature of a message using a public key that is deployed on the
   tenant. you can use verifier in scenarios where you need to check the authenticity and integrity of the messages using
   digital signature standards such as PGP or PKCS7/cms.
   ------------------------------------------------------------------------------------------------------------------------
+
   PKCS signature Verifier->
   ----------------------------------------------------------------------------------------------------------------------
   The pkcs signature verifier is used to verify the digital signature of data that has been signed using the pkcs standard.
   It checks the integrity and authenticity of the signed data by validating the digital signature against the corresponding
   public key and certificate.
   -------------------------------------------------------------------------------------------------------------------------
+
   XML signature Verifier->
   ----------------------------------------------------------------------------------------------------------------------
   The XML signature verifier is used to verify the digital signature XML messages that has been signed using the xml signature standard.
   It validates the integrity and authenticity of the signed XML messages by verifying  the digital signature against the corresponding
   public key and certificate.
   -------------------------------------------------------------------------------------------------------------------------
+
    Persistence--------------
    Data Store Operations
    ------------------------------------------------------------------------------------------------------------------------
@@ -1009,13 +1060,15 @@ The zip splitter is used to split zip archive files into individual files or seg
       -> Select
       -> Write
 ---------------------------------------------------------------------------------------------------------------------------
+
    Persist ->
 -----------------------------------------------------------------------------------------------------------------------------
 In SAP CPI, the "Persist" function allows you to store message payloads at specific points in an integration flow for later
 analysis, auditing, or debugging. This function creates a permanent record of the message data, including its GUID,
- timestamp, and payload. The persisted data can be accessed and retrieved using the SAP Cloud Integration OData API.
- The "Persist" step is a core part of message traceability and helps ensure the integrity of the data flow.
+timestamp, and payload. The persisted data can be accessed and retrieved using the SAP Cloud Integration OData API.
+The "Persist" step is a core part of message traceability and helps ensure the integrity of the data flow.
 -----------------------------------------------------------------------------------------------------------------------------
+
  Write Variables ->
 --------------------------------------------------------------------------------------------------------------------------
 You can use write variables pallet operations to write variables to data store and share them across different integration flows
@@ -1030,7 +1083,7 @@ The EDi validator component is used to validate the structure , syntax,  and com
 conform to the expected format and rules.
 ----------------------------------------------------------------------------------------------------------------------
  XML Validator ->
- --------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
 The XML validator component is used to validate the structure and integrity of xml messages.
 -> It checks whether  the XML messages conform to the defined XML schema or DTD (Document Type definition) and that
 they meet the required XML syntax.

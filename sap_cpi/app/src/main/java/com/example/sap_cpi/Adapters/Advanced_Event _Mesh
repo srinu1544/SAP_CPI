@@ -1,0 +1,64 @@
+Advanced Event mesh ->  (Sender, Receiver) - not configured fully
+---------------------------------------------------------------------------------------------------
+TODO - https://help.sap.com/docs/integration-suite/sap-integration-suite/advanced-event-mesh-adapter
+The AdvancedEventMesh adapter enables SAP Integration Suite to connect toSAP Integration Suite,
+advanced event mesh. Use the AdvancedEventMesh sender adapter to receive messages from SAP
+Integration Suite, advanced event mesh. Use the AdvancedEventMesh receiver adapter to
+send messages to SAP Integration Suite, advanced event mesh.
+The adapter uses the Solace Message Format (SMF) message protocol.
+
+
+
+Advanced Event Mesh (Sender) ->
+----------------------------------------------------------------------------------------------------
+The AdvancedEventMesh sender adapter allows SAP Integration Suite to consume messages from queues
+or subscriptions in SAP Integration Suite.
+
+config : (General, Connection , Processing)
+TODO -- https://help.sap.com/docs/integration-suite/sap-integration-suite/configure-advanced-event-mesh-sender-adapter
+
+General :  Name
+Processing :
+
+SENDER CONNECTION DETAILS (TV)
+Host (ET) :
+-> configure host
+
+Message VPN (ET) :
+->  Configure message VPN
+
+Username (ET) :  default
+-> configure username
+
+Authentication Type (DD) :  (Basic, OAuth2, Client Certificate)
+-> provide authentication type
+
+Password security alias (ET) :
+-> configure only is select Basic type in Authentication type.
+-> configure security alias
+
+Keystore Alias (ET) :
+->  configure only if select Authentication Type client certificate
+
+Truststore Alias (ET) :
+-> configure only if select Authentication Type OAuth2
+
+OAuth2 Credential Type (DD) : (OAuth2 Custom , OAuth2 Authorization Code , OAuth2 Client credentials)
+-> configure only if select OAuth2 in Authentication Type
+
+
+OAuth2 Client Credentials Credential Name
+Access Token Fetch/Refresh Interval (In Secs)
+
+
+
+
+Advanced Event Mesh (Receiver) ->
+----------------------------------------------------------------------------------------------------
+The AdvancedEventMesh receiver adapter allows SAP Integration Suite to send messages to queues or
+topics in SAP Integration Suite.
+
+
+config :
+TODO -- https://help.sap.com/docs/integration-suite/sap-integration-suite/configure-advanced-event-mesh-receiver-adapter
+

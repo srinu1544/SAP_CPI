@@ -1,0 +1,33 @@
+Idempotent process call ->
+----------------------------------------------------------------------------------------------------
+-> The idempotent process call element is used to invoke a process in a way that ensures idempotency
+-> Idempotency means that multiple invocations of the same process with the same input produce the same
+result, regardless of the number of invocations
+-> it helps to prevent duplicate processing and ensure that the result remains consistent even if the
+process is called multiple times.
+
+TODO -- https://community.sap.com/t5/technology-blogs-by-sap/step-by-step-for-implementing-idempotent-process-call-sap-cloud-integration/ba-p/13543161
+config : (General, Processing)
+General : Name
+
+Processing :
+Local Integration Process (Select) :
+-> select local integration process call
+
+IDEMPOTENT CONDITION DETAILS (TV)
+
+Message ID  (ET) :
+-> To check against, enter a unique message Id . use ${header.headername} 0r ${property.name} to
+dynamically read the value from a header or a property.
+
+Skip process call for duplicates (CB):
+
+-> SELECTED : if select this option,the local integration process doesn't run if there's
+a duplicate message
+
+-> DESELECT : if you deselect this option you always run the local integration process, use the
+following non-xml condition to check if youre processing a duplicate message
+${property.CamelDuplicateMessage} = 'true'
+
+*/
+

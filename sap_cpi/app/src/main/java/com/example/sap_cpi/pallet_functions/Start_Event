@@ -1,0 +1,10 @@
+
+Start Event ->
+------------------------------------------------------------------------------------------------------------------------------
+-> This is the component that allows you to start an integration process or a local integration process and may not
+have any incoming sequence flows. You can use this component to indicate the initiation of a process.
+
+-> Using a Start Event to start a local integration process that performs some error handling logic and returns
+the control to the exception subprocess.
+
+

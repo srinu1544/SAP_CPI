@@ -1,0 +1,39 @@
+ MIME Multipart Encoder ->
+ ----------------------------------------------------------------------------------------------------------
+ A multipurpose internet mail extensions (MIME) multipart message allows you to combine different kinds
+ of content in one message (for example , plain text and attachments)
+
+ To mention a use case if you want to send a message with attachments, but the protocol (for example HTTP or sftp)
+ does not support attachments you can send the message as a mime multipart instead.
+
+MIME Multipart Encoder:
+Purpose: Takes a message, potentially with attachments, and converts it into a MIME multipart format.
+How it works: Packages the message body as the first part and any attachments as subsequent parts of the multipart message.
+Output: A MIME multipart message with a Content-Type header indicating multipart.
+
+config : (General, Processing)
+General : Name
+
+Processing :
+
+Multipart Subtype (DD) : (Alternate, digest, mixed , parallel , Related)
+-> select the subtype of generated MIME multipart
+
+Add Multipart Headers Inline (cb) :
+-> Allows you to control whether message headers are to be part of the MIME Multipart message or not.
+
+Include Headers (ET) : (only when Add Multipart Headers Inline selected)
+-> With this attribute, you can specify which headers of the inbound message are to be treated
+   in the specified way. You can enter a regular expression. For example, the expression h.* indicates
+   headers that start with character h.
+
+Fold Long Headers (CB) : (only when Add Multipart Headers Inline is not selected)
+-> If set, headers will be folded by inserted line breaks.
+
+Note :  If you're using the Mail adapter, the folding of long headers is recommended to
+comply with the existing protocol guidelines regarding header formats. If you are working
+with the http protocol, do not fold headers as requests with folded headers would not comply
+to the http specification and could lead to errors in the receiving system.
+
+
+

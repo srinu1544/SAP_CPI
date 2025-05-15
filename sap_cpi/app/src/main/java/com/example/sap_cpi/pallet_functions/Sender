@@ -1,0 +1,9 @@
+
+
+Sender ->
+---------------------------------------------------------------------------------------------------------------------
+This is a participant element that models a remote system that sends messages to your integration flow.you can
+use sender in scenarios where you need to receive messages from different protocols or formats.You can choose an
+adapter type for the sender based on the communication.
+
+

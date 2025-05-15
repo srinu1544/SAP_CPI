@@ -1,0 +1,48 @@
+package com.example.sap_cpi.pallet_functions
+
+ID Mapping ->
+---------------------------------------------------------------------------------------------------------------------
+ This is a feature that allows you to map different identifiers for the same business object across different systems.
+ For example, you can map a customer ID in one system to a partner ID in another system. This helps you to ensure
+ data consistency and avoid duplication. You can use ID mapping in scenarios where you need to exchange data
+ between different systems that use different identifiers for the same business object
+
+ config : (General , Processing)
+
+ General  : Name
+ Processing :
+
+ Source Message ID (ET) :
+ ->  The source message ID.
+     The source message ID can be dynamically read from a header or property using an expression
+     such like ${property.messageID} or ${header.messageID}.
+
+   Target Header Name (ET) :
+  -> Name of the header in which to store the target message ID.
+
+  Context (ET) :
+  -> Defines the context the target message ID is generated for.
+     Typically, the context is used to identify the receiver.
+
+     If you use the ID Mapping step in a splitter or multicast scenario to map the ID of
+     source message to multiple target message IDs, the Context is defined per target message.
+
+     The context can be dynamically read from a header or property using an expression such
+     like ${property.context} or ${header.context}.
+
+     Note :
+     The value of the Context parameter has to start with at least one letter which can be followed
+      by multiple letters, digits, or any of the following special characters:  _ ~ -
+
+    Visibility (DD) :  (Global , Integration flow)
+->  Defines whether the ID mapping is shared by all integration flows (deployed on the tenant)
+    or only by one specific integration flow.
+
+    Global: ID mapping is shared across all integration flows deployed on the tenant.
+    Integration Flow: ID mapping is used by 1 integration flow. An ID mapping configured with
+    this setting is also referred to as local ID mapping.
+
+    Expiration Period (in d) (ET) :
+   -> Number of days after which the stored ID mapping is deleted (default is 30 days).
+
+

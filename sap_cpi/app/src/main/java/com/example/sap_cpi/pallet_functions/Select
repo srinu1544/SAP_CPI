@@ -1,0 +1,48 @@
+package com.example.sap_cpi.pallet_functions
+
+ Select ->
+--------------------
+Fetch messages in bulk from the data store.
+You can also specify the maximum number of messages you fetch in each poll.
+
+- Purpose: Fetches multiple messages based on criteria.
+- Configuration:- Data Store Name: Name of the data store.
+- Number of Polled Messages: Maximum number of messages to fetch.
+- Visibility: Global or Integration Flow.
+
+Data Store Name (ET) :
+
+Specifies the name of the data store (no white spaces).
+The maximum length allowed for the data store name is 40 characters. If you enter a longer string,
+a validation error is raised. Note that this length restriction applies to the value that is used
+for this parameter at runtime. Therefore, if you configure this parameter dynamically, make sure
+that the expected header or property value does not exceed this length restriction. Otherwise,
+a runtime error will be raised.
+
+Visibility (DD): (Global,Integration Flow)
+
+Defines whether the data store is shared by all integration flows (deployed on the tenant) or
+only by one specific integration flow.
+
+Global:
+Data store is shared across all integration flows deployed on the tenant.
+
+Integration Flow:
+Data store is used by one integration flow. A data store configured with this
+setting is also referred to as local data store.
+
+
+Number of Polled Messages (ET) :
+Specifies the maximum number of messages to be fetched from the data store within one poll (default is 1).
+If the number of messages fetched per poll is specified in the header SapDataStoreMaxResults, the header takes the precedence.
+You can also configure this property in such a way that the number of fetched messages per poll is dynamically
+evaluated at runtime based on the incoming message. To do this, you can enter the following expressions:
+
+${header.headername}, to dynamically retrieve the number of fetched messages per poll from the message header
+${xpath.<xpath>}, to dynamically retrieve the number of fetched messages per poll from an element in the message indicated by an xPath expression
+
+Delete on Completion (CB) :
+-> Select this option to delete a message from the data store after having successfully processed the message.
+
+
+

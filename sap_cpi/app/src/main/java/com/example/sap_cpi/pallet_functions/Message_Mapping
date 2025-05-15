@@ -1,0 +1,16 @@
+
+Message Mapping ->
+------------------------------------------------------------------------------------------------------------------------------
+ This is a type of mapping that transforms the structure and content of a message from one format to another.
+ For example, you can map an XML message to a JSON message or vice versa. You can use message mapping in
+ scenarios where you need to convert the message format between different systems or protocols.
+ You can create message mappings using graphical, XSLT or Groovy tools.
+
+config -
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/creating-message-mapping-as-flow-step?q=message+mapping+
+
+
+unable to write config here follow the notes.
+
+
+ */

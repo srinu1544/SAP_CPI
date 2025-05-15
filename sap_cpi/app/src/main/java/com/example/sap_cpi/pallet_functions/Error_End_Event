@@ -1,0 +1,36 @@
+Error End Event ->
+--------------------------------------------------------------------------------------------------------------------------
+
+-> The Error End Event in SAP Cloud Platform Integration (SAP CPI) is used to terminate message
+   processing when an error occurs. It ensures that the message is marked as failed in the
+   monitoring logs, allowing for better tracking and troubleshooting.
+
+ -> This is the component that allows you to throw an exception when an integration process ends.
+    You can use this component to indicate an error condition or a failure of a process
+ -> Using an Error End Event to throw the exception to default exception handlers or put the message
+    back into the queue for retrying.
+-> In SAP Cloud Integration (CPI), an Error End Event signals that an error has occurred during message
+   processing and should be handled, typically by an exception subprocess. It causes the message to be
+   marked as "Failed" in the message processing log. Unlike an Escalation End Event, which also indicates
+   an issue but allows processing to continue, an Error End Event stops the main process and throws the
+   exception to the exception handler
+
+
+
+
+   Use Case of Error End Event
+   - Exception Handling: If an integration flow encounters an error (e.g., invalid data, failed API call),
+   the Error End Event stops further processing.
+   - Logging & Monitoring: The failed message is logged in SAP CPI Message Processing Monitor, making
+   it easier to analyze issues.
+   - Controlled Failure: Instead of allowing the message to continue with incorrect data, the Error
+    End Event ensures that the process stops immediately.
+
+   Example Scenario
+   Imagine an integration flow that fetches customer data from an external API. If the API call fails
+    due to authentication issues, the Error End Event can be triggered to:
+   - Stop message processing.
+   - Log the error for further investigation.
+   - Send an alert to notify administrators.
+
+

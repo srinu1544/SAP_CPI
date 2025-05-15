@@ -1,0 +1,56 @@
+
+ Get ->
+ ------
+ This step gets a specific entry from the transient data store.
+
+- Purpose: Retrieves a stored message using an entry ID.
+- Configuration:- Data Store Name: Name of the data store.
+- Entry ID: ID of the message to be retrieved.
+- Delete After Fetch: True/False (whether to remove the message after retrieval).
+
+
+config : (General, Processing)
+
+General : Name
+Processing :
+Data Store Name (ET) :
+
+-> Specifies the name of the data store (no white spaces).
+The maximum length allowed for the data store name is 40 characters. If you enter a longer string,
+a validation error is raised. Note that this length restriction applies to the value that is used
+for this parameter at runtime. Therefore, if you configure this parameter dynamically, make sure
+that the expected header or property value does not exceed this length restriction. Otherwise,
+a runtime error will be raised.
+
+Visibility (DD) : (Global ,Integration Flow )
+
+Defines whether the data store is shared by all integration flows (deployed on the tenant) or only by one specific integration flow.
+
+Global: Data store is shared across all integration flows deployed on the tenant.
+
+Integration Flow: Data store is used by one integration flow. A data store configured with this setting is also referred to as local data store.
+
+For more information and guidelines how to use this parameter, see Anticipate Message Throughput When Choosing a Storage Option.
+
+Entry ID (ET) :
+-> Specify an entry ID that is stored together with the message content.
+Details for the entry ID are read from the incoming message. You can enter the following kinds of expressions to
+dynamically specify the entry ID:
+${header.headername}, to dynamically generate the entry ID from the message header.
+${property.propertyname}, to dynamically generate the entry ID from the exchange property of the message.
+${xpath.<xpath>}, to dynamically generate the entry ID from an element in the message indicated by an xPath expression.
+Example: ${xpath./CustomerReviews/CustomerReview/ProductId}
+You can also set the header SapDataStoreId to specify the Entry ID, and the corresponding entry is read at runtime.
+
+Delete on Completion (CB) :
+-> Select this option to delete a message from the data store after having successfully processed the message.
+
+Throw Exception on Missing Entry (CB) :
+-> You have the option to throw an exception if the entry with the specified Entry ID does not exist in the datastore.
+This checkbox is selected by default.
+
+Remember
+If you disable this option, the header SAP_DatastoreEntryFound is set to false and no exception is thrown,
+even if the Entry ID does not exist.
+
+

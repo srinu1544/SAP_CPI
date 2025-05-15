@@ -1,0 +1,19 @@
+XMLParser_XMLValidator :
+
+XML Parser:
+-----------
+
+Reads (parses) the XML document.
+Converts XML into a readable structure for programs.
+Ensures the XML is well-formed (proper tags, nesting).
+Examples: SAX Parser, DOM Parser.
+Used for reading and processing XML.
+
+XML Validator:
+-------------
+Checks if XML follows rules defined in XSD or DTD.
+Ensures the XML is valid according to schema.
+Verifies data types, required fields, structure.
+Example: Validator using XSD file.
+Used for checking correctness of XML before processing.
+

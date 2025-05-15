@@ -1,0 +1,30 @@
+package com.example.sap_cpi.pallet_functions
+
+  XML Modifier ->
+--------------------------------------------------------------------------------------
+use the xml modifier flow step to remove external DTDs (Document Type Definition)  and or to remove declarations.
+
+
+ config : (General, Processing)
+ General : Name
+
+ Processing :
+
+ Remove XML Declaration (CB) :
+ -> Select this option, to remove DTDs with external references from the XML payload.
+
+    Note :
+    If your payload contains DTDs with external references, the message processing can fail during XML operations.
+
+ Remove XML Declaration  (CB) :
+ -> deactivated by default)
+ ->  Select this option, to remove the XML declaration from the XML payload.
+
+  Invalid XML Character Handling (DD) : (None , Remove , Substitute)
+ ->  Select how to handle XML documents containing characters that are not valid in XML version 1.0/1.1. Depending on the XML version of the source message, the adapter checks the characters against the respective range allowed. Choose between the following options:
+     None: No removal or substitution of invalid XML characters.
+     Remove: Invalid characters are removed.
+     Substitute: Invalid characters are substituted by #.
+
+
+

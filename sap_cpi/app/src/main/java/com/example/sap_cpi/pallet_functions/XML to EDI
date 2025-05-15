@@ -1,0 +1,9 @@
+package com.example.sap_cpi.pallet_functions
+
+
+XML to EDI ->
+------------
+Description: Converts XML structure back into a standard EDI format (e.g., X12, EDIFACT).
+
+config :
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-xml-to-edi-converter?q=XML+to+Edi

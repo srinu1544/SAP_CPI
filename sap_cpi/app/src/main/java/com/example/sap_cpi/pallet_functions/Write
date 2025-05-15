@@ -1,0 +1,45 @@
+package com.example.sap_cpi.pallet_functions
+
+
+Write Operation ->
+---------------
+A data store operations step has to be triggered explicitly, for example, by a Timer event.
+This component stores data on your tenant. Note that the tenant space is limited and shared with
+other tenant data like message processing logs.
+
+
+- Purpose: Stores a message payload in the data store.
+- Configuration:- Visibility: Global (accessible across integration flows) or Integration Flow (local storage).
+- Entry ID: Unique identifier for the stored message.
+- Overwrite Existing Entry: True/False (whether to replace an existing entry).
+
+Data Store Name (ET) :
+
+-> Specifies the name of the data store (no white spaces).
+
+The maximum length allowed for the data store name is 40 characters. If you enter a longer string,
+a validation error is raised. Note that this length restriction applies to the value that is used
+for this parameter at runtime. Therefore, if you configure this parameter dynamically, make sure
+that the expected header or property value does not exceed this length restriction. Otherwise,
+a runtime error will be raised.
+
+Visibility (DD) : (Global,Integration Flow)
+-> Defines whether the data store is shared by all integration flows (deployed on the tenant)
+or only by one specific integration flow.
+
+Global: Data store is shared across all integration flows deployed on the tenant.
+Integration Flow: Data store is used by 1 integration flow. A data store configured with this
+setting is also referred to as local data store.
+
+Entry ID (ET) :
+
+-> Specify an entry ID that is stored together with the message content. The entry ID must not exceed 255 characters.
+Details for the entry ID are read from the incoming message. You can enter the following kinds of expressions:
+${header.headername}, to dynamically generate the entry ID from the message header.
+${property.propertyname}, to dynamically generate the entry ID from the exchange property of the message.
+${xpath.<xpath>}, to dynamically generate the entry ID from an element in the message indicated by an xPath expression.
+
+
+
+
+

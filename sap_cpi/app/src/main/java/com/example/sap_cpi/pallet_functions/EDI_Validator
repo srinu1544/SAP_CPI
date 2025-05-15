@@ -1,0 +1,33 @@
+ EDI Validator ->
+--------------------------------------------------------------------------------------------------------------
+-> The EDI validator validates the message payload in EDI flat file format against the configured XSD schema.
+The EDi validator component is used to validate the structure , syntax,  and compliance of EDI messages.
+-> It ensures that the EDI messages adhere to the specific EDI standards (Such as EDIFACT/ANSI-X12) and that they
+conform to the expected format and rules.
+
+config : (General , Validator)
+
+General : Name
+
+Validator :
+ Source Encoding (CB) : (ISO - 8859-1, UTF-8)
+  -> Select encoding format for the incoming payload.
+
+EDI Schema Definition (DD) : (Header , Integration Flow)
+-> Select the source of schema definition.
+
+Header (ET) : (configure only if header select)
+-> If you select Header as EDI Schema Definition, then you can see the field HeaderName,
+ in Properties view. Enter a valid header for the field.
+
+Schemas (Add) : - (configure if select integration flow)
+-> If you select Integration Flow as EDI Schema Definition, then you can see the table Schemas,
+   in Properties view. Select the valid schemas against which the validation will take place.
+Schemas Name (Select) :
+
+Prevent Exception on Failure (CB) :
+-> If you want to continue the processing even if the system encounters error while validating,
+   then select this parameter. If an exception occurs, then the error payload is added
+   to SAP_EDIValidationResult header.
+
+

@@ -1,0 +1,60 @@
+image45
+image47
+image46
+
+
+
+Router ->
+------------------------------------------------------------------------------------------------------
+This is a message routing step that sends a message to one of the possible routes based on a condition
+you can use router in scenarios where you need to route the message to different systems or services
+based on some criteria or logic
+
+-> we unable to give the condition in router, for condition we  can click on the path and give the condition.
+-> if click on router all paths related logic are shows
+
+when  click on the particular path we have options
+
+config :  (General, Processing)
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-router?q=router+
+General : Name
+--------------
+
+Processing
+----------
+Expression Type (DD) : (Non-XML, XML)
+-> select one of the condition type
+
+Examples  : NON-XML - like header , property
+           ${header.location} = 'hyd'
+           ${property.location} = 'VZA'
+
+           XML -
+           //firstName = 'Ramoju'
+
+Condition (ET) :
+-> here want to give the condition like above
+
+Default route (CB) :
+-> if check default route means Expression and condition visibility (all) will GONE.
+-> this path will default path.
+
+
+if you are using non xml some of conditions
+=             ${header.SenderId} = '1'
+!=            ${header.SenderId} != '1'
+>             ${header.SenderId} > '1'
+>=            ${header.SenderId} >= '1'
+<             ${header.SenderId} < '1'
+<=            ${header.SenderId} <= '1'
+and           ${header.SenderId} = '1' and ${header.ReceiverId} = '2'
+or            ${header.SenderId} = '1' or ${header.ReceiverId} = '2'
+contains      ${header.SenderId} contains '1'
+not contains  ${header.SenderId} not contains '1'
+in            ${header.SenderId} in '1,2'
+not in        ${header.SenderId} not in '1,2'
+regex         ${header.SenderId} regex '1.*'
+not regex     ${header.SenderId} not regex '1.*'
+
+
+*/

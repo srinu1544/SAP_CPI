@@ -1,13 +1,27 @@
-
 IN SAP SYSTEM GOTO
--------------------
+------------------
+1 create iflow
+2. download the certificates in cpi tenant
 
-1 - LOGICAL SYSTEM --  T-Code -  BD54
-2 - upload CPI SSL certificates - T-Code - Trust
-3 - RFC Destination - T-Code - sm59
+ -> WE31-To create new segment
+ -> WE30-To create new basic types
+ -> WE81-To create new message types
+ -> WE82-assign message type to basic types
+
+go to Trust - SSL Client SSL Client (Anonymous) - double click on this
+-> click on import add certificates
+
+2 - LOGICAL SYSTEM --  T-Code  SALE/BD54
+-----------------------------------------------------------------------
+
+
+1- upload CPI SSL certificates - T-Code - Trust
+
+2 - LOGICAL SYSTEM --  T-Code -  BD54
+3 - RFC Destination - T-Code - SM59
  Type G and go to technical settings
  -> Target System settings : host&port of our cpi
- -> path prefix address of IDOC like /Abc_IDoc
+ -> path prefix address of IDOC like  /cfx/IDoc
 
  goto login and security
  -> select basic auth
@@ -17,16 +31,16 @@ IN SAP SYSTEM GOTO
  connection test
  if http 500 means connection success
 
- 4) Create Port (we21)
+ 4) Create Port (WE21)
  give RFC destination details by select
  select port type (DD)
  select content type : (text,xml)
 
- 5) partner profile (we20)
+ 5) partner profile (WE20)
 
- 6) send idocs (we19)
+ 6) send idocs (WE19)
 
- 7) trace messages or status of idocs (we02)
+ 7) trace messages or status of idocs (WE02)
 
  success code of outbound message in S/4Hana - 03
  success code of inbound message in S/4Hana - 53
@@ -118,10 +132,10 @@ IN SAP SYSTEM GOTO
  6. BD10- To transfer material
  7. BD12-To transfer customer
 
-
-
  sap community - reference
  TODO - https://community.sap.com/t5/enterprise-resource-planning-blogs-by-members/application-link-enabling-ale/ba-p/13653098
  video reference - imp
  TODO - https://www.youtube.com/watch?v=5gRrGQxHwqU
  TODO - https://www.youtube.com/watch?v=I8-ec4FPpYU
+
+

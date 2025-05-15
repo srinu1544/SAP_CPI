@@ -1,0 +1,63 @@
+cloud connector ->
+------------------------------------------------------------------------------------
+
+default host and port of cc
+https://localhost:8443
+
+-> first go to btp cockpit
+-> connectivity
+-> cloud connectors
+-> here we can see the connected system which we connected for example virtual host of sap hana database
+
+first need to cc to our sub account using sub account id
+
+
+logs and trace files we have in cloud connector
+
+
+
+The SAP Cloud Connector is a tool that establishes a secure connection between an
+on-premise network and SAP Cloud products, like SAP Business Technology Platform (SAP BTP).
+It acts as a reverse invoke proxy, allowing cloud-based applications to access resources
+within the on-premise environment without requiring the on-premise firewall to be opened
+for external access.
+
+  Purpose:
+  The Cloud Connector facilitates secure communication between SAP BTP and on-premise systems,
+  enabling hybrid cloud scenarios.
+
+  Mechanism:
+  It functions as a reverse proxy, meaning connections originate from the Cloud Connector within
+  the on-premise network and are then routed to the SAP BTP.
+
+  Security:
+  By using the Cloud Connector, organizations can avoid exposing their internal systems directly
+  to the internet, enhancing security.
+
+  Deployment:
+  It can be installed on Windows, Linux, or Mac OS operating systems.
+
+  Use Cases:
+  The Cloud Connector supports various scenarios, including:
+
+  Connecting SAP or non-SAP applications.
+  Connecting a single cloud system to a single on-premise system, or multiple systems.
+  Using existing on-premise assets within SAP BTP applications.
+  Retrieving data from on-premise systems for use in SAP Data Intelligence or other data products.
+
+  Advantages:
+  Simplified configuration compared to traditional firewall setups.
+  No need to open firewall ports on the on-premise network.
+  Supports multiple backend SAP systems through a single Cloud Connector.
+  Easy to install and configure with low TCO.
+
+  Key Features:
+  Reverse Proxy: Acts as a reverse proxy, enabling secure communication from cloud to on-premise.
+
+  Protocol Support: Supports various protocols, including HTTP, RFC, and OData.
+
+  Easy Installation and Configuration: Designed for easy setup and management.
+  
+  Security: Enhances security by avoiding direct exposure of internal systems to the internet.
+
+  Scalability: Supports multiple subaccounts and multiple cloud connectors.

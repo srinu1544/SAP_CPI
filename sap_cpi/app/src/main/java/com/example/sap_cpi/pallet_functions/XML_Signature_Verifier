@@ -1,0 +1,47 @@
+  XML signature Verifier->
+  ---------------------------------------------------------------------------------------------
+  The XML signature verifier is used to verify the digital signature XML messages that has been
+  signed using the xml signature standard.
+  It validates the integrity and authenticity of the signed XML messages by verifying  the digital
+  signature against the corresponding public key and certificate.
+
+
+  config : (General , Processing)
+
+  General : Name
+
+  Processing :
+  Expected Signature Type (DD) : (Detached XML Signature, Enveloping or Enveloped XML Signature)
+
+  Enveloping or Enveloped XML Signature:
+  If the signature is contained within the content or the signature contains the signed data.
+  Verifying Enveloping Signature: If the incoming message has enveloping signature
+
+  an optional 'Reference' to the optional 'KeyInfo' element via ID is supported
+  'References' can have one optional transform whose algorithm must be a canonicalization method
+  So it implies, an enveloping XML signature with only the following structure is supported
+   ("?" denotes zero or one occurrence, the brackets [] denotes variables whose values can vary).
+
+   Detached XML Signatures:
+   If the signature is contained within the content or the signature contains the signed data.
+
+   Verifying Detached Signature If the incoming message has detached signature:
+   Signature element must be a sibling of the signed element
+   Signed element must have an attribute of type ID
+   Signature references signed element via the ID value
+   So it implies, a detached XML signature with only the following structure is supported
+   ("?" denotes zero or one occurrence, the brackets [] denotes variables whose values can vary).
+
+   Check for Key Info Element (CB) :
+   -> Select this option to check that the XML Signature contains a Key Info element
+      The KeyInfo element has to contain either the certificate chain, the certificate,
+      the Issuer Distinguished Name and Serial Number, or the Key Value element (or combinations of these attributes).
+
+      Disallow DOCTYPE Declaration (CB) :
+      -> Select this option to disallow DTD DOCTYPE declaration in the incoming XML message
+
+
+      Public Key Alias (Add) :
+      -> Enter an alias name to select a public key and corresponding certificate
+         Using the Public Key Alias, you can enter one or multiple public key aliases for the Verifier.
+

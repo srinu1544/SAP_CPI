@@ -1,0 +1,111 @@
+
+RESUME
+-------
+Ramoju.Srinivas
+Mail id : srinu1544@gmail.com
+Mobile : +91 8309654537
+SAP CPI CONSULTANT
+
+Professional Summary
+
+•	Having 3 years of experience in SAP CPI with 3 implementation projects involving SAP CPI development and integration.
+•	Experience in developing standard & custom iFlows based on specifications/requirements.
+•	Strong experience in SAP Integration technologies, including SAP PI/PO and SAP CPI.
+•	Expertise in handling standard pre-packaged content and custom iFlows in CPI.
+•	Experience in designing and implementing Integration Strategies for customers using on-premise and cloud application systems (S/4HANA, non-SAP cloud/on-premise systems, etc.).
+•	Hands-on experience with standard adapters such as OData, SOAP, SFTP, Mail, JDBC, HTTP(S), AS2, and IDoc.
+•	Experience in Exception Handling for iFlows in CPI using custom error handling frameworks.
+•	Proficient in using XPath expressions for data extraction, transformation, and dynamic routing within iFlows.
+•	Experience in working with Message Mapping, Groovy & JavaScript scripts to enhance integration functionalities.
+•	Knowledge of Security Concepts, including OAuth, SAML, and Certificate-based authentication in SAP CPI.
+•	Exposure to API Management and designing RESTful APIs within SAP BTP.
+
+Education
+
+Bachelor of Technology in and Mechanical Engineering – JNTU, Kakinada			       2009 – 2012
+
+SAP CPI Skills
+
+•	Implemented Cloud to Cloud and Cloud to on premise integrations using SAP CPI.
+•	Technical, functional, and architectural expertise in integrating SAP products with 3rd party applications using different technologies ALE-IDocs, EDI, RFC, HTTP, IDOC, JDBC, File FCC, SOAP, Mail.
+•	Strong in defining iflows, local & exception sub-process, value mapping artifacts.
+•	Hands on Experience on Custom IFLOW creation, deployment, monitoring.
+•	Worked on JSON and XML Conversions, Groovy Script, Content Modifier, request reply, multicast, router, process call, Aggregator, Gather, Local integration process, exception sub process etc.
+•	Experience on palette functions Content Modifier , Content Enricher , Poll Enricher, Splitter , Data Store Operations.
+•	Encryption message and Data Store Operations
+•	Experience on Retry mechanism for message failures
+•	Experience on message monitoring and Manage Integration Content Tools
+•	Well versed with Transport mechanism using CTS, File Transport system.
+•	Implemented Cloud to Cloud and Cloud to on premise integrations using SAP CPI.
+•	Proficient in analyzing and translating business requirements to technical requirements and architecture.
+•	Experience in integration of SAP and non-SAP systems in B2B scenarios using SAP Net Weaver Process Integration using both synchronous and asynchronous communication end to end interfaces.
+•	Designed integration configuration to develop end-to-end Business logic.
+•	Extract files from Database and Pull the file from Source drop zone to Target Drop zone
+•	Created Data types and Message types and created message and interface mappings.
+•	Configured various adapters like IDOC, File, RFC, JDBC, SOAP, Process Direct, Odata, Mail, FTP, JMS etc.
+•	Involved in Runtime workbench to monitor End-to-End Monitor. • Monitoring of various business processes at runtime and Monitoring the message flow, analysis and status tracking of different processes.
+
+
+Work Experience
+
+Employer: worked as a Senior Software Engineer in TECHWISE DIGITAL  (Hyderabad), from MAY 2024 to AUG 5th 2024.
+Employer: worked as a SAP CPI Consultant in EXCELL VALLEY (Hyderabad) from JUN 12th 2023 to MAY 2024.
+Employer: worked as a Software Engineer in MOTIVITY LABS (Hyderabad) from SEP 2021 to JUN 5th 2023.
+Employer: worked as a Android Developer in TEXAS REVIEW (Hyderabad), from oct 2018 to SEP 2021.
+Employer: worked as a Software Engineer in TECHGENE SOLUTIONS (Hyderabad), from MAR 2017 to SEP 2018.
+
+Projects
+
+
+Project #1
+Name : Expense Reports Processing for Finance Company
+Client: zaggle , india
+Role:  SAP CPI Consultant
+Duration: MAY 2024 – AUG 2024
+Description:
+This project focused on automating employee expense report processing by integrating SAP Concur, SAP S/4HANA, and third-party payment systems. The goal was to reduce manual work, enhance compliance, and ensure real-time expense tracking.
+
+Roles & Responsibilities:
+•	Developed iFlows to extract employee expense data from SAP Concur via OData APIs.
+•	Configured JDBC Adapter to fetch historical expense reports from the finance database.
+•	Used SFTP Adapter to transfer processed reports to the finance team’s shared folder.
+•	Designed exception subprocesses to handle errors in expense approvals and reimbursements.
+•	Applied XPath-based filtering to extract required financial data from XML payloads.
+•	Ensured data security by implementing OAuth 2.0 authentication for API calls.
+•	Testing & Support: Conducted integration testing with real employee transactions and worked closely with the finance & compliance teams for smooth deployment.
+
+
+Project #2
+Name : Parcel Tracking & Logistics Integration
+Client: NAVATA Transport, India
+Role: SAP CPI Consultant
+Duration: June 2023 - May 2024
+Description:
+This project involved real-time tracking of parcel deliveries and automated status updates between SAP S/4HANA, warehouse management systems (WMS), and third-party logistics providers (3PLs).
+
+Roles & Responsibilities:
+•	Developed API-based integrations between SAP TM (Transportation Management)
+•	Implemented event-driven tracking updates using Webhooks and REST APIs.
+•	Used JDBC Adapter to fetch real-time delivery status from 3PL databases.
+•	Integrated Email Notifications (Mail Adapter) for shipment status updates.
+•	Ensured data security by implementing OAuth 2.0 authentication for API calls.
+•	Data Transformation: Implemented JSON-to-XML conversions and enriched messages using content modifiers & Groovy scripts.
+
+Project #3
+Name : Vehicle Data Integration for Automobile Industry
+Client: Hyundai , india
+Role: SAP CPI Consultant
+Duration: SEP 2021 – June 2023
+Description:
+This project focused on integrating vehicle manufacturing, inventory, and after-sales service data across multiple SAP and non-SAP systems to improve supply chain efficiency and dealer network management.
+
+Roles & Responsibilities:
+•	Developed integration flows (iFlows) for connecting SAP S/4HANA and Dealer Management System (DMS).
+•	Used ODATA and SOAP Adapters to integrate vehicle production, sales, and service history.
+•	Designed real-time data exchange interfaces between different departments for efficient production and service tracking.
+•	Exception Handling: Implemented error-handling mechanisms with Alert Notifications & Logging.
+•	Used XPath expressions to dynamically route messages and transform payloads.
+•	Data Transformation: Utilized Message Mapping, Groovy scripting, and content-based routing to format data between SAP and third-party applications.
+•	Performance Optimization: Improved processing speed with asynchronous messaging and batch processing techniques.
+
+

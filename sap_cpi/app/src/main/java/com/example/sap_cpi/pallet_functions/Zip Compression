@@ -1,0 +1,9 @@
+ Zip Compression ->
+ -----------------------------------------------------------------------------------------------------------
+ In sap cpi zip compression refers to the use of the zip file format for compressing and archiving message
+ during integration flows.This is archived through the use of zip encoder and decoder element with in the
+ integration flow. The zip encoder compresses  a single message into a zip archive.
+
+ config : (General)
+ General : Name
+

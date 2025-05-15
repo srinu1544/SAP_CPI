@@ -1,0 +1,90 @@
+package com.example.sap_cpi.pallet_functions
+
+ PGP Encrypter ->
+  ---------------------------------------------------------------------------------------------------
+  This is a message transformation step that encrypts a message using public key that is deployed
+  on the tenant.The public key based on the PGP standard which is widely used method for encryting and
+  signing data you can use PGP encryptor in scenarios where you need to secure the communication with
+  a participant on the cloud using PGP encryption
+
+
+  Example :
+  ---------
+  Assume that you like to send an encrypted and signed message to multiple receivers. The receiver
+  is determined based on some value in the inbound message, for example, a customer number.
+  Furthermore, the message is to be encrypted and signed by receiver-specific keys.
+  To implement such a scenario, you can store the customer number as a property and
+  use this property to dynamically define the encryption key user IDs and the signer user IDs.
+
+
+  config : (General , Processing)
+  General :  Name
+
+  Processing :
+
+Signatures (DD) : (None , Include)
+  -> Select Including if you want to sign the payload with a signature.
+
+Content Encryption Algorithm (DD) : (AES,Blowfish,CAST5,ESede,Twofish)
+  -> In the dropdown list, select the algorithm you want to use to encrypt the payload.
+
+     Supported symmetric key algorithms for content encryption (symmetric key algorithms):
+      AES with 128, 192, and 256-bit key,
+      Blowfish (128 bit key, 16 rounds),
+      CAST5 (128 bit key, as per [RFC2144]),
+      ESede with 168-bit key,
+      Twofish with 256-bit key. DES is not supported.
+
+Secret Key Length (DD) : (128,192,256)
+      ->  Enter the secret key length.
+          Note
+          The length of the secret key depends on the encryption algorithm that you choose.
+
+          Compression Algorithm (DD) : (ZLIB, ZIP, BZip2,uncompressed)
+          -> Select the algorithm you want to use to compress the payload.
+
+Armored (CB) :
+      -> Select if you want the output to be radix 64 (base64) encoded with additional header.
+
+Integrity Protected Data Packet (CB) :
+      -> Select if you want to create an Encrypted Integrity Protected Data Packet.
+        This is a specific format where an additional hash value is calculated
+         (using SHA-1 algorithm) and added to the message.
+
+         This increases the message security level
+
+Encryption User ID of Key(s) from Public Keyring (Add) :
+        -> You can specify the encryption key user IDs (or parts of them). Based on this setting,
+           the system picks all public keys associated with User IDs that contains this value from
+           PGP public keyring. (see Outbound: Message-Level Security with OpenPGP).
+
+           You can enter ${header.headername} or ${property.propertyname} to read the encryption
+           key user ID dynamically from a header or exchange property.
+
+Signature Algorithm  (DD) : (MD5, RIPE-MD/160, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512)
+
+ -> (only if for Signatures the option Including has been selected)
+  Select the digest algorithm for the signature.
+  The signature is created by transferring the message content into a digest (hash value) using a digest algorithm.
+  Supported signature algorithms for PGP signing: MD5, RIPE-MD/160, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512.
+  Default value: SHA-512.
+
+Signer User ID of Key(s) from Secret Keyring (Add) :
+-> (only if for Signatures the option Including has been selected)
+   You can specify the signer user IDs (or parts of them). Based on this setting, the system picks
+   all private keys associated with User IDs that contains this value from PGP secret keyring.
+   All matching private keys will be used to sign the message (may yield multiple signatures).
+   (see Outbound: Message-Level Security with OpenPGP).
+
+   You can enter ${header.headername} or ${property.propertyname} to read the Signer User ID
+   dynamically from a header or exchange property.
+
+
+
+
+
+
+
+
+
+

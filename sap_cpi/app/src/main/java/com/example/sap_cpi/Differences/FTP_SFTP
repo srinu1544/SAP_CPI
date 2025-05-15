@@ -1,0 +1,35 @@
+package com.example.sap_cpi.Differences
+
+In SAP Cloud Integration (CPI), both FTP and SFTP are file transfer protocols, but SFTP offers
+significantly enhanced security. FTP transfers data in plain text, while SFTP encrypts data during
+transmission, protecting against unauthorized access and complying with stricter security regulations.
+
+Key Differences:
+
+Security:
+SFTP utilizes SSH (Secure Shell) for secure file transfer, encrypting data and authentication details.
+FTP, on the other hand, does not offer encryption, leaving data vulnerable.
+
+Port Usage:
+SFTP typically uses a single port (usually 22) for all communication, simplifying firewall configuration.
+FTP can use multiple ports for control and data connections, potentially creating firewall issues.
+
+Authentication:
+SFTP supports both password-based and public key authentication, providing stronger security options.
+FTP relies primarily on username and password authentication.
+
+Encryption:
+SFTP provides full end-to-end encryption, ensuring data confidentiality during transmission.
+FTP does not offer any encryption.
+
+Firewall Friendliness:
+SFTP's use of a single port makes it easier to configure in environments with firewalls.
+
+Resumable Transfers:
+SFTP supports resumable transfers, meaning you can resume a transfer if interrupted, while FTP does not.
+
+In SAP CPI:
+You can use the FTP and SFTP adapters to connect to various FTP and SFTP servers for file transfer tasks.
+The SFTP adapter in CPI uses SSH protocol to transfer files securely, encrypting sensitive information before transmission.
+For secure file transfers, SFTP is the preferred protocol in CPI, as it provides better security and compliance with
+security standards.

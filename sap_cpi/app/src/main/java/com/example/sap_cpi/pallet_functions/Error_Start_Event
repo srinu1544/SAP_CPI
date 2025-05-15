@@ -1,0 +1,11 @@
+package com.example.sap_cpi.pallet_functions
+
+
+Error Start Event ->
+--------------------------------------------------------------------------------------------------------------------
+-> This is the component that allows you to catch an exception when an integration process starts. You can use this
+   component to trigger an exception subprocess or a local integration process
+-> Using an Error Start Event to catch any exceptions thrown in the main integration process and handle them
+   in an exception subprocess
+
+

@@ -1,0 +1,21 @@
+@Preview
+@Composable
+fun RequestReplay() {
+    LoadImage(imageRes = R.drawable.image44)
+}
+
+
+Request Reply ->
+----------------------------------------------------------------------------------------------------
+This is a process step that allows to you to send a request message to a receiver system and receives a
+replay message from it. this is useful when you need to synchronize the communication between different
+systems or services you can use request replay in scenarios where you need to get a confirmation acknowledgement
+or response from the receiver system.
+
+->  Request Replay can connect with only receiver system
+->  it collapse previous step data
+
+ Configure : (General)
+ -----------
+ General : Name
+

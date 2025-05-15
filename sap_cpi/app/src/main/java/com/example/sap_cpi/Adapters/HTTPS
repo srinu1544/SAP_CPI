@@ -1,0 +1,310 @@
+
+HTTP Adapter : (hyper text transport protocol)
+Connecting to REST/SOAP APIs using HTTP calls.
+Sending/Receiving data between SAP CPI and external systems.
+
+
+for creating Free REST API -- https://www.youtube.com/watch?v=Wu_oJ-Bzo2o&ab_channel=BTP_CPIVideos%26KidsFunnyShorts
+
+In SAP Cloud Platform Integration (CPI), the HTTPS adapter is a type of adapter that facilitates
+secure communication between SAP CPI and external systems over the HTTPS protocol.
+It acts as both a sender and receiver, enabling data exchange using HTTP/HTTPS for
+various applications and platforms.
+
+---------------------------------------------------------------------------------------------------
+https (sender) (inbound) :
+---------------------------------------------------------------------------------------------------
+-> we use http adapter to send and receive messages using http protocol
+and it provides additional security features SSL,TLS encryption client authentication
+we need this adapter when exchange data securely , reliably , with receiver systems that supports.
+
+-> To use http adapter to call restful web services, access odata apis or send messages to cloud applications
+-> we can also use http adapter for communicate with other cpi tenants or custom applications that expose
+Http interfaces
+
+configure : General (name) , connections  condition
+===================================================
+connections
+----------
+Address (ET) :
+-> give any end point name with / first symbol
+ex : /getDATA
+
+Authentication (DD) : User Role
+                     Client certificate
+
+user Role :
+----------
+-> ESB.Message.send  this is default
+-> when you choose user role the inbound authorization is checked based on user role.
+
+client certificate :
+---------------------
+verifier ----> identify of the sender
+In this option you always have to select one or more client certificates by using add option
+
+CSRF (CB)-- Cross-Site Request Forgery (CSRF)
+This option prevents Cross-Site Request Forgery (CSRF), which is a malicious online attack. Such attacks exposes user
+content without their authorization.
+
+Note :
+During an inbound HTTPS communication, if the sender adapter receives a GET or HEAD request to fetch the CSRF
+token value and you have the enabled CSRF Protected then the adapter will return the CSRF token and stop processing
+the message further.
+
+Include X-CSRF-Token in the HTTP header field for all modifying requests and these requests are validated during runtime.
+If the validation fails then the server returns “HTTP 403 Forbidden” status code.
+
+condition :
+-----------
+we mention the body site of inbound messages if messages is increased limit size the message is
+rejected automatically and error message will generated
+->body size default 40 mb
+---------------------------------------------------------------------------------------------------
+
+
+
+http (Receiver) adapter :
+--------------------------------------------------------------------------------------------------
+-> we use http adapter to send and receive messages using http protocol
+and it provides additional security features SSL,TLS encryption client authentication
+we need this adapter when exchange data securely , reliably , with receiver systems that supports.
+
+-> To use http adapter to call restful web services, access odata apis or send messsages to cloud applications
+-> we can also use http adapter for communicate with other cpi tenants or custom applications that expose
+Http interfaces
+
+configure :  (General , connection)
+-----------------------------------
+General : name
+--------
+
+Connection :
+-----------
+   address (ET) :
+      -> host & port name
+
+   query (ET) :
+       -> In this field you have enter the query
+        note : query string must not entered in address field.
+       ->  it can be static value or it can be externalize using a variable.
+
+  Proxy type (DD) : (internet, on-premise)
+     if select internet data routing happens via internet
+     you can chose on premise when you want to exchange messages within on-premise systems enter the
+     proxy type location id which is a unique identifier for the cloud connector instance under the
+     method you can choose the http action
+
+  method :
+      dynamic -> dynamically change the method variable substitution
+      Delete
+      Get
+      HEAD
+      POST
+      PUT
+      Trace
+Authentication (DD):
+   basic
+   OAuth2 client credentials
+   None
+   OAuth SAML bearer assertion
+   client certificate
+   principal propagation (visible if select proxy type is on-premise)
+
+Timeout (CB)  :
+  time to tenant wait for response before terminate  the message.
+
+Throw Exception on Failure (CB) :
+Attach Error details on failure (CB) :
+
+Header Details : (Request header , Response header) :
+ In the request header settings you can define the custom headers that
+ you want to send to the target system. In the response header section , you can
+ enter the custom header that you would expect as a response from the target system.
+
+
+ Interview questions on HTTP Adapter
+ -----------------------------------
+ what are the recommended modes on the sender side ?
+ what are the recommended modes on the Receiver side ?
+ ----------------------------------------------------------
+ What is The best practices in http adapter ?
+ A.Always use HTTPS
+   ➔ Never use HTTP. Always encrypt communication.
+
+   Use Authentication
+   ➔ Set Basic Auth, OAuth2, or Certificates.
+   ➔ Never leave it open.
+
+   Enable CSRF Protection (for POST, PUT, DELETE)
+   ➔ Protects from attack if someone misuses your endpoint.
+
+   Set Correct HTTP Method
+   ➔ Use GET for read, POST for create, PUT for update, DELETE for delete.
+
+   Set Proper Timeouts
+   ➔ Avoid long waiting by setting smart timeout values.
+
+   Handle Errors
+   ➔ Always add Exception Subprocess to manage failures nicely.
+
+   Secure Credentials
+   ➔ Store passwords and tokens in "Security Material", not inside iFlow.
+
+   Set Content-Type Header
+   ➔ Example: application/json or application/xml.
+   ➔ Always tell the receiver what format you're sending.
+
+   Limit Logging
+   ➔ Don’t log passwords, tokens, or personal data.
+
+   Use IP Whitelisting (if possible)
+   ➔ Only allow trusted IPs to call your HTTPS endpoint.
+   -----------------------------------------------------------------------------------------
+  Q. How do you handle the certificates ?
+  A. Tenant Keystore Setup
+   Upload Client Certificate:
+   ➔ Add a valid client certificate (signed by trusted CA) into CPI Keystore.
+
+   Upload Receiver Root Certificate:
+   ➔ Import the receiver server's root certificate into the CPI Keystore.
+
+   Set Keystore Alias:
+   ➔ In the HTTP adapter, specify the correct keystore alias and client key alias.
+
+   2. Integration Flow (iFlow) Setup
+   Sender (CPI Receives Request)
+   Client Certificate Authentication:
+   ➔ In sender channel, select "Client Certificate" authentication.
+   ➔ Add the client certificates manually or use User Role Mapping (preferred for easier updates).
+
+   Receiver (CPI Sends Request)
+   Client Certificate Authentication:
+   ➔ In receiver channel, enable "Client Certificate Authentication".
+   ➔ Select the correct client certificate alias.
+
+   3. Important Points
+   Load Balancer Certificate:
+   ➔ Add the load balancer's root certificate to CPI Keystore if needed.
+
+   Service Keys:
+   ➔ Create and link service keys if client certificate authentication is used.
+
+   Certificate Updates:
+   ➔ If you add certificates directly, you must redeploy iFlow when updating.
+   ➔ User Role Mapping avoids redeployment (recommended).
+
+   Connectivity Test:
+   ➔ Always run a Connectivity Test to make sure CPI can reach the receiver server.
+
+   -----------------------------------------------------------------------------------------------
+  Q.Common issues faced while using http adapter in sap cpi?
+  A.Common issues when using the HTTP adapter in SAP CPI include HTTP errors like 401
+   (Unauthorized), 403 (Forbidden), 404 (Not Found), 500 (Internal Server Error),
+    and 502 (Bad Gateway). Other issues include special character handling, especially
+    with languages like Hebrew, Turkish, and Russian, where encoding problems can lead
+    to data corruption. Additionally, challenges can arise with URL encoding, where special
+    characters in the URL value can cause errors during saving or processing the request.
+
+    Detailed Explanation:
+
+    1. HTTP Errors:
+    401 (Unauthorized): This indicates the authentication credentials are invalid or missing.
+     Review authentication configurations and credentials in the CPI tenant.
+
+    403 (Forbidden): The call fails due to missing permissions on the Cloud Integration side.
+    Check the 'User Role' parameter in the adapter configuration, especially if using Basic
+    Authentication or Role Based Authentication.
+
+    404 (Not Found): The endpoint doesn't exist or is unavailable. Verify the endpoint's
+    existence and status within the CPI tenant's monitor.
+
+    500 (Internal Server Error): This can be due to an internal CPI problem or a problem with
+    the receiver system. Check for errors in the CPI tenant's monitor or the receiver system's logs.
+
+    502 (Bad Gateway): Too many messages are being sent to the tenant at once, exceeding its resources.
+    Adjust the message processing rate or request the tenant to increase resources.
+
+    2. Special Character Handling:
+    Languages with special characters (like Hebrew, Turkish, Russian) can cause encoding issues.
+    Define the required encoding in the Content Modifier step and use UTF-8 as the CamelCharsetName.
+    Escape double quotes (") in JSON payloads to avoid parsing errors.
+
+    3. URL Encoding:
+    Special characters in URL values (like slashes, question marks, and ampersands)
+    can be misinterpreted by the HTTP adapter. Ensure these characters are properly encoded or escaped in the URL.
+    Consider using & instead of & in the URL to prevent encoding issues.
+
+    4. Content-Length Issues:
+    The Content-Length header might be present in the trace but not passed to the receiver system.
+     Verify the header's value and ensure it's correctly passed.
+
+    5. Other Issues:
+    Intermittent failures due to temporary unavailability of the target system can be addressed with HTTP retry mechanisms.
+    If using OAuth2 with an on-premise system, token fetching might fail.
+
+    The OData adapter is preferred for standard SAP services with XML payloads, while the HTTP adapter
+    provides more flexibility in content-type handling.
+    Ensure the correct proxy type (e.g., on-premise) and location ID are configured for on-premise systems.
+    Handle exceptions in the integration flow using an exception subprocess
+
+ --------------------------------------------------------------------------------------------------
+Q. how did you handle big volume messages sender and receiver while using http adapter in sap cpi?
+A. 1. Use Chunking (Splitting Large Messages)
+Split large messages into smaller parts inside the iFlow.
+
+Use Splitter (e.g., General Splitter or JSON/XML Splitter) to break big payloads into manageable chunks.
+
+Process each chunk separately.
+
+Example: If a 10 MB JSON file has 10,000 records, split it into 1,000 records per message.
+
+2. Streaming Mode (Large Attachments Handling)
+Enable Streaming Mode in the HTTP Receiver Adapter.
+
+Streaming means CPI does not load the full message into memory, it sends/receives in parts.
+
+➔ Reduces memory usage and prevents Out of Memory (OOM) errors.
+
+3. Timeout and Session Settings
+Increase Connection Timeout and Socket Timeout settings.
+
+Big messages take more time to send/receive, so you need longer timeouts.
+
+Example: Set timeout to 300,000 ms (5 minutes) or more depending on size.
+
+4. Message Compression
+If supported by the receiver, use compression (like GZIP).
+
+Compress large payloads to send faster and save bandwidth.
+
+➔ Add a Content Modifier to set header: Accept-Encoding: gzip
+
+5. Paging / Batch Processing
+If the sender or receiver system supports pagination or batch processing, use it.
+
+Fetch or send data in small pages (e.g., 1000 records at a time).
+
+➔ API with page size parameter: GET /data?page=1&size=1000
+
+6. Increase Tenant Resources (If Needed)
+If processing a very high number of big messages daily:
+
+Request more memory or message processing capacity from SAP BTP support team.
+
+➔ Called "Tenant Sizing".
+
+7. Use Asynchronous Flows
+If possible, design your iFlow to send a response immediately and process data in background.
+
+Use Data Store and Process Direct adapters for background processing.
+----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

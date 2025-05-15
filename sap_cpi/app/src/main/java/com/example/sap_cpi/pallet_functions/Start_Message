@@ -1,0 +1,8 @@
+
+ Start Message ->
+---------------------------------------------------------------------------------------------------------------
+-> This is the component that allows you to receive a message from a sender when an integration process starts.
+   You can use this component to trigger a process based on an incoming message
+-> Using a Start Message event to receive a message from an HTTP sender and trigger the main integration flow
+
+

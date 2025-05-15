@@ -1,0 +1,23 @@
+package com.example.sap_cpi.pallet_functions
+
+Process Call ->
+----------------------------------------------------------------------------------------------------
+Context
+You can use this step type to invoke a local integration process from the main integration process.
+
+You use local integration processes to keep the size of a process model at a manageable scale.
+That way, you can break down the main integration process into smaller fragments (represented by local
+integration processes). You combine these fragments to achieve the complete message processing design
+of your integration flow.
+-> The process call element is used to invoke a separate process or subprocess within an integration flow.
+-> it enables modulation and reusability by dividing complex integration flows into smaller manageable process
+-> a helps to improve maintainability , scalability and reusability by encapsulating  specific functionality
+or logic in separate process
+
+config : (General, Processing)
+General : Name
+
+Processing :
+Local Integration process (Select) :
+-> here we want to select local integration process name
+

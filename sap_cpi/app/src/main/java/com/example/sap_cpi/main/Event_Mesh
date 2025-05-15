@@ -1,0 +1,50 @@
+Event Mesh :
+------------
+An event mesh is a network of interconnected event brokers that facilitates real-time,
+asynchronous communication between applications, services, and devices. It enables applications
+to publish and subscribe to events, regardless of their location (e.g., on-premise, in a private
+cloud, or public cloud). Essentially, it's a logical layer that enhances communication capabilities,
+often using the publish/subscribe (pub/sub) patter
+
+Video references :
+TODO - https://www.youtube.com/watch?v=p95rwmy8NYw&ab_channel=MentorsPool
+TODO - https://www.youtube.com/watch?v=E32dwoxnEHY&ab_channel=SAPonAzure
+
+
+how to send data s4 hana to event mesh :
+-----------------------------------------
+
+To send data to SAP Event Mesh when an event triggers in S/4HANA, you need to configure a channel and outbound
+topic in S/4HANA, then create a service key and configure a message client in Event Mesh. The S/4HANA system
+will then send events to the Event Mesh via the configured channel, and the message client will receive and manage the events.
+
+1. Configure Event Mesh in S/4HANA:
+Create a Service Key:
+In your SAP BTP subaccount, create a service key for Event Mesh.
+Create a Channel:
+In S/4HANA, use transaction code SPRO to configure the channel and provide the details from the service key.
+Define Outbound Topics:
+Configure outbound bindings within the channel to specify which topics will receive events.
+Select Topic Name:
+Choose the topic name based on the event type and the structure of your application. For S/4HANA integration,
+the topic name should correspond to the topic space defined in S/4HANA.
+
+2. Configure Event Mesh Instance and Message Client:
+Create an Event Mesh Instance: In your SAP BTP subaccount, create an instance of SAP Event Mesh.
+Create a Message Client: In the Event Mesh instance, create a message client to receive events from S/4HANA.
+Configure Message Client: Configure the message client to subscribe to the topics that will receive events from S/4HANA.
+
+3. Send Data to Event Mesh:
+Trigger Events in S/4HANA:
+When a relevant event triggers in S/4HANA (e.g., a business partner is updated), the system will publish the event to the configured channel and topic.
+Event Mesh Receives and Manages Events:
+The message client in Event Mesh will receive the event and manage it according to the configured rules and subscriptions.
+
+Example Scenario:
+Let's say you want to send data about a sales order change to Event Mesh. You would:
+Configure the channel and outbound topic: in S/4HANA to publish events related to the sales order object.
+Set up a message client: in Event Mesh to subscribe to the sales order change topic.
+When a sales order changes, the S/4HANA system will send the event data to the configured topic in Event Mesh, and the message client will receive it.
+This allows other applications or systems that are connected to Event Mesh to react to the sales order change in a real-time and asynchronous manner.
+
+

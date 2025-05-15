@@ -1,0 +1,83 @@
+CTMS : (cloud transport management servive)
+----------------------------------------------------------------------------------------------------
+
+how to Transport :
+TODO -- please refer : asserts/presentation_2
+
+blog ref -
+TODO - https://community.sap.com/t5/technology-blogs-by-members/introduction-to-cloud-platform-transport-management-service-for-sap-cpi/ba-p/13536828
+
+In SAP, CTMS stands for Cloud Transport Management Service. It's a tool used for managing the transport of
+development artifacts and application-specific content between different SAP BTP accounts. Specifically,
+in the context of SAP Cloud Platform Integration (CPI), CTMS helps move CPI artifacts from one subaccount
+to another, automating the process of exporting, importing, and deploying them across different development,
+testing, and production environments.
+
+What CTMS does in SAP CPI:
+Automates Artifact Transport:
+CTMS simplifies the process of moving CPI artifacts (like integration flows, mapping rules, etc.)
+from one environment to another.
+
+Facilitates CI/CD:
+It integrates well with CI/CD pipelines, allowing for automated and controlled deployments of CPI artifacts.
+
+Provides Audit Trail:
+CTMS tracks changes and deployments, ensuring transparency and accountability.
+
+Enables Landscape Management:
+It helps manage the different CPI environments (development, testing, production) and ensures that
+artifacts are deployed correctly across them.
+
+Integrates with SAP Cloud ALM:
+CTMS can be integrated with SAP Cloud Application Lifecycle Management (ALM), providing a unified view of change and release processes.
+
+Procedure of using CTMS in SAP CPI (general steps):
+
+1. Configure CTMS:
+Create a CTMS instance in your SAP BTP account.
+Define transport nodes representing your CPI subaccounts (development, testing, production).
+Establish transport routes between the nodes, specifying the flow of artifacts.
+
+2. Create and Upload Artifacts:
+Develop and create your CPI artifacts in the Development subaccount.
+Upload the artifacts to the CTMS transport node representing your Development subaccount.
+
+3. Create Transport Request:
+Use the CTMS interface to create a transport request and attach the artifacts.
+
+4. Release and Move Transport Request:
+Release the transport request to initiate the deployment to the next node (e.g., from Development to Test).
+
+5. Import and Deploy in Target Environment:
+The CTMS will automatically move the artifacts along the defined transport routes, importing and deploying
+them in the target subaccounts (Test, Production).
+
+6. Monitor and Troubleshoot:
+Use the CTMS interface to monitor the status of transports and troubleshoot any issues that may arise.
+
+Key Considerations:
+
+Integration with CI/CD:
+For seamless CI/CD, integrate CTMS with your chosen CI/CD tool (e.g., SAP CI/CD service or third-party tools).
+
+Landscape Design:
+Carefully design your CTMS landscape (transport nodes and routes) to match your CPI development and deployment processes.
+
+Content Agent:
+CTMS uses a Content Agent service to facilitate the export and import of CPI artifacts.
+
+Destinations:
+Ensure that the necessary destinations are configured in your BTP account to enable communication between CTMS and CPI.
+
+
+
+
+manual procedure
+-> directly go to SE01 0r SE09 TR releasing
+
+
+
+
+
+
+

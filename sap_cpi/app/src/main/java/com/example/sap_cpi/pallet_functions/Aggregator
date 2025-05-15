@@ -1,0 +1,74 @@
+@Preview
+@Composable
+fun Aggregator() {
+    Column {
+        LoadImage(imageRes = R.drawable.image3)
+        LoadImage(imageRes = R.drawable.image4)
+
+    }
+
+}
+
+
+Aggregator ->
+-----------------------------------------------------------------------------------------------------------------
+-> This is a message routing step that combines multiple messages into a single message based on a correlation condition
+you can use aggregator in scenarios where you need to collect and merge messages that belong to the same logic
+group of sequences.
+You want to combine related individual messages so that they can be processed in bulk. Using an Aggregator
+pattern, you can collect and store individual messages until a complete set of related messages has been
+received. The aggregated message is then sent to the actual receiver.
+
+Use Case
+You want to collect individual product items related to the same order. The aggregated items are to be sent
+as one single order with multiple items.
+
+-> it is not work in local integration process and exception subprocess
+-> it will work with only XML data.
+-> common thing like company
+-> This data will store in data store
+-> It is not store the duplicate items
+
+config (General, Correlation, Aggregation Strategy)
+General : Name
+
+Correlation :
+Correlation Expression (XPath) (ET) :
+-> here we can give the correlation Expression like all the company data aggregate you can give the
+name of the company  EG : SAP
+
+Aggregation Strategy :
+
+Incoming Format (DD): XML (Same Format)
+
+Aggregation Algorithm (DD) : (combine, combine in sequence)
+-> combine : combine the data as per incoming
+-> combine in sequence : combines the data like 1,2,3,4..
+
+if select combine in sequence below Message Sequence Expression (XPath) will visible
+Message Sequence Expression (XPath) (ET):
+-> here we can enter the which is used to determine the sequence number.
+
+Last Message Condition (XPath) (ET) :
+-> Define the condition (XPATH = value) to identify the last message of an aggregate.
+    You have the option to use an Router step after the Aggregator in order to evaluate the Camel
+    ${header.CamelAggregatedCompletedBy} attribute, and, based on the value, decide how to continue.
+
+   Note that the header attribute can only have one of the following values:
+
+   timeout
+   Processing of the aggregate has been finished because the configured Completion Timeout has been reached.
+
+   predicate
+   Processing of the aggregate has been finished because the Completion Condition has been fulfilled.
+
+   Completion Timeout (ET) :
+   -> Defines the maximum time between two messages before aggregation is being stopped (period of inactivity).
+      you have the option to use an Router step after the Aggregator in order to evaluate the Camel
+      ${header.CamelAggregatedCompletedBy} attribute, and, based on the value, decide how to continue.
+
+Data Store Name (ET) :
+->  Enter the name of the transient data store where the aggregated message is to be stored.
+
+
+*/

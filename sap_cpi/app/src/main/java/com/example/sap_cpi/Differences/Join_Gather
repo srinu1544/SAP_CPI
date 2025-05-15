@@ -1,0 +1,11 @@
+difference between Join and gather :
+-----------------------------------
+
+In SAP CPI, "Gather" combines multiple messages into a single message, while "Join" brings together messages
+from different routes, acting as a synchronization point. Gather merges the content of incoming messages,
+whereas Join ensures all messages are available from specified routes before proceeding, but doesn't modify
+the message content itself.
+
+The Gather step merges messages from different routes (into a single message) with the option to define
+certain strategies how to combine the initial messages. The Join step is used in combination with the Gather step.
+It brings together the messages from different routes, but it does not affect the content of the messages.

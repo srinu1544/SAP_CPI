@@ -1,0 +1,26 @@
+image49
+
+
+
+sequential multicast ->
+---------------------------------------------------------------------------------------------------------------------------
+This is a message routing step that sends a copy of the same message to multiple
+routes in a specific order.you can use parallel multicast in scenarios where you
+need to perform multiple operations on the same message in parallel or
+where the order of execution in important. it is used when one path dependent
+on another path
+-> Only after the first path is finished (successfully or with an error), the second branch starts
+
+Note :  No configurations only we can change  sequential order
+        Select the branch which you want to move up or down in the order.
+        Use Move Up and Move Down to change the order.
+
+  config : (General, Routing Sequence)
+  General : Name
+
+  Routing sequence
+  Specify the sequence of execution of branches (TV):
+
+  Sequence Order                Sequence Name
+  1                              Branch 1
+  2                              Branch 2

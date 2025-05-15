@@ -1,0 +1,55 @@
+AMQP - (Advanced Message Queue protocol)
+----------------------------------------
+In many integration scenarios, messages or events have to be exchanged between applications or
+systems via message brokers. With the Advanced Message Queuing Protocol (AMQP) adapter, SAP
+Cloud Integration can be used as a provider or a consumer of such messages or events. SAP
+Cloud Integration can connect to external message brokers using the AMQP protocol, consume
+messages or events using the AMQP sender adapter, or store messages or events in the message
+broker using the AMQP receiver adapter.
+
+note : This is basically used in event mesh (channel communication)
+
+The AMQP adapter in SAP Cloud Platform Integration (CPI) enables integration with systems that use
+the Advanced Message Queuing Protocol (AMQP). It allows CPI to act as both a sender and receiver
+of messages to and from AMQP brokers like RabbitMQ or Azure Service Bus, facilitating communication
+between different applications and systems.
+
+Key Features and Functionality:
+
+AMQP Protocol Support:
+The adapter uses the AMQP protocol for message exchange, enabling communication with a wide range of AMQP brokers.
+
+Sender and Receiver:
+CPI can act as a sender, publishing messages to AMQP brokers, or as a receiver, consuming messages from brokers.
+
+Integration with External Systems:
+The adapter facilitates integration with external systems that rely on AMQP messaging, allowing for data exchange
+between CPI and these systems.
+
+Message Brokers:
+It can connect to various AMQP brokers, including cloud-based brokers (like Azure Service Bus, Amazon MQ, or Cloudamqp)
+and on-premise brokers (like RabbitMQ, ActiveMQ, or Apache Qpid).
+
+Message and Event Exchange:
+The adapter enables the exchange of messages and events between CPI and external AMQP brokers.
+
+Monitoring:
+While the adapter itself doesn't manage queues, topics, or message monitoring, these can be managed using
+the tools provided by the respective message broker.
+
+Use Cases:
+Event-Driven Architecture:
+The adapter can be used in event-driven architectures where applications communicate via messages or events.
+
+Microservices:
+It can enable communication between microservices within a cloud-based environment using AMQP messaging.
+
+Integration with Third-Party Systems:
+The adapter facilitates integration with external systems that rely on AMQP for communication, such as CRM or ERP systems.
+
+Example:
+Imagine an e-commerce system that uses SAP CPI as its integration hub. The AMQP adapter could be used to connect
+the system to a message broker that handles orders from different channels (website, mobile app, etc.).
+The orders are published to the broker, and CPI can then use the AMQP adapter to consume these orders and
+process them further, potentially updating inventory, triggering shipping notifications, or interacting with other
+back-end systems.

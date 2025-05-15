@@ -1,0 +1,48 @@
+On-premise systems are self-hosted, meaning the software and hardware are located and managed
+within the user's own premises. Cloud systems, on the other hand, are hosted by a third-party
+provider and accessed remotely over the internet. Think of a restaurant using on-premise
+software: their point-of-sale (POS) system is installed directly on their own computers,
+while a cloud-based POS system would be accessed from any device with an internet connection.
+
+On-Premise Systems:
+--------------------
+Location:
+Software and hardware are physically located within the organization's premises.
+
+Control:
+The organization has full control over its infrastructure, including hardware, software, and data.
+
+Maintenance:
+The organization is responsible for all maintenance, updates, and upgrades of the system.
+
+Security:
+The organization is responsible for securing its own infrastructure and data.
+
+Scalability:
+Scalability can be limited by the organization's hardware capabilities.
+
+Cost:
+May have higher upfront costs for hardware and infrastructure, but long-term costs can be predictable.
+
+Cloud Systems:
+--------------
+Location:
+Software and hardware are hosted by a third-party provider in their data centers, accessed
+remotely over the internet.
+
+Control:
+The organization typically has less control over the underlying infrastructure, but more control
+over the software and data.
+
+Maintenance:
+The provider handles all maintenance, updates, and upgrades.
+
+Security:
+The provider is responsible for the security of the infrastructure, but the organization
+is responsible for securing its data.
+
+Scalability:
+Highly scalable, allowing the organization to adjust resources as needed.
+
+Cost:
+Typically lower upfront costs, with recurring subscription fees.

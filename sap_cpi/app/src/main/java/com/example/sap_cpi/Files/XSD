@@ -1,1 +1,9 @@
-XSD - XML Schema Definition
+
+XSD - XML Schema Definition :
+---------------------------
+
+XSD, or XML Schema Definition, is a W3C recommendation that defines the structure and content of an
+XML document. It's a formal way to describe the legal building blocks of an XML document, including
+elements, attributes, data types, default values, and the order and number of elements. XSD is used
+to validate XML documents and ensure they adhere to the defined rules, guaranteeing consistency
+and reliability

@@ -1,0 +1,21 @@
+  EDI Extractor ->
+----------------------------------------------------------------------------------------------------
+-> EDI Extractor enables you to extract EDI headers and transfer to camel headers. This element
+   extracts data from single incoming EDI document and adds it to the exchange such that this
+   information can be used further in message processing. EDI extractor can read both flat file and XML format.
+
+   The EDI Extractor is used specifically for extracting structured data from EDI (Electronic Data Interchange) messages.
+   It enables the extraction and parsing of data from EDI messages, allowing for further processing or mapping.
+
+   Context
+   EDI Extractor supports EDIFACT, EANCOM, ODETTE, and ASC-X12 documents.
+
+   TODO config  - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-edi-extractor?q=EDI+Extractor
+
+   config : (General)
+   General : Name
+
+
+
+
+

@@ -1,0 +1,19 @@
+Java Script ->
+--------------------------------------------------------------
+In SAP CPI, JavaScript can be used as a scripting language within the "Script" palette element
+to perform data transformations and custom logic. You can either write JavaScript code directly
+in the script editor or upload a script file. This allows for more flexibility in message
+processing than standard mapping options.
+
+
+config :  (General, Processing)
+
+Processing :
+
+Script File (Select) :
+-> select the script file
+
+Script Function (ET) :
+-> Enter the function name that has to be  initially called for script execution
+
+

@@ -1,0 +1,8 @@
+package com.example.sap_cpi.pallet_functions
+
+ End Event ->
+ -------------------------------------------------------------------------------------------------------------------------
+ This is the component that allows you to end an integration process or a local integration process and may not have
+ any outgoing sequence flows. You can use this component to indicate the normal completion of a process
+ Using an End Event to end a local integration process that performs some transformation logic and returns
+ the control to the main integration process

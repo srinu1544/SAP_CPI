@@ -1,0 +1,43 @@
+CSRF :
+------
+
+In SAP CPI (Cloud Platform Integration), CSRF protection is a security feature designed to
+prevent Cross-Site Request Forgery attacks. This attack type tricks a user's browser into
+sending unauthorized requests to a trusted website on their behalf. CSRF protection in CPI
+works by requiring a unique, unpredictable token (CSRF token) for every modifying HTTP
+request, such as POST, PUT, DELETE, etc.
+
+Here's how it works in SAP CPI:
+
+1. CSRF Token Retrieval:
+When using HTTPS-based sender channels, CPI requires the client to first fetch a CSRF token from
+the server before sending a modifying request. This is often done with a GET or OPTIONS request.
+
+2. Token Inclusion:
+The client then includes this CSRF token in the X-CSRF-Token header of subsequent modifying requests.
+
+3. Server Validation:
+The server validates the CSRF token against the session cookie and the CSRF token stored on the
+server. If the token is invalid or missing, the request is rejected with a 403 Forbidden status code.
+
+Why use CSRF protection in CPI?
+Security:
+It protects against unauthorized actions being performed on behalf of logged-in users,
+ even if the user is unaware of the malicious activity.
+
+Best Practice:
+For HTTPS-based sender channels, enabling CSRF protection is a security best practice and is
+often enabled by default.
+
+How to enable CSRF protection in CPI:
+
+HTTPS Adapter:
+When using the HTTPS adapter in an integration flow, ensure the "CSRF Protected" option is
+enabled in the Connection tab.
+
+OData Adapter:
+Similarly, the "CSRF Protected" flag is available in the "Connection" properties of the
+OData receiver adapter.
+
+Other Adapters:
+Depending on the specific adapter, similar options for enabling CSRF protection may be available.

@@ -1,0 +1,29 @@
+XML Validator ->
+--------------------------------------------------------------------------------------------------------------------
+
+-> The XML validator component is used to validate the structure and integrity of xml messages.
+-> It checks whether  the XML messages conform to the defined XML schema or DTD (Document Type definition) and that
+they meet the required XML syntax.
+
+TODO Config -- https://help.sap.com/docs/cloud-integration/sap-cloud-integration/validating-message-payload-against-xml-schema?q=XML+Validator+
+
+ config : (General , Validator)
+
+ General :  Name
+
+ Validator :
+ Source (DD) : (Integration Flow , Header)
+ -> select source of schema definition
+
+ XML Schema (Select) : (configure only if integration Flow select in source)
+ -> select the path where xsd located
+
+ header (ET) :
+ -> Header, enter the name of the header in the Header Name field.
+
+ Prevent Exception on Failure (CB) :
+ -> If you want to continue the processing even if the system encounters error while validating,
+    then select the check box Prevent Exception on Failure.
+
+
+

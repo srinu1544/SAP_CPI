@@ -1,8 +1,0 @@
-ProcessDirect :
-
-The ProcessDirect adapter in SAP CPI facilitates direct, high-speed communication between integration
-flows within the same tenant, reducing latency and network overhead compared to traditional
-adapters like HTTP or SOAP. It essentially enables integration flows to call each other directly,
-as if they were internal functions, without the need for external communication.
--> With out load balance
-->  you cannot use multiple consumers with the same endpoint address in a single ProcessDirect adapter

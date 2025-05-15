@@ -1,0 +1,25 @@
+MIME Multipart Decoder ->
+----------------------------------------------------------------------------------------------------
+A multipurpose internet mail extensions (MIME) multipart message allows you to combine different kinds
+of content in one message (for example , plain text and attachments)
+
+To mention a use case if you want to send a message with attachments, but the protocol (for example HTTP or sftp)
+does not support attachments you can send the message as a mime multipart instead.
+
+MIME Multipart Decoder:
+Purpose: Takes a MIME multipart message and transforms it back into a standard message with attachments.
+How it works: Extracts the first part of the multipart message as the main message body and any remaining parts as attachments.
+Output: A standard message with the extracted body and attachments.
+
+
+TODO -  https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-mime-multipart-encoder
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/mime-multipart-messages?q=mime+multipart+decoder+
+
+config :  (General , Processing)
+General : Name
+
+Processing :
+
+Multipart Headers Inline (CD) :
+->  select if the MIME headers of the multipart are the part of the message body instead message header
+

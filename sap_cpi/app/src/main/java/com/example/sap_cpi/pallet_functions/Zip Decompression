@@ -1,0 +1,9 @@
+Zip Decompression ->
+-----------------------------------------------------------------------------------------------------
+In Sap cpi zip decompression refers to the process of extracting the content of a zip archive, which
+is a file that contains one or more files compressed into a single archive.This is typically archived using
+the sap cpi zip decoder flow step which is unzip a single message from a zip archive.
+
+config : (General)
+General : Name
+

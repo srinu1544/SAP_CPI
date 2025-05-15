@@ -1,0 +1,20 @@
+In SAP CPI, ZIP compression reduces message size by packing data, while ZIP decompression
+expands that data back to its original form. Both processes are essential for handling
+large files and optimizing integration flows, but they operate in opposite directions:
+compression reduces size for transfer, while decompression restores the original data.
+
+ZIP Compression:
+Purpose: Reduces the size of a single message by applying the standard ZIP algorithm.
+Process: Uses a ZIP encoder to package the message into a compressed archive.
+Benefits: Smaller file sizes, faster transfer speeds, and easier management of multiple files.
+
+
+ZIP Decompression:
+Purpose: Expands a ZIP-compressed message back to its original form, often referred to as "unzipping".
+Process: Uses a ZIP decoder to extract the contents of the compressed archive.
+Benefits: Restores the original message content after compression.
+Limitations: The ZIP Decoder in SAP CPI can only handle ZIP archives with a single entry, not those containing multiple files.
+
+In essence:
+Compression: Shrinks the message for efficient storage and transfer.
+Decompression: Reverts the compressed message to its original size and content.

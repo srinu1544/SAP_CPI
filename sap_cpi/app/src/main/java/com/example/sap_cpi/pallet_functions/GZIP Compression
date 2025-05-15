@@ -1,0 +1,25 @@
+package com.example.sap_cpi.pallet_functions
+
+
+GZIP compression ->
+------------------------------------------------------------------------------------------------------
+Purpose:
+Reduces the size of a message by finding repeating patterns and replacing them with shorter codes,
+effectively shrinking the data.
+
+Algorithm:
+Based on the DEFLATE algorithm, which combines LZ77 and Huffman coding.
+
+Benefits:
+Reduces bandwidth usage, speeds up data transfer, and can improve application performance by minimizing data size.
+
+How it works:
+Identifies and replaces repeating sequences of bytes with shorter codes.
+Employs a dictionary to store these short codes and track their references throughout the data.
+Utilizes Huffman coding to further compress the data, assigning shorter codes to more frequently appearing symbols.
+
+Example in CPI:
+The GZIP Encoder can be used to compress a message during an integration flow.
+
+config : (General)
+General : Name

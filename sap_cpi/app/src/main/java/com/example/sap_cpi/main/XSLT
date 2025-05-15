@@ -1,0 +1,8 @@
+XSLT :  (Extensible Stylesheet Language Transformations)
+--------------------------------------------------------
+
+XSLT is a language used to transform XML documents into various formats. In the context of SAP CPI,
+XSLT mapping allows you to: Transform Data: Convert XML data from the source format to the target
+format using XSLT templates. This is particularly useful when you need to map data from one XML
+structure to another.
+

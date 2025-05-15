@@ -1,0 +1,27 @@
+
+  PKCS signature Verifier->
+  ----------------------------------------------------------------------------------------------------------------------
+  The pkcs signature verifier is used to verify the digital signature of data that has been signed using the pkcs standard.
+  It checks the integrity and authenticity of the signed data by validating the digital signature against the corresponding
+  public key and certificate.
+
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/verify-pkcs-7-cms-signature?q=Signature+verifier+
+
+  config : (General , Processing)
+
+  General : Name
+
+  Processing :
+
+  Header is Base64 Encoded (CB) :
+  -> Select this option to verify if the Signed Data encoded in Base64 is included in the header/property SapCmsSignedData.
+
+  Body is Base64 Encoded (CB) :
+  -> Select this option to verify if the Signed Data encoded in Base64 is included in the message body.
+
+  Public Key Aliases (ADD) :
+  -> Enter an alias name to select a public key and corresponding certificate from the keystore.
+     You can enter ${header.headername} or ${property.propertyname} to read the name dynamically
+     from a header or exchange property.
+
+

@@ -1,0 +1,174 @@
+
+ API Management :
+ ----------------
+
+Reference for free apis
+TODO - https://api.sap.com/
+
+video reference :
+TODO - https://www.youtube.com/watch?v=v0IJLoRQbYk&list=PLae66MM0AHNplwl45T_a_a20_ZdqQScZI&index=7&ab_channel=InfoStreetBuzz
+
+sap api management :
+TODO -  https://www.sap.com/india/products/technology-platform/integration-suite/capabilities/api-management.html
+
+Policies :
+TODO -- https://community.sap.com/t5/technology-blog-posts-by-members/oauth-2-0-authentication-for-api-management-to-connect-to-cpi/ba-p/13504672
+
+
+https://register.sapdevcenter.com/SUPSignForms/
+https://sapes5.sapdevcenter.com/sap/bc/gui/sap/its/webgui
+
+sapes5.sapdevcenter.com
+
+
+api stands for application programing interface mainly api collection communication protocols and subroutines used by various
+program to communicate between them or we can say api is a mechanism that enables two software components to communicate each
+other
+
+An api (application programming interface) is a set of rules and specifications that allows different software
+applications to communicate and interact with each other , enabling data exchange and functionality sharing.
+
+->  it is coming under the capability
+
+Types of apis -
+-> public apis :
+   Public APIs, also known as Open APIs, are available to any developer or organization without restrictions.
+    These APIs are designed to be used by third-party developers to integrate with external applications.
+    ->  Openly accessible with minimal restrictions.
+    Ex : Google Maps API – Allows developers to embed maps and navigation features into applications.
+
+
+-> partner apis :
+   Partner APIs are shared with specific business partners rather than being open to the public.
+   These APIs require special permissions and agreements between companies.
+   -> Restricted access, available only to authorized business partners.
+   Ex : Amazon Selling Partner API – Used by third-party sellers to manage inventory, orders, and pricing
+
+
+-> internal or private api :
+
+   Internal APIs, also known as Private APIs, are used within an organization to connect different services,
+    applications, or teams. These APIs are not exposed to the public and are strictly for internal use.
+    -> Restricted to internal developers and teams
+    Ex : Banking Internal APIs – Used by internal teams to manage transactions, account information, and fraud detection.
+
+-> composite api :
+   --------------
+   Composite APIs allow developers to combine multiple API calls into a single request. Instead of making multiple separate requests
+   to different services, a single API call triggers multiple processes at once.
+   -> Improves efficiency by reducing the number of API calls.
+   Ex : E-commerce Checkout API – A single API call can:
+        Validate user payment details.
+        Check stock availability.
+        Place an order.
+        Send a confirmation email.
+
+API protocols in sap cpi :
+-> REST
+-> SOAP
+-> ODATA
+
+ important in apis :
+ -> api provider - it is used to abstract or used to connecting the backend system or it is call target system.
+ -> api proxy  - it is actual api used to using to connect to target system or which will be using to connect to
+                 the target system or to design our api where we design all those things.
+                 -> their can be multiple proxys for api providers
+                 ->  you can combine all the api proxies to the api product
+ -> api product
+
+
+ policy -- imp
+ ------
+
+ How to Implement API Policies in SAP CPI
+ - Use SAP API Management to define policies.
+ - Apply policies at the API Proxy level (PreFlow or PostFlow).
+ - Monitor API traffic using SAP CPI logs.
+
+In SAP CPI (Cloud Platform Integration), API policies help manage security, access control,
+and traffic management. Whitelisting is a key security measure that allows only specific IP addresses
+or domains to access an API
+
+
+ API Policies in SAP CPI (Including Whitelisting)
+ 1. Access Control Policy (Whitelisting)
+ - This policy allows or denies access to an API based on IP addresses.
+ - You can configure it in SAP API Management to restrict access to trusted sources.
+
+ Example Configuration:
+ <AccessControl xmlns="http://www.sap.com/apimgmt" async="true" continueOnError="false" enabled="true">
+     <IPRules noRuleMatchAction="
+
+<AccessControl xmlns="http://www.sap.com/apimgmt" async="true" continueOnError="false" enabled="true">
+    <IPRules noRuleMatchAction="DENY">
+        <MatchRule action="ALLOW">
+            <SourceAddress mask="32">192.168.1.100</SourceAddress>
+            <SourceAddress mask="32">203.0.113.50</SourceAddress>
+        </MatchRule>
+    </IPRules>
+    <IgnoreTrueClientIPHeader>true</IgnoreTrueClientIPHeader>
+</AccessControl>
+
+- The above configuration allows only specific IPs to access the API.
+- Any request from an unlisted IP will be denied.
+
+
+2. Spike Arrest Policy (Traffic Control)
+- Prevents API overload by limiting the number of requests per second.
+- Helps protect against DDoS attacks.
+
+3.OAuth & API Key Authentication
+- Ensures that only authorized clients can access the API.
+- Uses OAuth tokens or API keys for authentication.
+
+video reference :
+https://www.youtube.com/watch?v=2ER5Djaa1jQ&list=PLae66MM0AHNplwl45T_a_a20_ZdqQScZI&index=5&ab_channel=InfoStreetBuzz
+
+4 Quota Policy (Rate Limiting)
+- Restricts the number of API calls within a specific time frame.
+- Example: Allow 1000 requests per hour.
+
+
+
+for product creation
+-> create iflow with http adapter
+-> create provider with using api keys in api keys runtime (api) service keys
+-> create proxy with using api keys in runtime service keys
+-> go to engage
+-> products ->  create
+->  now go to api ->  add ->  check
+-> then go to publish
+-> now go to developer hub in menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

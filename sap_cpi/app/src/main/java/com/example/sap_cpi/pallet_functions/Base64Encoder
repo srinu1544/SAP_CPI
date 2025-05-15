@@ -1,0 +1,14 @@
+package com.example.sap_cpi.pallet_functions
+
+Base64 Encoder ->
+--------------------------------------------------------------------------------------------------------
+Converts binary data (like images, files, etc.) into a text-based string representation using a specific
+set of characters (A-Z, a-z, 0-9, +, /) and padding with '='.
+ -> You use this step to convert any binary data into text data. You can use an encoder if you need to transfer
+ data over a medium that only supports the exchange of textual data.
+ Use Case
+ -> Assume that you like to add an image to a product details message and you like to transfer this message
+ to a medium that only works with textual data.
+
+config : (General)
+General : Name

@@ -1,0 +1,66 @@
+
+@Preview
+@Composable
+fun image() {
+    LoadImage(imageRes = R.drawable.image54)
+}
+
+
+XML TO CSV
+----------
+Description: Transforms XML data into a flat CSV format.
+
+config :  (General, Processing)
+
+General :  Name
+
+Processing :
+
+BASIC ELEMENTS (TV)
+
+Path to Source Element in XML (ET) :
+-> Enter the xpath of record identifier
+
+
+Field Separator in CSV (DD) : (colon, comma, dot, pipe , semicolon, space , tab)
+-> Enter field separator in csv
+
+CSV Header (DD) :  (None, XML Based , XSD annotation based)
+-> Select how to include the field names as headers in the converted CSV file.
+   None: To skip adding headers
+   XML based: To use an XML element for header name.
+   XSD annotation based: To use <xsd:documentation> tag inside xsd element's <xsd:annotation> tag for header name.
+   Note.
+
+   XML Schema (select) : (only if you select CSV Header as XSD annotation based)
+   -> Define the XML schema path or choose Select to upload the XML schema from your local file system by choosing Upload from File System.
+      You can also enter ${header.headername} or ${property.propertyname} to read the path dynamically from a header or a property. To fetch details from partner directory, use syntax pd: <header_name>.
+
+   PARENT ELEMENT (TV)
+
+  Include Parent Element (CD) :
+  -> Select this checkbox if you want to include the parent element of the XML file in CSV file
+
+  Path to Parent Element (ET) :
+  ->Enter the Xpath of master record identifier
+
+  Include Attribute Values (CD) :
+  -> include attribute values
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ */

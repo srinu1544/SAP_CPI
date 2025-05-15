@@ -1,0 +1,14 @@
+Mail Adapter : (Message and Information Logging)
+Sending/Receiving emails via SMTP/IMAP protocols.
+Used for email notifications in integration flows.
+
+
+outlook configure :
+-------------------
+smtp-mail.outlook.com:587
+
+
+gmail configuration
+Host Address: smtp.gmail.com
+Port: 587
+

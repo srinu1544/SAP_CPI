@@ -1,0 +1,11 @@
+IDoc splitter ->
+-------------------------------------------------------------------------------------------------
+An IDoc Splitter in SAP CPI (Cloud Platform Integration) is a component that breaks down a composite
+IDoc message into individual IDocs. It's used when you need to process a bulk IDoc message,
+containing multiple individual IDocs, as separate entities.
+
+The Idoc splitter is used to split SAP IDoc messages into individual segments or sub-documents.
+-> It allows for the separation and processing of individual segments or sub-documents within IDoc messages.
+
+config : (General)
+General  : Name

@@ -1,0 +1,80 @@
+
+Escalation End Event ->
+-----------------------------------------------------------------------------------------------------------------------
+This is the component that allows you to escalate an exception when an integration process ends.
+You can use this component to indicate a critical error condition or a failure of a process that requires attention.
+Using an Escalation End Event to end the vel message with an escalated status and persist it for monitoring and alerting.
+
+
+config : (General , Processing)
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-escalation-event?q=Escalation+End+Event+
+
+General : (Name):
+-----------------
+
+Processing :
+------------
+  Category (DD) : Routing condition not meet
+                  Receiver not reachable
+                  Receiver not found
+                  Not authenticated to invoke receiver
+                  Not authorized to invoke receiver
+                  Receiver tries to redirect
+                  internal server error in receiver
+                  others not further qualified
+
+when you select one of the Escalation Categories from the dropdown, it essentially defines the type of error or
+issue that has occurred during the message processing. Based on the category selected, a corresponding message
+or action will be triggered.
+
+
+Escalation Event                         Routing condition has not been met.
+---------------------------------------------------------------------------------
+Receiver not reachable                   Receiver could not be reached, because it is temporarily down
+                                         or not accessible (for example, due to overload or maintenance work).
+
+Receiver not found                       Receiver could not be found because the URL points to a non-existent
+                                         resource (for example, HTTP 404 error).
+
+Not authenticated to invoke receiver     Receiver could not be called because authentication has failed
+                                         (for example, HTTP 401 error).
+
+Not authorized to invoke receiver         Receiver could not be called because of insufficient permissions
+                                          (for example, HTTP 403 error).
+
+Receiver tries to redirect                Receiver could not be reached (HTTP 302 error).
+
+Internal server error in receiver         Internal server error occurred in the receiver system (for example, HTTP 500 error).
+
+Others – not further qualified            Escalation category has not been further qualified.
+
+Escalation End Event Behavior (imp)
+-----------------------------
+This topic describes the behavior of integration processes containing an escalation end event.
+
+The Escalation Event does not abort the integration flow processing as a whole but only throws the Escalation Event .
+
+Main integration process:
+If an Escalation End Event is used in the main integration process, the escalation end event throws an Escalated
+event and the processing stops afterwards as there are no further steps to execute
+
+Local integration process:
+If an integration process is calling a local integration process and an escalation event has been defined in the
+local integration process, the Escalation Event is thrown, and the processing continues in the calling flow.
+If there are still steps to process in the main flow, the processing continues normally at this level
+and the main flow message status will be Completed.
+
+Note :
+In case of a synchronous exchange pattern, the process raises an exception and the message will be marked as Escalated.
+This behavior violates the process described above that no exception will be raised, but this handling was explicitly
+chosen, since the event is usually defined in the exception sub-process and the sender expects a valid response
+in a synchronous exchange pattern.
+
+Note :
+In case of an asynchronous exchange pattern no exception will be raised and the message status will be Escalated.
+
+Note
+If the Escalation End Event is used within an exception subprocess, the message processing stops and the message
+status will be Escalated. This is regardless of whether the exception subprocess is used in the main Integration
+Process or a Local Integration Process.
+

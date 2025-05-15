@@ -1,0 +1,72 @@
+we have only open connector receiver adapter for connection non spa
+
+config :
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/openconnectors-receiver-adapter
+
+
+Add Receiver Adapter
+Open your Integration Flow.
+
+Drag and drop the Open Connectors Receiver Adapter to the Receiver lane.
+Double-click the adapter to open its configuration.
+
+2. Configure the General Tab
+Name: Give a meaningful name for the channel (example: OpenConnector_Receiver).
+
+3. Configure the Connection Tab
+3.1 Base URI
+Copy the correct Base URI according to your SAP BTP region.
+
+Example:
+https://api.openconnectors.ext.int.sap.hana.ondemand.com/elements/api-v2
+Paste it into the Base URI field.
+
+3.2 Credential Name
+Choose an existing Security Artifact (type: OpenConnector Credentials).
+If not created yet, first deploy a User Credentials artifact (Open Connectors type) in Security Material.
+
+3.3 Resource
+Click Select next to Resource.
+It will show a list of available Resources from your Open Connectors instance.
+Choose the API resource you want to access (example: contacts, accounts).
+
+3.4 Method
+Select the HTTP method:
+
+GET → Read Data
+POST → Create Data
+PUT/PATCH → Update Data
+DELETE → Delete Data
+
+3.5 Request Format
+Choose the format of incoming message:
+JSON
+XML (only if your payload is in XML, and must use <SwaggerParser> structure).
+
+3.6 Response Format
+Choose the format you want in the response:
+Same options: JSON or XML.
+
+Do not add manual format converters in the IFlow.
+
+3.7 Query Parameters for Resource (Optional)
+If your Resource path has variables or you want to apply filters:
+
+Provide values like:
+varname1=value1, varname2=value2
+For query parameters:
+
+Example:
+${header.query1};${header.query2}
+3.8 Page Size and Process in Pages (Optional)
+If you expect large results:
+
+Page Size: Enter number of records per page.
+
+Process in Pages: Enable this if using in Looping Process Call.
+
+3.9 Timeout
+Set the Timeout (milliseconds) to avoid waiting too long for responses.
+
+Example: 60000 (means 60 seconds).
+

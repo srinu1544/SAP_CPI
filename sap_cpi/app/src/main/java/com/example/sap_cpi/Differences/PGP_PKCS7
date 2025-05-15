@@ -1,0 +1,27 @@
+pgp and pkcs#7
+--------------
+
+
+PGP (Pretty Good Privacy)
+🔹 Purpose: Used for file encryption and secure data exchange
+🔹 Encryption Method: Asymmetric encryption with public-private key pairs
+🔹 Key Management: Requires PGP key pairs (Public & Private Keys)
+🔹 Supported Algorithms: RSA, AES, CAST5, TripleDES
+🔹 Usage in SAP CPI: Implemented via PGP Encryptor & PGP Decryptor
+🔹 Best for: Securing file transfers and protecting sensitive data
+
+
+PKCS#7 (Public Key Cryptography Standards #7)
+🔹 Purpose: Used for secure message exchange in web services and APIs
+🔹 Encryption Method: Based on CMS (Cryptographic Message Syntax)
+🔹 Key Management: Uses X.509 certificates for encryption
+🔹 Supported Algorithms: AES, DES, RC2, Camellia, etc.
+🔹 Usage in SAP CPI: Implemented via PKCS#7 Encryptor & PKCS#7 Decryptor
+🔹 Best for: B2B integrations and encrypted API communications
+
+Which One to Use?
+✔ PGP → Best for securing file transfers & emails
+✔ PKCS#7 → Ideal for message encryption in web services & APIs
+
+
+

@@ -1,0 +1,76 @@
+
+  Content Modifier ->
+------------------------------------------------------------------------------------------------------------------------------
+You use the content modifier step to modify the content of incoming message by providing additional
+information in the header or body of the message
+
+The Content Modifier is used to modify the content of a message by adding, updating, or deleting message headers,
+properties, or payload fields.
+It allows for flexible manipulation of message data during runtime.
+
+
+message headers
+---------------
+-> headers are usually sent by http based systems to the cpi tenant
+-> CPI delete all incoming headers unless they are allowed in the runtime configuration of the integration flow
+-> Headers can be added, deleted and manipulated in cpi
+-> Headers are handed over to the receiver systems
+-> Receiver systems can accept header values of site between 4 kb to 16 kb
+-> unwanted header should be deleted before message is sent to receiver.
+-> headers will transport to other iflows and receiver system.
+-> message headers can be shared data bw dependent iflows
+
+Exchange property
+-----------------
+-> Exchange is a data container that's available during message processing.
+-> additional data apart from the actual message can be stored temporarily in the properties area of the exchange.
+-> They are available to all the steps in the iflow during message processing
+-> exchange properties can be added, deleted and manipulated in CPI. even the whole payload
+-> They are not handed over to the receiver systems.
+-> never transfer out of an iflow
+
+
+
+message Body
+------------
+
+config : (General, Message Header, Exchange Property, Message Body)
+
+General : Name
+
+Message Headers :
+Action      Name       Source Type       Source Value       Data Type     Default Value
+
+Create                 Constant
+Delete                 Expression
+                       Global Variable
+                       Header
+                       Locale Variable
+                       Number Range
+                       Property
+                       XPath
+
+Exchange Property :
+Action      Name       Source Type       Source Value       Data Type     Default Value
+
+Create                 Constant
+Delete                 Expression
+                       Global Variable
+                       Header
+                       Locale Variable
+                       Number Range
+                       Property
+                       XPath
+
+Message Body :
+Type (DD) : (Constant, Expression)
+-> simplifies whether body includes simple expression or not.
+
+Body :
+-> Enter a Expression or a constant to form a new body
+
+
+
+
+
+*/

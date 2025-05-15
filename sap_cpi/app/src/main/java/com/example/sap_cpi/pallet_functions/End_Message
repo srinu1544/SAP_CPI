@@ -1,0 +1,6 @@
+ End Message ->
+ --------------------------------------------------------------------------------------------------------------------------
+ -> This is the component that allows you to send a message to a receiver when an integration process ends.
+ You can use this component to communicate the outcome of a process to another system.
+ -> Using an End Message event to wrap the exception in a fault message and send it back to the sender in the payload
+

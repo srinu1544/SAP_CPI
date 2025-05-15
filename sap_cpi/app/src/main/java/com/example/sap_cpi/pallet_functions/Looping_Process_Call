@@ -1,0 +1,48 @@
+
+Looping Process Call
+---------------------------------------------------------------------------------------------------
+This step uses generates the following property: CamelLoopIndex
+
+-> The looping process call element is used to invoke a process within a loop or iteration based on specific
+conditions
+-> it allows for the repeated execution of a process for each item in a collection or until a certain condition
+met.
+-> it is useful when there is a need to process multiple items or perform iterative tasks within an integration flow
+-> we are using the when we using the success factor
+-> we unable to pull the data for the particular entity or odata service or success factor then we will go
+with this looping call
+-> this is useful for pagination like scenarios
+
+config : (General, Processing)
+General : Name
+
+Processing :
+
+Lopping integarion process (Select) :
+-> select the name of the local integration process
+
+LOOPING CONDITION DETAILS (TV)
+Expression Type (DD) : (NON-XML , XML)
+-> XML : for XPath expressions, for example: //customerName = ‘Smith’.
+-> Non-XML : for Camel Simple Expression Language.
+
+Note
+Examples:
+${header.SenderId}, which indicates the SenderId header field.
+${in.body}, which indicates the body of the incoming message.
+
+Condition Expression (ET) :
+-> Enter an expression to specify a routing condition. As long as the condition is true, the loop processing is executed.
+   Example of XML conditions: /bank_name/bank_id = 'mybank', //BankId = 'ABC'
+   Example of Non-XML conditions: ${header.SenderId} = '001'
+
+Max Numbers of iteration (ET) :
+-> Specify the maximum number of iterations the loop is to be executed. Even if the condition is still
+   met, the loop ends afterwards.
+
+Action when Max. Iterations Reached (DD) : (Throw Exception , End Loop)
+-----------------------------------------
+-> Select to throw an exception when the maximum number of iterations has been reached or to exit the
+  loop and continue with the main process without error even if the looping condition continues to be true.
+
+  */

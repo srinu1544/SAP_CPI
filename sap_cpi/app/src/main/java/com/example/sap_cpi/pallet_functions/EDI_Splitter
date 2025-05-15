@@ -1,0 +1,41 @@
+EDI Splitter ->
+-------------------------------------------------------------------------------------------------
+-> The Edi splitter is specifically designed to splitEDI messages into individual segments or transactions
+-> It allows for the extraction and processing of individual segments or transactions within Edi messages.
+
+You use the EDI splitter to split inbound bulk EDI messages, and configure the splitter to validate
+and acknowledge the inbound messages. If you choose to acknowledge the EDI message, then the splitter
+transmits a functional acknowledgement after processing the bulk EDI message. A bulk EDI message can
+contain one or more EDI formats, such as EDIFACT, ODETTE, EANCOM, TRADACOMS, and ASC-X12. You can
+configure the EDI splitter to process different EDI formats depending on the business requirements
+of the trading partners.
+
+
+TODO -- https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-edi-splitter?q=EDI+Spilitter+
+config : (General, processing , EDIFACT , X12 , TRADACOM)
+General : Name
+
+ Processing :
+ Parallel Processing (CB) :
+-> Allow simultaneous process of split message with in a specific time period.
+
+ Timeout (in sec) (ET) :
+-> Set the time limit in seconds for the EDI splitter to process individual split messages.
+   If there are any processes still pending once the time has lapsed, the splitter terminates
+   the processes and updates the MPL status.
+
+   EDIFACT :
+   Source Encoding (DD) : (UTF-8, ISO-8859-1)
+   -> Use the appropriate encoding format of the inbound EDIFACT interchange. The following
+      encoding formats are available in the EDI splitter:
+      UTF-8
+      ISO-8859-1
+      You can also set this field using the header SAP_EDISPLITTER_EDIFACT_SOURCE_ENCODING.
+      The values for the headers can be one of the following:
+      UTF-8
+      ISO-8859-1
+
+
+
+
+

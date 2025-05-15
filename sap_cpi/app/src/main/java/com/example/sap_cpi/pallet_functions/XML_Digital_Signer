@@ -1,0 +1,19 @@
+package com.example.sap_cpi.pallet_functions
+
+  XML Digital Signer ->
+  -------------------------------------------------------------------------------------------------
+  In SAP Cloud Integration (CPI), the XML Digital Signer is a step in an iFlow that uses XML
+  Signature standard to digitally sign and validate XML messages. This ensures the authenticity
+  of the message by guaranteeing the sender's identity and preventing alterations after signing.
+  The digital signature is stored as an XML element within the message itself.
+
+  The XML Signature Verifier validates the XML signature contained in the incoming message body and
+  returns the content which was signed in the outgoing message body.
+
+ TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/xml-digital-signature?q=XML+digital+signature+
+ config : (General, Processing)
+ General : Name
+
+ Processing :
+ unable to note configs here please refer above config link
+

@@ -1,0 +1,55 @@
+  PKCS#7 Encrypter->
+  -----------------------------------------------------------------------------------------------------
+ This is a message transformation step that encrypts a message using public key that is deployed
+ on the tenant.The public key based on the PKCS#7 standard, which is newer version of the PKCS.
+ which is widely used method for encrypting and signing data you can use PGP encryptor in scenarios
+ where you need to secure the communication with  a participant on the cloud using PKCS#7 encryption
+
+ config : (Processing)
+
+ Processing :
+
+ Block Size(in bytes) (ET) : 2048
+ -> Enter the size of the data that is to be encoded.
+    If you enter a value equal to or less than 0, the whole data is encoded.
+
+Encode Body with Base64 (CB) :
+-> Select this option if the message body will be base64-encoded.
+
+Signatures (DD) :
+-> Select one of the following options:
+   Enveloped Data Only
+   Select this option if you want to apply encryption only.
+   Signed and Enveloped Data
+   Select this option if you want to apply both encryption and signing.
+
+Content Encryption Algorithm (DD) :  ( AES/GCM/NoPadding,
+                                       AES/CCM/NoPadding, AES/CBC/PKCS5Padding, ARCFOUR/ECB/NoPadding,
+                                       Camellia/CBC/PKCS5Padding, CAST5/CBC/PKCS5Padding, DES/CBC/PKCS5Padding,
+                                       DESede/CBC/PKCS5Padding, RC2/CBC/PKCS5Padding.)
+-> Specify the algorithm that is to be used to encrypt the payload.
+
+   Supported algorithms (by the symmetric key) for content encryption
+   (format Cipher/Operation Mode/Padding Scheme): AES/GCM/NoPadding,
+   AES/CCM/NoPadding, AES/CBC/PKCS5Padding, ARCFOUR/ECB/NoPadding,
+   Camellia/CBC/PKCS5Padding, CAST5/CBC/PKCS5Padding, DES/CBC/PKCS5Padding,
+   DESede/CBC/PKCS5Padding, RC2/CBC/PKCS5Padding.
+
+   The following options are available when for Signatures the option Enveloped Data
+   Only is selected: AES/GCM/NoPadding, AES/CCM/NoPadding, AES/CCM/NoPadding, AES/GCM/NoPadding.
+
+Secret Key Length (DD) (128,192,256):
+-> Specify the key length.
+   The offered key lengths depend on the chosen encryption algorithm.
+
+Receiver Public Key Alias (Add) :
+-> Specify one or more aliases.
+   Enter an alias to select the public key from the keystore.
+   You can enter ${header.headername} or ${property.propertyname} to read the name
+   dynamically from a header or exchange property.
+
+
+
+
+
+

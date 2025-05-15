@@ -1,0 +1,37 @@
+
+The core difference between Poll Enrich and Content Enricher lies in how they obtain and
+incorporate additional data into a message. Poll Enrich uses a polling consumer to periodically
+retrieve data, often from an external system or file, and combines it with the original message.
+Content Enricher, on the other hand, uses a producer to make a request-reply call to an external
+system, and then merges the response into the original message.
+
+Poll Enrich:
+------------
+
+Purpose:
+Primarily used for event-driven messaging, such as reading a file or downloading data from a server.
+
+Mechanism:
+Employs a polling consumer to periodically check for new data at an endpoint.
+
+Data Source:
+Typically retrieves data from external storage systems like SFTP servers or files.
+
+Aggregation:
+The retrieved data is typically combined or appended to the original message, as configured by the aggregation option.
+
+
+Content Enricher:
+-----------------
+Purpose:
+Used for request-reply messaging, where an external system is invoked to provide additional data for the message.
+
+Mechanism:
+Sends the current exchange (message) to a producer endpoint and uses the reply (response) from the external system.
+
+Data Source:
+Typically retrieves data from external systems like databases, APIs, or other services.
+
+Aggregation:
+The response from the external system is merged into the original message,
+using a defined aggregation algorithm (e.g., combine or enrich).

@@ -1,11 +1,13 @@
 Q. What is the difference between Value mapping and Fix values? what are the onfaillure options we are having ?
 A. fix values :
-   -> when ever we have limited number of values whose are not changed frequently we can to with fixvalue
+   ------------
+   -> when ever we have limited number of values whose are not changed frequently we can to with fix value
    -> limited values
    -> used only for particular iflow
    -> complicate to modify the data
 
   value mapping :
+  ---------------
   -> if we have n number of values those are changing frequently we can go with value mappings
   -> this we can maintain out of iflow so we can modify easily.
   -> n number of values (more limit)

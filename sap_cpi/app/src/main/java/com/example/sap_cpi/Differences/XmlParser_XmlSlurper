@@ -1,0 +1,9 @@
+XmlParser:
+Use when you need to update and read the XML simultaneously.
+Ideal for scenarios where the entire XML document is processed or manipulated incrementally.
+Example: Adding, removing, or modifying nodes directly.
+
+XmlSlurper:
+Use when you only need to read specific parts of an XML file.
+Suitable for transforming an existing document into another format.
+Example: Extracting values using GPath expressions without modifying the original XML.

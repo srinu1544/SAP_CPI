@@ -1,0 +1,33 @@
+package com.example.sap_cpi.pallet_functions
+
+PKCS#7/CMS Splitter ->
+----------------------------------------------------------------------------------------------------
+-> Use a PKCS#7/CMS Splitter if you want to break down a PKCS7 Signed Data message into two files:
+one containing the signature and one containing the content
+
+
+todo -- https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-pkcs-7-cms-splitter
+config : (General, Processing)
+General :  Name
+
+Processing :
+   Payload File Name (ET) :
+   ->  Name of the file that will contain the payload after the splitting step.
+
+   Signature File Name (ET) :
+   -> Name of the file (extension .sig) that will contain the signature after the splitting step
+
+   Wrap by Content Info (CB) :
+   -> Select this option if you want to wrap PKCS#7 signed data containing the signature into PKCS#7 content.
+
+   Payload First (CB):
+   -> Select this option if you want the payload to be the first message returned.
+
+   Base64 Payload (CB) :
+   ->  Select this option if you want to encode the payload with the base64 encoding scheme after splitting.
+
+   BASE64 Signature (CB) :
+    -> Select this option if you want to encode the signature using the base64 encoding scheme after splitting.
+
+
+

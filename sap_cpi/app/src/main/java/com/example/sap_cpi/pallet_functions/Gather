@@ -1,0 +1,71 @@
+image11 ,image12
+
+Gather->
+----------------------------------------------------------------------------------------------------
+This is a message routing step that merges messages from different routes into a single message with
+the option to define certain strategies on how to combine the initial messages you can use gather in
+scenarios where you need to consolidate messages that are split or multicast in the integration flow.
+-> if you want to gather the records  which got  multicast or which got split in cpi in to a single data is called gather
+-> The Gather step merges messages from different routes (into a single message) with the option to define certain
+strategies how to combine the initial messages.
+
+
+TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-gather-and-join?q=gather
+config : (General , Aggregation Strategy)
+General : Name
+
+Aggregation Strategy :
+Incoming formats (DD): (Any, Plain Text, XMl (Different format) , XML (Same format))
+
+               -> Any
+              -> Plain Text
+              -> XML (Different format)
+              -> XML (Same format)
+
+
+-> if select Any in above
+
+ Aggregation Algorithm  (DD): (Tar, Zip)  like this
+
+  if select Plain Text in above DD
+  Aggregation Algorithm  (DD): (concatenate , Tar, Zip)  like this
+
+    if select XML (Different format) in above DD
+    Aggregation Algorithm  (DD): (combine , Tar, Zip)  like this
+
+      if select XML (Same format) in above DD
+      Aggregation Algorithm  (DD): (combine, combine in xpath , Tar, Zip)  like this
+
+  -> combine :
+      Combine (can only be selected if for Incoming Format you have selected XML (Same Format)
+       or XML (Different Format))
+  -> combine at xpath :
+     Combine at XPath (can only be selected if for Incoming Format you have selected XML (Same Format))
+     Combine the incoming messages at the specified XPath.
+     Concatenate (can only be selected if for Incoming Format you have selected Plain Text)
+     concatenate the information from the different sources one after another.
+
+  if select combine in xpath will shown
+  Combine from source (XPath) (ET) :
+  -> XPath of the node that you are using as reference in the source message to retrieve the information.
+
+  Combine at target (XPath) (ET) :
+  -> XPath of node that acts as the root for combined message.
+
+  -> Tar :
+      Aggregates files to an archive (.tar) file.
+
+  -> Zip :
+     Aggregates files to an archive (.zip) file.
+
+     if select Tar or zip File name ET will shown
+     File Name (ET) :
+    ->  Specify a simple expression to define unique file names within the archive.
+        If not specified, header CamelFileName is evaluated. In case the header is not
+       available at runtime, a unique file name will be generated.
+
+  For all three incoming formats, you can also choose the strategy Zip that allows you to merge the input into a single
+  archive (.zip) file. In that case, you need to specify a file name pattern.
+
+
+

@@ -1,0 +1,21 @@
+
+Groovy script ->
+-------------------------------------------------------------------------------------------------
+In SAP Cloud Platform Integration (CPI), the Groovy Script pallet function allows you to integrate
+Groovy scripts into your integration flows for data transformations, logic execution, and custom
+functionality. You can access and manipulate message payloads, headers, and properties within Groovy
+scripts to achieve specific business requirements
+
+
+config :  (General, Processing)
+Processing :
+
+Script File (Select) :
+-> select the script file
+
+Script Function (ET) :
+-> Enter the function name that has to be  initially called for script execution
+
+
+mandatory package
+import com.sap.gateway.ip.core.customdev.util.Message;

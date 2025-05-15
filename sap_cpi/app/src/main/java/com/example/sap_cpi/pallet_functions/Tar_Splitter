@@ -1,0 +1,22 @@
+Tar Splitter ->
+-------------------------------------------------------------------------------------------------
+->  This step splits an archive (.tar) file into individual files.
+The tar splitter is used to split tar archive files into individual files or segments.
+-> It enables the extraction and processing of individual files or segments with in tar archive files
+
+config : (General,Processing)
+General : Name
+
+Processing :
+
+File Name Pattern (ET) :
+-> Enter a file name pattern if you like to process only specific files from the archive.
+   For example, if you like to process only XML files from the archive, enter the following expression:
+   *.xml
+   If you don't enter anything, all files from the archive are processed.
+
+Stop on Exception (CB) :
+-> Select this option to stop file processing if an exception occurs.
+   If you deselect this option, splitting the archive and processing of
+   the individual files continues, even if processing one of them fails.
+

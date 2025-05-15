@@ -1,0 +1,37 @@
+CSV TO XML :
+------------
+Description: Converts comma-separated values (CSV) data into structured XML format.
+
+config : (General , Processing)
+
+General :  Name
+
+Processing :
+XML Schema (Select) :
+-> select the path where xml schema located.
+
+Path to Target Element in XSD (ET) :
+-> XPath in the XML schema file where you want to place the content from CSV file.
+
+Record Marker in CSV (ET) :
+-> Enter the Record identifier in CSV file.
+
+Field Separator in CSV  (DD) : (colon , comma , Dot , pipe , semicolon , space, Tab
+-> Enter field separator in csv file
+
+Exclude First Line Header  (CB) :
+-> Ignore first line of csv file for conversion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

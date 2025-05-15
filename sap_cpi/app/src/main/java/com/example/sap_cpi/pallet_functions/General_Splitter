@@ -1,0 +1,64 @@
+image13
+image14
+
+
+General Splitter ->
+----------------
+-> The general splitter is versatile component used to split messages based on a specified delimiter or criteria
+-> it enables the splitting of messages into multiple parts or segments based on the defined roles or conditions
+->  it sends the message individually to target system
+->  it retain the root(enveloping element) element when split data
+
+The General splitter is a versatile component used to split messages based on a specified delimiter or criteria
+-> It enables the splitting of messages into multiple parts or segments based on the defined role or conditions
+-> Splits a composite message into individual messages, but retains the enveloping elements (like the root node)
+   in each of the split messages .
+-> Each split message contains the original message's structure, including the surrounding tags or elements .
+   Useful when the context of the enveloping elements is important for subsequent processing.
+
+The General Splitter splits a composite message comprising N messages into N individual messages,
+each containing 1 message with the enveloping elements of the composite message. The term enveloping
+elements refers to these elements including the split point. Note elements that follow the one that
+is indicated as split point in the original message (but on the same level), are'nt counted as enveloping
+elements. They won't be part of the resulting messages.
+
+
+configure
+----------
+TODO - https://help.sap.com/docs/integration-suite/sap-integration-suite/define-general-splitter?q=General+splitter+
+Expression Type (DD):
+                      Line Breaker
+                      X path
+
+xpath expression (ET) :
+                  -> it is visible only if select on xpath
+                  -> input xpath
+Grouping (ET) :
+            -> input number
+            -> the size of group into which the composite message is to be split
+            -> for example , if a message has 10 nodes and grouping is defined as 2 the message is split into
+               5 messages with 2 nodes each
+Streaming (CB) :
+            -> select this option if you want to stream the process of splitting a large composite messages into
+             series of messages in small chunks
+
+Parallel processing (CB) : (not maintain order in delivery)
+                          -> select this check box if you want to enable (parallel)
+                             processing of all the split messages at once
+
+ Number of concurrent  process (ET) :
+                          -> it visible only if select parallel processing
+                          -> if you have select parallel processing the split messages are processed concurrently in threads
+                              define how many concurrent processes to use in the splitter.
+                              default is 10 , allowed 50.
+Time out (ET) :
+          -> It is visible if select parallel processing
+          -> if the concurrent processing of the split messages does not respond in the specified time , the next elements
+             in the aborted and the next elements in the sequence  flow are processed.
+          -> default value is 300.
+
+ stop on Exception (CB) :
+                        -> you have the option to stop messages processing immediately if an exception occurs.
+                        -> if you disable this option, message splitting and processing of the sub messages continues,
+                          even if one of them fails.
+

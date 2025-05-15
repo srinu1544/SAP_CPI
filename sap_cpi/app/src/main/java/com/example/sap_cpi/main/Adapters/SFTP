@@ -1,9 +1,0 @@
-SFTP Adapter : (secure file transport protocol)
-Sending/Receiving files (CSV, XML, JSON) via SFTP (Secure File Transfer Protocol).
-Integrating with banks, vendors, or third-party applications.
-port number : 22
-
-FOR SFTP Public key generation :
-monitor -> manage keystore -> create -> SSH key -> fill details with name like (SFTP_Public)
--> IN SFTP_Public (...) 3 dots click on download public open ssh key
-This key we want to give server side person.

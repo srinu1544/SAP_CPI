@@ -1,0 +1,46 @@
+JDBC Adapter : (java data base connectivity) (Receiver)
+--------------------------------------------------------------------------------------------------
+Database communication.
+Integration between SAP CPI and databases (SAP HANA, MySQL, SQL Server, Oracle, etc.)
+Fetching master data (e.g., Product, Customer, Employee data)
+Storing API logs or transactional data into a database
+Triggering SQL queries from SAP applications
+
+JDBC URL format :
+jdbc:sqlserver://<virtualHost>:<virtualPort>;DatabaseName=<databaseName>;
+Oracle uses jdbc:oracle:thin:@<host>[:<port>]:<SID>
+
+--------------------------------------------------------------------------------------------------
+The JDBC adapter in SAP Cloud Platform Integration (CPI) enables integration flows to interact with database
+systems, allowing for data exchange and manipulation. Key points include connecting to various databases
+(cloud or on-premise), handling JDBC drivers and data sources, and supporting SQL operations and
+stored procedures. It also facilitates error handling and recovery, including fallbacks to backup databases.
+
+
+config : (General, Connection)
+General :  Name
+
+Processing :
+
+CONNECTION DETAILS (TV)
+
+JDBC Data Source Alias (ET) :
+-> provide the name of jdbc data source alias mention in the jdbc materials
+
+Connection Timeout (in s) (ET) :
+-> specify the duration wait for jdbc response
+
+Query/Response Timeout (in s) (ET) :
+-> specify the duration wait for Query response
+
+Maximum Records (ET) :
+-> Provide a value to display the maximum number of records to be fetched.
+
+Batch Mode (CB) :
+-> Toggle between single and batch statement
+
+Batch Operation  (DD) : (Automatic , non-Automatic)
+-> (configure only if batch mode check box check)
+select automatic for adapter control and select non-automatic for driver control.
+
+

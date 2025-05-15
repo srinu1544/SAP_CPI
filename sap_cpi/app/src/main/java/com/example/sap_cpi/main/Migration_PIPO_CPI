@@ -1,0 +1,64 @@
+Migrating mappings from SAP PI/PO to SAP CPI involves converting message mappings and potentially
+associated artifacts like function libraries. This can be done using tools like the SAP Integration
+Suite Migration Tooling or tools like Figaf. The process often includes steps like downloading
+relevant Java files, converting them to Groovy, and adjusting the code for CPI compatibility.
+
+Here's a more detailed breakdown of the process:
+
+1. Preparation and Planning:
+Assess the existing SAP PI/PO environment: Analyze the mappings, function libraries, and other artifacts to determine their compatibility with SAP CPI and identify potential challenges.
+Identify migration scope: Determine which mappings and artifacts need to be migrated.
+
+Plan the migration approach: Choose the appropriate migration strategy (automatic, semi-automatic, or manual)
+based on the complexity and volume of the migration.
+
+2. Migration Process:
+Using SAP Integration Suite Migration Tooling (Manual or Semi-Automatic):
+Download relevant artifacts: Download Java files, function libraries, and other necessary artifacts from SAP PI/PO.
+
+Import and convert mappings: Import the downloaded artifacts into SAP CPI and convert them to the desired format
+(e.g., Groovy scripts for function libraries).
+
+Adjust code for CPI compatibility: Modify the code to ensure it works with the CPI environment and its features.
+Using Figaf Migration Tool (Semi-Automatic/Automated):
+Connect to SAP PI/PO and SAP CPI: Establish connections between the Figaf tool and the respective systems.
+
+Select ICOs (Integration Communication Objects) for migration: Choose the ICOs and their associated mappings
+and function libraries to be migrated.
+
+Migrate to CPI: The tool will automatically convert the ICOs to Integration Flows (IFlows), handle mappings
+and function libraries, and transport the IFlows to the CPI environment.
+
+3. Testing and Validation:
+Test the migrated mappings:
+Thoroughly test the migrated mappings in the SAP CPI environment to ensure they function as expected.
+Validate the migration:
+Verify that the migrated mappings and associated artifacts are correctly configured and that the
+integration flows are working as intended.
+
+4. Post-Migration Activities:
+Monitor the migrated integration flows:
+Monitor the performance and functionality of the migrated integration flows in the SAP CPI environment.
+
+Adjust the migration as needed:
+Make any necessary adjustments or improvements to the migrated mappings and integration flows based on
+post-migration testing and monitoring.
+
+Key Considerations:
+Function Libraries:
+SAP CPI supports function libraries, but they may require conversion from the PI/PO format to Groovy or
+CPI's Function Library objects.
+
+Mapping Types:
+Different types of mappings in PI/PO (e.g., graphical, content conversion, value mapping) require different
+approaches for migration to CPI.
+
+B2B Integration:
+SAP CPI's B2B capabilities may differ from PI/PO's B2B modules, requiring adjustments and potential rewrites of mappings.
+
+Testing:
+Thorough testing is crucial to ensure that the migrated mappings and integration flows function correctly in the CPI
+environment.
+
+By following these steps and considering the key factors, you can effectively migrate your mappings from
+SAP PI/PO to SAP CPI and leverage the benefits of the cloud-based integration platform.
