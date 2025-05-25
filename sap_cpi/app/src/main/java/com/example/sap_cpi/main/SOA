@@ -1,0 +1,8 @@
+SOA (service oriented architecture) :
+------------------------------------
+
+In the context of SAP Cloud Platform Integration (CPI), the SOA Manager (SOA MANAGER)
+is a tool used within the SAP backend to configure and manage web services,
+specifically for scenarios involving SAP systems and external systems.
+It facilitates the setup of service providers and consumer proxies for local systems,
+enabling communication and data exchange through web services.

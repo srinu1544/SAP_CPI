@@ -1,0 +1,18 @@
+In SAP CPI, both GZIP and ZIP are used for compressing and decompressing files, but they
+utilize different algorithms. GZIP uses the DEFLATE algorithm, while ZIP uses a variety
+of algorithms. GZIP is primarily used for compressing individual files, whereas ZIP can
+be used to create archives containing multiple files.
+
+
+GZIP:
+Compression Algorithm: Uses the DEFLATE algorithm, which combines LZ77 and Huffman coding.
+Purpose: Primarily designed for compressing single files.
+Common Use Cases: Used in web servers to reduce the size of files transmitted over the network, according to Hostinger.
+In SAP CPI: GZIP encoders and decoders and decoders are available to compress and decompress individual files.
+
+
+ZIP:
+Compression Algorithm: Uses a variety of algorithms, including Deflate.
+Purpose: Primarily used for creating archives containing multiple files, including compressed versions of the individual files within the archive.
+Common Use Cases: Used for archiving and sharing multiple files together, says Lenovo.
+In SAP CPI: ZIP encoders and decoders are available to compress and decompress files, with the ZIP Splitter available for processing multiple files within an archive.

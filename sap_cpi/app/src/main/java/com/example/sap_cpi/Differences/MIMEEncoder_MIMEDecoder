@@ -1,0 +1,15 @@
+In SAP CPI, the MIME Multipart Encoder transforms a message into a multipart format, while the
+MIME Multipart Decoder converts a multipart message back into a standard message with attachments.
+The encoder prepares a message for transmission that may include attachments, while the decoder
+reconstructs the original message from the multipart parts.
+
+MIME Multipart Encoder:
+Purpose: Takes a message, potentially with attachments, and converts it into a MIME multipart format.
+How it works: Packages the message body as the first part and any attachments as subsequent parts of the multipart message.
+Output: A MIME multipart message with a Content-Type header indicating multipart.
+
+
+MIME Multipart Decoder:
+Purpose: Takes a MIME multipart message and transforms it back into a standard message with attachments.
+How it works: Extracts the first part of the multipart message as the main message body and any remaining parts as attachments.
+Output: A standard message with the extracted body and attachments.
