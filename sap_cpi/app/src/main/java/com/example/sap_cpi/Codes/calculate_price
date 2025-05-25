@@ -6,7 +6,7 @@ Parse XML into a document tree that may be traversed similar to XPath expression
 def root = new XmlSlurper().parseText(body)
 def cnt = root.'*'.size()
 for (i=0;i<cnt;i++)
- {
+{
    price = root.Order[i].PRICE.text()
    qty = root.Order[i].ORDQTY.text()
    value = price.toInteger() * qty.toInteger()

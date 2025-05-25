@@ -97,9 +97,6 @@ Create New Connection :
 ->  If you enable this option, the adapter creates a new RFC connection in the backend
      system, every time a new call is made to the target system.
 
-
-
-
 video reference :
 TODO - https://www.youtube.com/watch?v=K_0Pw3ylPwI&t=37s&ab_channel=BTP_CPIVideos%26KidsFunnyShorts
 

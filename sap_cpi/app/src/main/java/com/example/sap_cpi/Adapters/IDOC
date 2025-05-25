@@ -1,9 +1,6 @@
-
 IDoc Adapter : (Intermediate Document)
 -> (For SAP ECC/S4HANA integration)
 -> Used for SAP-to-SAP communication.
-
-
 
 IDOC Sender :
 ----------------------------------------------------------------------------------------------------
@@ -15,3 +12,23 @@ TODO - TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/
 
 blog reference :
 TODO - https://community.sap.com/t5/technology-blogs-by-members/sap-s4h-idoc-to-sap-cpi-inbound-idoc-interface/ba-p/13484455
+
+
+Q. Idoc types ?
+1. Master Data IDocs:
+CREMAS/CREMAS02: Vendor master data.
+DEBMAS/DEBMAS03: Customer master data.
+MATMAS/MATMAS03: Material master data.
+GLMAST/GLMAST01: General ledger account.
+COSMAS/COSMAS01: Cost center.
+COEMAS/COEMAS01: Cost element.
+PRCMAS/PRCMAS01: Profit center.
+
+2. Logistics IDocs:
+ORDERS/ORDERS05: Purchase order.
+INVOIC: Invoice.
+DELFOR: Delivery forecast.
+DESADV: Shipping notification.
+INFREC/INFREC01: Purchasing info record.
+ARTMAS/ARTMAS02: Article master.
+PRDCAT/PRDCAT01: Product catalog.

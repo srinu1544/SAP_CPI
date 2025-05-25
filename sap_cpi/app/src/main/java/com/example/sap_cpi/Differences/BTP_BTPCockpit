@@ -15,9 +15,9 @@ SAP BTP Cockpit:
 -> It's the central web-based user interface for administrators and developers to manage and
    administer their SAP BTP accounts.
 -> The Cockpit provides access to various functions, including managing applications, services,
-    security, and resources.
+   security, and resources.
 -> It's the primary tool for creating and managing resources on BTP, including applications,
-    services, and security settings.
+   services, and security settings.
 -> Administrators can use the Cockpit to onboard users, assign roles, and manage access permissions
    within their BTP accounts.
 -> The Cockpit also provides a dashboard for monitoring the status of applications and services

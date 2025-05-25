@@ -1,5 +1,11 @@
+//TODO -- presentation_1.ppt
+
+
+ALE Settings :
+---------------
+
+
 IN SAP SYSTEM GOTO
-------------------
 1 create iflow
 2. download the certificates in cpi tenant
 
@@ -79,7 +85,7 @@ go to Trust - SSL Client SSL Client (Anonymous) - double click on this
  Accounting doc: FIDCCP02
 
  Standard Message types :
- ------------------------
+ -----------------------
  Customer master: DEBMAS
  Material master: MATMAS
  PO to Orders: ORDERS.

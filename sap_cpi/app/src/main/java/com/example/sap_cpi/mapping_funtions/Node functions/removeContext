@@ -3,13 +3,20 @@ image43
 
  Remove context :
  ----------------
-✅ Purpose:
-Removes the context changes while keeping all values intact.
-Converts multiple context levels into a flat list.
+ In SAP CPI especially when working with XML payloads, message mappings often deal with multiple levels of context.
+ The removeContext() function is used within a message mapping to flatten the structure  by removing context levels.
 
-✅ When to Use:
-When you want to remove hierarchy levels but keep all values.
-When dealing with multiple occurrences of elements.
+ Purpose:
+ The removeContext function removes all context changes and brings an values to the same level , making them part of
+ the same context.
+
+
+ When to Use:
+ In SAP CPI every node in a mapping may create its own context. This impacts how loops and conditions behave. by removing context
+ ->  you make the data more linear
+ -> it becomes easier to process in functions like useOneASMany or custom logic.
+
+
 
 before remove context
 Context 1: [Apple]

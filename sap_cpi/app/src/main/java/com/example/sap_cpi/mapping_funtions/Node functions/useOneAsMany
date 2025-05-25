@@ -1,0 +1,6 @@
+useOneAsMany :
+--------------
+The useOneAsMany() function in SAP CPI is a powerful tool for transforming messages when a single
+piece of data needs to be replicated multiple times based on the occurrences of another element
+in the message. It's used when you need to write a field that appears once in the source message
+to the target structure as many times as another field appears.

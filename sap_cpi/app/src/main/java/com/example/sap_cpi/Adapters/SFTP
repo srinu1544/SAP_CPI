@@ -7,8 +7,6 @@ free cloud -- https://app.sftpcloud.io/register
 free on-premise -- https://www.rebex.net/tiny-sftp-server/
 
 
-
-
 SFTP Adapter
 ---------------------------------------------------------------------------------------------
 
@@ -29,7 +27,7 @@ This key we want to give server side person.
 
 
 configuration process  :
----------------------
+-----------------------
 first need to do test connection with using
 Go to test connection -> SSH
 host and port

@@ -4,6 +4,35 @@ securely connect to external systems. They ensure that integrations can access A
 databases, and services without exposing sensitive information.
 
 
+1. User Credentials:
+Basic authentication using user names and passwords.
+Suitable for simple scenarios where an application needs to authenticate using a user's credentials.
+Can be stored as secure parameters in SAP CPI.
+
+2. OAuth Client Credentials:
+Used when an application needs to authenticate on its own behalf, without user interaction.
+The application presents its client credentials (client ID and client secret) to obtain an access token.
+Suitable for server-to-server communication and accessing resources under the application's control.
+The access token is cached and auto-renewed by SAP CPI.
+
+3. OAuth SAML Bearer Assertion:
+A flow where an OAuth client uses a SAML 2.0 assertion to obtain an access token.
+The SAML assertion is obtained from a SAML 2.0 identity provider and contains user information.
+The OAuth client exchanges the assertion with an authorization server to get an access token.
+This is commonly used with SuccessFactors, where an application needs to authenticate using a dedicated technical user.
+
+4. OAuth Authorization Code:
+An OAuth flow where the client redirects the user to an authorization server for authentication.
+The user grants access to the client, and the authorization server issues an authorization code.
+The client exchanges the authorization code for an access token, without the user credentials ever being shared with the client.
+Suitable for web applications where the user interacts with the application.
+
+5. Secure Parameters:
+A generic way to store sensitive information, such as usernames, passwords, and other credentials.
+Secure parameters are encrypted and stored in SAP CPI's security material.
+They can be accessed by integration flows through a specific mechanism.
+
+
 Types :
 - Basic Authentication – Uses a username and password for authentication.
 - OAuth 2.0 Credentials – Supports various OAuth grant types like Client Credentials and Authorization Code.

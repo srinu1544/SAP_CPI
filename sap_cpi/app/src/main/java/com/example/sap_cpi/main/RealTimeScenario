@@ -1,0 +1,122 @@
+Realtime scenario :
+-------------------
+
+https://www.youtube.com/watch?v=hoeCBCxOnEE&list=PLcFnxKjhr7FpJI7wmdkIkCBP_-3BfKt08&index=15
+
+BDAT : (Business , Data , Application , Technology)
+->  it is important for realtime scenarios
+
+Rationale :
+-> A project rationale explains why a particular project is important, what problem it aims
+to solve, and why it's worth investing resources in. It essentially provides the justification
+for undertaking the project, convincing stakeholders of its value and purpose.
+
+
+
+Scenario : 1
+------------
+order conformation Email :
+soap ->  content modifier -> router -> mail
+                               |
+                               |-----> help mail
+----------------------------------------------------------------------------------------------------
+scenario : 2
+------------
+invoice handling :
+mail -> handle attachemts(groovy) ->  router ->  getFilename(groovy)->  dropbox
+                                        |
+                                        |------------------- support mail
+
+handle attachments (groovy)
+pdf, xml , zip files
+
+getFilename (groovy)
+-> dynamically construct file name
+
+----------------------------------------------------------------------------------------------------
+
+Q . real-time SAP CPI scenarios  -- vvimp
+
+1. Third-Party API Integration with SAP S/4HANA
+📌 Scenario:
+A company wants to sync customer data between SAP S/4HANA and Salesforce in real-time.
+
+🔹 Steps in CPI Flow:
+
+Use the IDoc Adapter to receive customer data from SAP S/4HANA.
+Convert IDoc (XML) to JSON using Message Mapping.
+Call Salesforce API using the HTTP Adapter.
+Handle OAuth authentication using Security Material.
+Log the API response in Data Store for tracking.
+✅ Business Outcome:
+Customer records in SAP and Salesforce are always synchronized, reducing manual updates.
+
+2. File-to-File Integration Between SAP & Non-SAP System
+📌 Scenario:
+A manufacturing company needs to transfer supplier invoices from SAP S/4HANA to a non-SAP system via SFTP.
+
+🔹 Steps in CPI Flow:
+
+SAP S/4HANA drops an invoice file in an SFTP server.
+CPI picks up the file using the SFTP Adapter.
+Uses Groovy Script to rename the file with a timestamp.
+Converts CSV to JSON format for processing.
+Drops the processed JSON file in another SFTP location for the non-SAP system.
+✅ Business Outcome:
+Automated invoice processing without manual intervention.
+
+3. SAP SuccessFactors Integration with Workday
+📌 Scenario:
+An HR department wants to transfer employee data from SAP SuccessFactors to Workday on a scheduled basis.
+
+🔹 Steps in CPI Flow:
+
+SAP CPI extracts employee records using SuccessFactors OData Adapter.
+Converts the data format using Message Mapping (XML → JSON).
+Calls Workday’s REST API using the HTTP Adapter.
+Stores API responses in Data Store for audit purposes.
+✅ Business Outcome:
+HR records are synchronized across systems, ensuring accurate employee information.
+
+4. EDI Integration for Purchase Orders (B2B)
+📌 Scenario:
+A retailer wants to send purchase orders (POs) to suppliers using EDI (Electronic Data Interchange).
+
+🔹 Steps in CPI Flow:
+
+SAP generates a purchase order (IDoc).
+CPI converts IDoc to EDI X12 format using the EDI Separator Adapter.
+Sends the EDI file to the supplier via AS2 Adapter.
+Receives a 997 Functional Acknowledgment from the supplier.
+✅ Business Outcome:
+Faster, automated B2B transactions with suppliers using standard EDI.
+
+5. SAP CPI Integration with WhatsApp for Order Notifications
+📌 Scenario:
+A company wants to send order confirmation messages to customers on WhatsApp after they place an order.
+
+🔹 Steps in CPI Flow:
+
+SAP S/4HANA triggers an event when an order is confirmed.
+CPI receives the order details using IDoc Adapter.
+Formats the message in JSON and sends it to WhatsApp API using the HTTP Adapter.
+Logs all WhatsApp responses for tracking.
+✅ Business Outcome:
+Customers get instant order confirmations via WhatsApp, improving engagement.
+
+6. Integration of SAP S/4HANA with Bank for Payment Processing
+📌 Scenario:
+A finance company processes vendor payments from SAP to the bank.
+
+🔹 Steps in CPI Flow:
+
+SAP S/4HANA sends a payment file (CSV/XML).
+CPI picks the file and encrypts it using PGP.
+Sends the encrypted file to the bank’s SFTP server.
+Receives a payment confirmation file from the bank.
+Sends the confirmation back to SAP for reconciliation.
+✅ Business Outcome:
+Secure, automated vendor payments with audit tracking.
+-------------------------------------------------------------------------------------------------------------------
+
+

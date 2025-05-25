@@ -19,3 +19,9 @@ Script Function (ET) :
 
 mandatory package
 import com.sap.gateway.ip.core.customdev.util.Message;
+
+where can we use groovy script
+------------------------------
+1. extracting attachments in invoice handling scenario
+
+

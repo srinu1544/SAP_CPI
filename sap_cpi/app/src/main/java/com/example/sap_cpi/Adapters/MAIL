@@ -12,3 +12,7 @@ gmail configuration
 Host Address: smtp.gmail.com
 Port: 587
 
+for reading email imap protocol
+imap.gmail.com:993
+
+

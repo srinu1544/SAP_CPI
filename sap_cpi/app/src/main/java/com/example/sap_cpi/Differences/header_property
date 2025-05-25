@@ -1,8 +1,8 @@
 
 
-Difference between header vs property
+ header vs property
 -------------------------------------
-In SAP CPI, Message Headers are part of the message and are propagated to the receiver,
+   In SAP CPI, Message Headers are part of the message and are propagated to the receiver,
    while Exchange Properties are internal to the integration flow and are not transferred to the receiver.
    Here's a more detailed explanation:
 
@@ -16,6 +16,7 @@ In SAP CPI, Message Headers are part of the message and are propagated to the re
    Exchange Properties:
    --------------------
    Scope: Internal to the integration flow, not part of the message.
-   Purpose: Used to store temporary data or intermediate values within the integration flow, not intended for external communication.
+   Purpose: Used to store temporary data or intermediate values within the integration flow, not
+             intended for external communication.
    Example: Storing a product ID extracted from the message body for later use within the flow.
    Access: Accessible by steps within the same integration flow, but not by the receiver system.

@@ -112,7 +112,6 @@ or domains to access an API
 - The above configuration allows only specific IPs to access the API.
 - Any request from an unlisted IP will be denied.
 
-
 2. Spike Arrest Policy (Traffic Control)
 - Prevents API overload by limiting the number of requests per second.
 - Helps protect against DDoS attacks.

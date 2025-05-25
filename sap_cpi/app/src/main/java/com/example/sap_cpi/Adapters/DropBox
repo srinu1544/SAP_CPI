@@ -1,0 +1,13 @@
+Dropbox :   (Sender , Receiver)
+---------
+
+The Dropbox adapter in SAP Cloud Platform Integration (CPI) is a connector that enables you to
+exchange files between your Dropbox account and SAP systems. It allows you to create, retrieve,
+update, and delete files within your Dropbox storage via the CPI.
+
+what is Dropbox :
+-> Dropbox is a popular cloud storage service that allows users to store, share, and access files
+ from any device with an internet connection. It provides a centralized location for files,
+ synchronizes them across devices, and offers features for collaboration and file sharing.
+
+

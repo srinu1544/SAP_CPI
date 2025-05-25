@@ -1,0 +1,18 @@
+image5
+
+collapse context
+----------------
+taking only the first value from each context and merging them into a single context.
+
+before collapse context
+Context 1: [A, B, C]
+Context 2: [D, E, F]
+Context 3: [G, H, I]
+
+after collapse context
+Context 1: [A, D, G]
+B, C, E, F, H, I are ignored.
+
+
+
+

@@ -1,0 +1,46 @@
+CollapseContext_RemoveContext :
+-------------------------------
+
+collapse context
+----------------
+taking only the first value from each context and merging them into a single context.
+
+before collapse context
+Context 1: [A, B, C]
+Context 2: [D, E, F]
+Context 3: [G, H, I]
+
+after collapse context
+Context 1: [A, D, G]
+B, C, E, F, H, I are ignored.
+
+
+ Remove context :
+ ----------------
+ removes all context changes and brings an values to the same level , making them part of
+ the same context.
+
+ In SAP CPI especially when working with XML payloads, message mappings often deal with multiple levels of context.
+ The removeContext() function is used within a message mapping to flatten the structure  by removing context levels.
+
+ Purpose:
+ The removeContext function removes all context changes and brings an values to the same level , making them part of
+ the same context.
+
+
+ When to Use:
+ In SAP CPI every node in a mapping may create its own context. This impacts how loops and conditions behave. by removing context
+ ->  you make the data more linear
+ -> it becomes easier to process in functions like useOneASMany or custom logic.
+
+
+
+before remove context
+Context 1: [Apple]
+Context 2: [Orange]
+Context 3: [Banana]
+
+after remove context
+[Apple, Orange, Banana]
+
+Only the context breaks are removed, but all values remain.
