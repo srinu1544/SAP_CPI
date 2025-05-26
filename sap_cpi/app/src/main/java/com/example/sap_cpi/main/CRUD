@@ -1,0 +1,21 @@
+CRUD (Operations) :
+-------------------
+
+CRUD stands for Create, Read, Update, and Delete, representing the fundamental operations for
+managing data in databases and APIs. These operations are mapped to HTTP methods like POST,
+GET, PUT/PATCH, and DELETE, respectively.
+
+Create (POST):
+Adds new data or resources to the database or API. For example, posting a new blog entry.
+
+Read (GET):
+Retrieves existing data or resources. For example, viewing a blog post.
+
+Update (PUT/PATCH):
+Modifies existing data or resources.
+
+PUT: Replaces the entire resource with the new data.
+PATCH: Updates specific fields of a resource without replacing the entire resource. For example, updating a user profile.
+
+Delete (DELETE):
+Removes data or resources from the database or API. For example, deleting a blog post.

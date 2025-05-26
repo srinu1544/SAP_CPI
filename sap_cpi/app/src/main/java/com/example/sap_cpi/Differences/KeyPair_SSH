@@ -1,0 +1,30 @@
+KeyPair vs SSH in manage keystore :
+------------------------------------
+
+In SAP CPI's Keystore, both key pairs and SSH keys are used for secure communication,
+but have distinct purposes. A key pair (public and private keys) is used for a broader range of
+encryption tasks like SSL, decryption, signature, and client certificate authentication.
+An SSH key is specifically designed for secure authentication and connection to SFTP servers,
+enhancing security over traditional password-based authentication.
+
+
+Key Pair:
+--------
+Purpose: Used for various encryption and authentication tasks, including:
+SSL/TLS communication
+Data encryption and decryption
+Digital signatures
+Client certificate authentication
+Implementation: Involves a public and private key.
+Example: Used for secure communication between the SAP Cloud Platform Integration (CPI) tenant and a third-party system that requires SSL/TLS.
+
+SSH Key (SSH Key Pair):
+------------------------
+Purpose: Primarily for secure authentication and connection to SFTP servers.
+Implementation: Also uses a public and private key pair, but specifically designed for SSH protocol.
+Example: Used for establishing secure connections to SFTP servers for data transfer within CPI integrations.
+In essence:
+Key pairs are versatile tools for various cryptographic tasks.
+SSH keys are specialized for secure authentication and connections, particularly to SFTP servers.
+For a more helpful explanation to users, consider providing examples relevant to their specific
+use case within SAP CPI, such as secure communication with an external system or establishing an SFTP connection.

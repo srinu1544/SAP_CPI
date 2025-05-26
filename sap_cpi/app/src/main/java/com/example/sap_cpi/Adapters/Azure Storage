@@ -1,0 +1,50 @@
+It is used for integrate SAP CPI with Azure Cloud
+using this we can perform various operations Like CRUD
+
+we have different types of storages in Azure
+Blob storage (binary files)
+Table Storage (Structure storage )
+Queue Storage
+File  Storage
+
+ We have sender and Receiver adapters in cpi
+
+ we can integrate different types of applications using this adapter like
+ Microsoft share point
+ Power Bi
+ Microsoft office 365 and other microsoft applications
+ and sap and non  sap applications
+
+ Do's
+ ----
+ Do use the AzureStorage adapter for scenarios that require secure, reliable, and scalable data storage
+ and exchange between SAP CPI and Azure Storage
+
+ Do use the appropriate type of Azure Storage protocol based on your data type and use case.
+ For example, use Blob Service for binary or text data, Queue Service for message queues,
+ File Service for file shares, and Table Service for structured data
+
+ Do use the dynamic configuration to override the sender or receiver channel settings at runtime
+
+ Dont's
+ ------
+ Don't use the AzureStorage adapter for scenarios that require complex data processing or transformation,
+ as the adapter only supports basic CRUD operations
+
+ Don't use the AzureStorage adapter for scenarios that require streaming or real-time data exchange,
+ as the adapter only supports batch or scheduled data exchange
+
+ Don't use the AzureStorage adapter for scenarios that require data encryption or compression,
+ as the adapter does not support these features
+
+ not supports :
+ --------------
+ -> The adapter does not support the append blob and page blob storage types
+ -> The adapter does not support the SAS token authentication method
+ -> The adapter does not support the Azure Data Lake Storage Gen2 service
+ -> The adapter does not support the Azure Storage Emulator service
+ -> The adapter does not support the Azure Storage Explorer tool
+ -> The adapter does not support Dynamic Blob Reading
+ -> The adapter does not support Directory Scanning
+
+

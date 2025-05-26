@@ -1,0 +1,122 @@
+private and public keys :
+-------------------------
+
+Kleopatra :
+-----------
+To generate private and public key pairs in Kleopatra, open the application, navigate to
+File > New Key Pair, and select "Create a personal OpenPGP key pair".
+You'll be guided through entering your details and choosing a passphrase,
+after which the key pair will be created.
+
+
+
+Here's a more detailed breakdown:
+
+needs to install the application Kleopatra
+Open Kleopatra: Launch the Kleopatra application.
+
+Create a new key pair:
+Go to File > New Key Pair and select "Create a personal OpenPGP key pair".
+
+Enter your details:
+Input your name and email address.
+
+Advanced Settings (Optional):
+You can optionally select "Advanced Settings" to adjust parameters like the key algorithm
+(e.g., RSA, ECDSA), key size, and usage.
+
+Set a passphrase:
+If you choose to protect your key with a passphrase, enter it and confirm it.
+
+Generate the key:
+Click "Create" and follow the on-screen instructions.
+
+Export your keys:
+Once the key pair is created, you can export both the public and private keys.
+Right-click on the key in Kleopatra, select "Export" to get the public key, and "Backup Secret Keys"
+to get the private key.
+
+Store your keys securely:
+Keep your private key safe, as it's essential for decrypting messages.
+
+
+In SAP CPI's Keystore, both key pairs and SSH keys are used for secure communication,
+but have distinct purposes. A key pair (public and private keys) is used for a broader range of
+encryption tasks like SSL, decryption, signature, and client certificate authentication.
+An SSH key is specifically designed for secure authentication and connection to SFTP servers,
+enhancing security over traditional password-based authentication.
+
+
+
+In SAP CPI we can generate :
+
+
+
+
+Key Pair:
+--------
+Purpose: Used for various encryption and authentication tasks, including:
+SSL/TLS communication
+channel communication
+Data encryption and decryption
+Digital signatures
+Client certificate authentication
+Implementation: Involves a public and private key.
+Example: Used for secure communication between the SAP Cloud Platform Integration (CPI) tenant and a third-party system that requires SSL/TLS.
+
+procedure to get this key :
+FOR SFTP Public key generation :
+monitor -> manage keystore -> create -> KeyPair -> fill details with name like
+
+
+Alias:
+Key Type: (RSA,DSA,EC)
+Key Size: 2048
+Signature Algorithm: (SHA-512/RSA, SHA-384/RSA, SHA-256/RSA, SHA-224/RSA, SHA-1/RSA)
+Common Name (CN):
+Organizational Unit (OU):
+Organization (O):
+Location (L):
+State or Province (ST):
+Country/Region (C):
+E-Mail (E):
+Valid From: May 25, 2025
+Valid Until: May 25, 2027
+
+-> Click (...) 3 dots click on download
+
+
+
+SSH Key (SSH Key Pair):
+------------------------
+Purpose: Primarily for secure authentication and connection to SFTP servers.
+Implementation: Also uses a public and private key pair, but specifically designed for SSH protocol.
+Example: Used for establishing secure connections to SFTP servers for data transfer within CPI integrations.
+In essence:
+Key pairs are versatile tools for various cryptographic tasks.
+SSH keys are specialized for secure authentication and connections, particularly to SFTP servers.
+For a more helpful explanation to users, consider providing examples relevant to their specific
+use case within SAP CPI, such as secure communication with an external system or establishing an SFTP connection.
+
+
+procedure to get this key :
+
+FOR SFTP Public key generation :
+monitor -> manage keystore -> create -> SSH key -> fill details with name like (SFTP_Public)
+
+Alias:
+Key Type: (RSA,DSA,EC)
+Key Size: 2048
+Signature Algorithm: (SHA-512/RSA, SHA-384/RSA, SHA-256/RSA, SHA-224/RSA, SHA-1/RSA)
+Common Name (CN):
+Organizational Unit (OU):
+Organization (O):
+Location (L):
+State or Province (ST):
+Country/Region (C):
+E-Mail (E):
+Valid From: May 25, 2025
+Valid Until: May 25, 2027
+
+-> IN SFTP_Public (...) 3 dots click on download public open ssh key
+This key we want to give server side person.

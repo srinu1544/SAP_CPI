@@ -16,7 +16,17 @@ Queues are primarily used for point-to-point communication, where a single consu
 Topics are used for publish-subscribe scenarios, where messages are broadcast to multiple subscribers interested in the topic.
 
 Difference between Exclusive and non Exclusive?
+Exclusive:
+Single consumer, order preservation, suitable for transactional applications.
+Non-Exclusive:
+Multiple consumers, load balancing, suitable for applications that can handle multiple parallel processing instances.
+
 how to see payloads in solace?
+To see message payloads in Solace, you can use the Solace Brocker Manager or a Solace queue browser. These tools allow you to view messages, including their payloads, without consuming them.
+Using the Broker Manager:
+Navigate to Queues: In the Broker Manager, go to "Queues" in the left navigation bar.
+Select a Queue: Choose the specific queue you want to inspect.
+Browse Messages: The Broker Manager will display messages in the queue, and you can view their payloads
 
 
 

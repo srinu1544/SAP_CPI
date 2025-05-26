@@ -1,0 +1,29 @@
+GPath  :
+--------
+
+GPath refers to a path expression language in Groovy, similar to XPath for XML, used to navigate
+and extract data from nested data structures like XML and JSON. It allows you to specify a path
+to access elements within these structures using a dot notation (e.g., results.cnt) and bracket
+notation for array access (e.g., results.id). GPath is often used in tools like REST Assured to
+work with APIs and extract information from responses.
+
+Path Expression Language:
+GPath is a way to specify a path through the structure of XML or JSON data to locate specific elements.
+
+Groovy Integration:
+It's a built-in feature of the Groovy programming language.
+
+Similar to XPath:
+GPath is analogous to XPath, which is used to navigate XML documents.
+
+REST Assured Integration:
+In the context of REST Assured, a popular testing framework, GPath is used to extract values from JSON responses.
+
+Dot Notation:
+Elements within a data structure are accessed using periods (e.g., results.cnt).
+
+Bracket Notation:
+Array elements are accessed using bracket notation (e.g., results.id).
+
+Use Cases:
+GPath is used for extracting data, performing assertions on values, and transforming data.
