@@ -15,13 +15,12 @@
 -> security, storage options etc.
 -> logging (trace,log, debug, info etc)
 -> transport mechanism (CTMS, CAS, git, manual import and export)
--> outlook mail configuration
 -> all questions and answers
 -> real time scenarios
 -> facing complications
 
 language have to learn
-XML, xslt , xpath , camel,
+XML, xslt , xpath , camel, Groovy
 
 
 

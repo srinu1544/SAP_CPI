@@ -22,7 +22,7 @@ package com.example.sap_cpi.pallet_functions
 
   Processing :
 
-Signatures (DD) : (None , Include)
+  Signatures (DD) : (None , Include)
   -> Select Including if you want to sign the payload with a signature.
 
 Content Encryption Algorithm (DD) : (AES,Blowfish,CAST5,ESede,Twofish)

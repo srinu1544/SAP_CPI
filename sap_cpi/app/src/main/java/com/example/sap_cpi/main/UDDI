@@ -1,0 +1,27 @@
+UDDI :
+------
+
+UDDI stands for Universal Description, Discovery, and Integration.
+It is basically a directory service for web services, like a “yellow pages”
+where businesses can publish and find web services on the internet or within an enterprise.
+
+Key Points about UDDI
+---------------------
+Universal Description – Stores information about web services (like service name, provider, and usage details).
+Discovery – Allows clients or systems to search for services based on specific criteria.
+Integration – Provides the technical information (like WSDL URL) required to integrate with that service.
+
+UDDI in Web Services
+---------------------
+Works together with SOAP and WSDL:
+WSDL describes how to call the service.
+SOAP is the protocol for communication.
+UDDI tells you where to find the service.
+
+Simple Example
+---------------
+A company develops a Currency Conversion Web Service.
+They publish it in the UDDI Registry with details like:
+Service Name: CurrencyConversionService
+WSDL URL: http://example.com/CurrencyConversion?wsdl
+Another company searches the UDDI Registry, finds this service, and integrates it into their application.

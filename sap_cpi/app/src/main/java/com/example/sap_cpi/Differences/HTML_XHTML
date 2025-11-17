@@ -1,0 +1,20 @@
+HTML and XHTML are both markup languages used for creating web pages, but XHTML is a stricter,
+more XML-based version of HTML. XHTML requires stricter syntax, including mandatory closing tags,
+lowercase tags and attributes, and quoted attribute values. HTML is more lenient and allows for
+optional closing tags and case sensitivity.
+
+HTML (Hypertext Markup Language):
+---------------------------------
+Is the foundation of the web, defining the structure of web pages.
+Has a more flexible syntax, allowing for optional closing tags and case sensitivity.
+Is widely supported by browsers.
+Continues to evolve, with versions like HTML5 introducing new features.
+
+XHTML (Extensible Hypertext Markup Language):
+---------------------------------------------
+Is a stricter, XML-based version of HTML.
+Requires all elements to be closed, with closing tags or trailing slashes.
+Requires lowercase tags and attribute names, and quoted attribute values.
+Uses XML parsing and validation tools.
+Was intended to improve interoperability with XML and other technologies.
+While still technically supported, it's less prevalent than HTML

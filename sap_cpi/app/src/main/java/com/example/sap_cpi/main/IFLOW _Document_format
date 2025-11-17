@@ -1,0 +1,8 @@
+iflow correct document format
+
+.project
+metainfo.prop
+META-INF/MANIFEST.MF
+src/main/resources/parameters.prop
+src/main/resources/parameters.propdef
+src/main/resources/scenarioflows/integrationflow/xml_to_csv.iflw

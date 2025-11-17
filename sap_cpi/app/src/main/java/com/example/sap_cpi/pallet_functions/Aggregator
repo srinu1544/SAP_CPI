@@ -1,14 +1,5 @@
-@Preview
-@Composable
-fun Aggregator() {
-    Column {
-        LoadImage(imageRes = R.drawable.image3)
-        LoadImage(imageRes = R.drawable.image4)
-
-    }
-
-}
-
+image3
+image4
 
 Aggregator ->
 -----------------------------------------------------------------------------------------------------------------

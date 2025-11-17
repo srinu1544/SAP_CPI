@@ -1,3 +1,6 @@
+Presentation_4
+
+
 
  XSLT Mapping ->
 ------------------------------------------------------------------------------------------------------------------------------
@@ -7,8 +10,81 @@
    apply complex transformations or logic to an XML message. You can create XSLT mappings using graphical or
    text-based tools.
 
+   XSLT = Style Sheets for XML Transformation
+   XSL = Style Sheets for XML
+
+   Another way to change XML messages
+   XSLT is a text-based mapping script, that allows you to parse the source XML and produce the
+   target XML according to the transformation script.
+
+   XSLT is a language for transforming XML documents.
+
+   XPath is a language for navigating in XML documents.
+
+   XQuery is a language for querying XML documents.
+
+   XSLT is used to transform an XML document into another XML document, or another type of document
+   that is recognized by a browser, like HTML and XHTML.
+
+   Normally XSLT does this by transforming each XML element into an (X)HTML element.
+   With XSLT you can add/remove elements and attributes to or from the output file. You can also
+   rearrange and sort elements, perform tests and make decisions about which elements to hide and
+   display, and a lot more.
+
+   XSLT Uses XPath
+   XSLT uses XPath to find information in an XML document.
+   XPath is used to navigate through elements and attributes in XML documents.
+
+
+   When to use XSLT mapping?  -- vvimp
+    -------------------------
+   Sometimes it is difficult to produce desired output using graphical mapping.
+   For example text/html output, sorting or grouping of records etc.
+   A few situations where XSLT mapping fits well are:
+
+   -> When the required output is other than XML like text, html or xhtml
+   -> When data is to be filtered based on certain fields
+   -> When data is to be sorted based on certain field
+   -> When data is to be grouped based on certain field
+
+
+   XPATH Expression root would select all child nodes of node root
+   ---------------------------------------------------------------
+   /root represents absolute path and would select the node root
+   root/node1 would select all node1 elements that are children of root
+   //node1 would select all node1 elements irrespective of where they are in the document
+   root//node1 would select all node1 elements that are descendent of root
+   /root/node1[1] would select first node1 element that is child of root
+   . would select the current node
+   .. would select the parent of current node, while
+   @ would select attributes
+
+   The <xsl:for-each> Element
+   The XSL <xsl:for-each> element can be used to select every XML element of a specified node-set:
+   Legal filter operators are:
+   =(equal)
+   =(not equal)
+   <less than
+   >greater than
+   <xsl:for-each select="catalog/cd[year='1990']">
+
+   An XSL style sheet consists of one or more set of rules that are called templates.
+   A template contains rules to apply when a specified node is matched.
+   The <xsl:template> element defines a template.
+   The match="/" attribute associates the template with the root of the XML source document.
+   The <xsl:apply-templates> element applies a template rule to the current element or to the current element's child nodes.
+
+   The root element that declares the document to be an XSL style sheet is
+   <xsl:stylesheet> , <xsl:transform>
+
+   <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+     <xsl:template match="/">
+   match="/" defines the whole document
+
+
 
   config : (General, Processing)
+  --------
 
   General : Name
 

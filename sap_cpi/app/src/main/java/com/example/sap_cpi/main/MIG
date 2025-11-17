@@ -1,0 +1,40 @@
+MIG (Message Implementation Guideline):
+---------------------------------------
+Purpose:
+Provides a blueprint for message structure, including details like data types, attributes, and expected content.
+Usage:
+Used as a reference or source when creating mappings in SAP Integration Advisor.
+Example:
+Defining the structure of a purchase order message in XML format.
+Key Features:
+Specifies the message structure and content.
+Serves as a template for customizing message interfaces.
+Provides guidelines for implementing a customized message interface.
+Can be created using messages in a type system as a starting point.
+
+where can we find MIG/MAG
+--------------------------
+
+-> Check your SAP Cloud Integration License:
+Ensure you have an enterprise edition license, as Integration Advisor is not available with the standard edition.
+
+-> Access the SAP BTP Cockpit:
+Log in to your SAP BTP Cockpit.
+
+-> Find the "Process Integration" Service:
+Locate the "Services" section and then choose "Process Integration".
+
+-> Configure Process Integration:
+Click on "Configure Process Integration" within the "Take Action" screen area of the Process
+Integration service page.
+
+-> Access the Integration Suite:
+You'll find the Integration Suite tile and can subscribe to it.
+
+-> Navigate to Subscriptions:
+Within the Integration Suite, you'll find the "Subscriptions" section where you can manage your
+subscriptions, including Integration Advisor.
+
+-> Access the Integration Advisor Application:
+Once subscribed, you'll be able to access the Integration Advisor application, which includes the
+Type System library and other features.

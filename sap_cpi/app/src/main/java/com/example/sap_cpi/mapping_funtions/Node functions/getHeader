@@ -1,0 +1,30 @@
+getHeader:
+----------
+In SAP Cloud Platform Integration (CPI), the getHeader function is a standard function used in message
+mappings to retrieve the value of a specific header from the message. It's available as a built-in
+function, allowing users to access header values without needing custom Groovy scripts. This function
+is crucial for accessing information passed within the message header, which can influence the
+integration flow or be used in data transformations.
+
+Cloud Integration – Message Mapping – getHeader and ...
+
+Here's a more detailed explanation:
+
+Purpose:
+The getHeader function retrieves the value of a header based on its name. Headers are key-value
+pairs that can carry metadata or control information related to the message.
+
+Availability:
+Since version 6.46.34, getHeader is a standard function in SAP CPI, eliminating the need for
+custom scripts in many cases, according to www.sprintegrate.com.
+
+Usage:
+In message mapping, you can find and use getHeader under the "Functions" tab when defining mapping expressions.
+
+Example:
+If you need to access the "Content-Type" header, you would use getHeader("Content-Type").
+
+Null Handling:
+If the specified header doesn't exist, the getHeader function will return "null", which you may
+need to handle in your mapping logic (e.g., by setting a default value or performing other actions).
+

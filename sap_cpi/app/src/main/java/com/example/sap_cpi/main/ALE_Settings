@@ -1,28 +1,22 @@
 //TODO -- presentation_1.ppt
 
 
-ALE Settings :
----------------
+high level :
+-----------
+-> Create IFlow
+-> Download certificates and upload in Trust
+-> BD54 Create Logical system
+-> SM59 Create RFC Destination
+-> WE21 XML HTTP Port Creation
+-> WE20 PARTNER PROFILE
+-> BD64 Modeling and Implementing Business Process
+-> BD12/BD10 - Send customer / Material
 
-
-IN SAP SYSTEM GOTO
-1 create iflow
-2. download the certificates in cpi tenant
-
- -> WE31-To create new segment
- -> WE30-To create new basic types
- -> WE81-To create new message types
- -> WE82-assign message type to basic types
-
-go to Trust - SSL Client SSL Client (Anonymous) - double click on this
--> click on import add certificates
-
-2 - LOGICAL SYSTEM --  T-Code  SALE/BD54
 -----------------------------------------------------------------------
-
+This we will tell in interviews
+-------------------------------
 
 1- upload CPI SSL certificates - T-Code - Trust
-
 2 - LOGICAL SYSTEM --  T-Code -  BD54
 3 - RFC Destination - T-Code - SM59
  Type G and go to technical settings
@@ -53,6 +47,67 @@ go to Trust - SSL Client SSL Client (Anonymous) - double click on this
 
  QCLNT100: Logical system for sender system (Q Client 100) - Sender
  PCLNT100: Logical system for receiver system (P Client 100) - Receiver
+
+------------------------------------------------------------------------
+in detaily
+
+ALE Settings :
+---------------
+IN SAP SYSTEM GOTO
+1.Create iflow
+2.Download the certificates and upload in trust
+3.Goto basic settings
+4.Logical system
+5.Define logical system
+6.Click on new entry (SAP CI System)
+
+goto communication
+-> Create RFC Connections
+-> click on create
+-> In technical settings give the host,port and path prefix of sap cpi
+
+-> Go to logon & Security
+-> Select basic authentication
+-> give the CI user name and password or client id, client secret
+
+
+-> click on connection test
+
+-> now Create Port
+-> create XML HTTP port
+-> In order to create port
+-> give the already created logical system
+-> give teh already created RFC Destination
+-> select content type - application/x-sap.idoc
+-> check on soap protocol
+-> click on save
+
+
+-> now go to partner profile (WE20)
+-> Partner no
+-> click on the partner type
+-> click on the type (user)
+-> give the agent
+
+-> go to outbound (here we can choose multiple data like MATMAS , DABMAS)
+-> specify message type (ex : MATMAS_06)
+-> receiving port
+-> Idoc type (MATMAS_06)
+-> click on save
+
+-> go to maintain distribution modal and distribution view
+
+
+
+
+
+
+
+
+
+
+
+ --------------------------------------------------------------------------------------------
 
 
  ALE IDOCS
@@ -137,6 +192,16 @@ go to Trust - SSL Client SSL Client (Anonymous) - double click on this
  5. WE09- To check IDOC business content
  6. BD10- To transfer material
  7. BD12-To transfer customer
+
+ Connection Types in ALE
+ -------------------------
+  ABAP Connections                    --  3
+  HTTP Connections to External Server  -- G
+   HTTP Connections to ABAP System     -- H
+   Internal Connections                -- I
+   TCP/IP Connections                  -- T
+   WebSocket RFC                       -- W
+   Connections Using ABAP Driver       -- X
 
  sap community - reference
  TODO - https://community.sap.com/t5/enterprise-resource-planning-blogs-by-members/application-link-enabling-ale/ba-p/13653098

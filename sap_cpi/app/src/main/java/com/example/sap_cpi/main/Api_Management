@@ -1,6 +1,10 @@
+API Management : -- https://www.sap.com/india/products/technology-platform/integration-suite/capabilities/api-management.html
+---------------
+API management refers to the process of creating, publishing, and managing API connections between
+applications and systems across the enterprise. It allows organisations a scalable, unified
+platform to share and socialise their API configurations while controlling access, collecting
+and analysing usage statistics, and enforcing associated security policies.
 
- API Management :
- ----------------
 
 Reference for free apis
 TODO - https://api.sap.com/
@@ -126,7 +130,6 @@ https://www.youtube.com/watch?v=2ER5Djaa1jQ&list=PLae66MM0AHNplwl45T_a_a20_ZdqQS
 4 Quota Policy (Rate Limiting)
 - Restricts the number of API calls within a specific time frame.
 - Example: Allow 1000 requests per hour.
-
 
 
 for product creation

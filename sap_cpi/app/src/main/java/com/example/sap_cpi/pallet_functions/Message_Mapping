@@ -1,10 +1,58 @@
 
 Message Mapping ->
-------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+  Mapping enables to define an association between fields of messages with different structuring.
+
+  Each message mapping flow step in an integration flow is associated with a mapping definition resource.
+  You create this definition while adding the mapping step to the integration flow.
+
+  Can also reuse a definition resource that you have already created in the same integration flow project.
+
+  Source Field	    Target Field
+  Employee	        User
+  Employee ID	    ID
+  Employee Name	    Name
+  Employee Surname	LastName
+
+
  This is a type of mapping that transforms the structure and content of a message from one format to another.
  For example, you can map an XML message to a JSON message or vice versa. You can use message mapping in
  scenarios where you need to convert the message format between different systems or protocols.
  You can create message mappings using graphical, XSLT or Groovy tools.
+
+ Types of mapping
+ ----------------
+ message mapping
+ XSLT mapping
+ Mapping with scripting
+ Operation mapping from enterprise Service Repository(On-premise)
+ Id mapping
+
+
+ types of message mapping :
+ --------------------------
+ -> Static
+ -> Dynamic
+
+
+ Dynamic Reference Type
+ ----------------------
+ In the Expression field, enter the header or property name that would contain the identifier of the message mapping artifact.
+ A reference to the message mapping artifact must be contained either in a header/property or via Partner Directory.
+
+ For a header or property, the accepted format is "${header.header_name}", or "${property.property_name}",
+ where the <header_name> or <property_name> is defined in the message exchange.
+
+ if give constant in header of property should be ref:mapping1 -- here mapping1 is id
+
+ Can fetch the ID of the message mapping artifact by viewing its metadata.
+
+ Further, the <header_name> or <property_name> must contain the identifier (ID) of the message mapping artifact in the form "ref:<message_mapping_ID>".
+
+ For partner directory, the accepted format is "pd:<Partner ID>:<Parameter ID>",
+ where the parameter ID refers to the identifier associated to the message mapping artifact ID in the form "ref:<message_mapping_ID>"
+
+
 
 config -
 TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/creating-message-mapping-as-flow-step?q=message+mapping+

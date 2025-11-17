@@ -1,0 +1,6 @@
+	         Script Collection 📝	      Function Library 📚
+	         -------------------          ----------------------
+Contains	 Full scripts (executable)	  Reusable functions (helpers)
+Entry point	 Has processData(Message)	  No processData(), just methods
+Execution	 Can run directly in iFlow	  Must be called from another script
+Use case	 End-to-end script logic	  Common utilities used in many scripts/mappings

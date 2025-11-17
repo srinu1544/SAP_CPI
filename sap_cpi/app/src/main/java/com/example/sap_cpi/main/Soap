@@ -1,0 +1,50 @@
+
+SOAP :
+------
+A SOAP message always follows a standard XML-based format. It has a defined structure with mandatory and optional parts.
+
+
+Soap structure
+--------------
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:m="http://www.example.com/weather">
+
+    <!-- Optional: Header section for metadata -->
+    <soap:Header>
+        <m:AuthHeader>
+            <m:Username>admin</m:Username>
+            <m:Password>12345</m:Password>
+        </m:AuthHeader>
+    </soap:Header>
+
+    <!-- Required: Body section for main data or fault -->
+    <soap:Body>
+
+        <!-- Normal Request Example -->
+        <m:GetWeather>
+            <m:City>Hyderabad</m:City>
+        </m:GetWeather>
+
+        <!-- Normal Response Example -->
+        <!--
+        <m:GetWeatherResponse>
+            <m:Temperature>30°C</m:Temperature>
+            <m:Condition>Sunny</m:Condition>
+        </m:GetWeatherResponse>
+        -->
+
+        <!-- Fault Example -->
+        <!--
+        <soap:Fault>
+            <faultcode>SOAP-ENV:Client</faultcode>
+            <faultstring>Invalid City Name</faultstring>
+            <faultactor>http://www.example.com/weather</faultactor>
+            <detail>
+                <errorCode>1001</errorCode>
+                <errorMessage>City name cannot be empty.</errorMessage>
+            </detail>
+        </soap:Fault>
+        -->
+
+    </soap:Body>
+</soap:Envelope>

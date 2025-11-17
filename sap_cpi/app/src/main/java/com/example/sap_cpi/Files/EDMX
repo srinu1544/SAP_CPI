@@ -1,6 +1,6 @@
-package com.example.sap_cpi.Files
-
-/*In SAP CPI (Cloud Platform Integration), EDMX (Entity Data Model XML) is not a native concept but is relevant when
+EDMX (Entity Data Model XML) :
+------------------------------
+In SAP CPI (Cloud Platform Integration), EDMX (Entity Data Model XML) is not a native concept but is relevant when
 dealing with OData services. EDMX is the XML representation of the Entity Data Model (EDM), which describes the
 structure of data exposed by an OData service.
 
@@ -48,7 +48,3 @@ Do you need help with a specific integration scenario involving EDMX? 😊
     </Schema>
   </edmx:DataServices>
 </edmx:Edmx>
-
-
-    
-*/

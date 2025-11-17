@@ -3,6 +3,12 @@ RFC ->  (Remote Function Call) (Receiver)
 view table T-code - SE11
 create function module - T-code - SE37
 
+Standard tables to view data
+-----------------------------
+VBAK – Header Table
+VBAP – Item Table
+VBEP – Schedule Line Table
+
 main important points
 SAP Cloud Connector: Configure the SAP Cloud Connector to connect to the on-premise SAP system.
 RFC Destination: Create an RFC destination in the SAP BTP cockpit, providing the necessary connection parameters.

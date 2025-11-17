@@ -1,0 +1,6 @@
+
+createIf :
+----------
+In SAP CPI, the createIf node function conditionally creates a target node based on a condition in the source side.
+If the condition is true, the target node is created; otherwise, it is not. This is used in Message Mapping steps
+to create a target node only under specific conditions.

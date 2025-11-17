@@ -15,9 +15,6 @@ Error End Event ->
    an issue but allows processing to continue, an Error End Event stops the main process and throws the
    exception to the exception handler
 
-
-
-
    Use Case of Error End Event
    - Exception Handling: If an integration flow encounters an error (e.g., invalid data, failed API call),
    the Error End Event stops further processing.

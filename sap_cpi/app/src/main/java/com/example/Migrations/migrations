@@ -1,3 +1,67 @@
+migration (PIPO_CPI)
+---------------------
+migration.docs
+
+-- > ifgaf videos -- https://www.youtube.com/watch?v=e6TSgw59Nic&list=PLGmC8_Zgq6dvbcjIxDqFnwelfYvPW_qgR
+
+This course is for Migration PI/PO to CPI   -- https://help.sap.com/docs/integration-suite/sap-integration-suite/migration-tooling
+-----------------------------------------
+
+Migration Types :
+-----------------
+Greenfield → Build fresh in CPI.
+Brownfield → Lift-and-shift migration.
+Bluefield → Tool-driven + optimized mix of green & brown.
+Hybrid → Manual mix of fresh + migrated.
+Manual → Developer rebuilds manually.
+Automated → Using SAP tools.
+Selective → Only active/critical interfaces.
+Phased → Step-by-step migration.
+
+SAP PI to CPI Manual Migration Checklist Preparation
+----------------------------------------------------
+☑ Source PI/PO landscape details collect చేయండి
+☑ Migrating Scenarios list తయారు చేయండి
+☑ ప్రతి scenarioకి: Sender system, Receiver system, Adapter types note చేయండి
+☑ ESR Objects list చేసుకోండి: Data Types, Message Types, Service Interfaces, Message Mapping, Operation Mapping
+☑ ID Objects list చేసుకోండి: Business Systems / Components, Communication Channels, Determinations, Agreements
+-> CPI Tenant Setup
+☑ Cloud Integration (CPI) tenantకి access verify చేయండి
+☑ Cloud Connector setup complete ఉందా చూడండి
+☑ Security materials prepare చేయండి: Certificates, Keystore entries, OAuth credentials
+-> Recreate Scenarios in CPI (IFlows)
+☑ Integration Package create చేయండి
+☑ ప్రతి scenarioకి కొత్త IFlow design చేయండి
+☑ Sender Adapter configure చేయండి
+☑ Receiver Adapter configure చేయండి
+☑ Mapping logic rebuild చేయండి: Graphical → Message Mapping, Java → Groovy, XSLT → reuse
+☑ Exception Subprocess configure చేయండి
+-> Parameters & Connectivity
+☑ Externalized Parameters create చేయండి
+☑ Value Mappings recreate చేయండి
+☑ Adapter-specific settings migrate చేయండి
+☑ Endpoints validate చేయండి
+-> Testing
+☑ Unit Test చేయండి
+☑ End-to-End Test చేయండి
+☑ Negative Test cases validate చేయండి
+☑ Error handling check చేయండి
+-> Transport & Deployment
+☑ DEVలో Integration Flow activate చేయండి
+☑ ATT Document export చేయండి
+☑ QAలో import చేసి activate చేయండి
+☑ QAలో business validation చేయండి
+☑ PRODకి transport చేసి final validation చేయండి
+-> Documentation
+☑ ప్రతి scenarioకి mapping document maintain చేయండి
+☑ Endpoints, security credentials document చేయండి
+☑ Migration challenges & solutions record చేయండి
+☑ Business sign-off తీసుకోండి
+
+
+
+
+
 Migrating mappings from SAP PI/PO to SAP CPI involves converting message mappings and potentially
 associated artifacts like function libraries. This can be done using tools like the SAP Integration
 Suite Migration Tooling or tools like Figaf. The process often includes steps like downloading

@@ -1,2 +1,5 @@
-package com.example.sap_cpi.pallet_functions.mapping_funtions.Node
+Exists :
+--------
 
+It checks if a particular node or field exists within the data payload.
+If the node exists, it returns true; otherwise, it returns false

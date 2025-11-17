@@ -1,0 +1,31 @@
+sort :
+------
+
+
+In SAP CPI's graphical mapping, the Sort node function is used to arrange elements of a collection
+(like an array or list) in a specific order. You can choose to sort either numerically or
+lexicographically, and in ascending or descending order. This function works on multiply-occurring
+inbound fields within the existing or set context. The sorting process is stable, meaning the order
+of elements that are the same is preserved.
+
+Here's a breakdown:
+
+Purpose:
+Sorts the values of a repeating node in a message mapping.
+
+How it works:
+The function sorts the values within each context of a repeating node.
+
+Sorting criteria:
+You can specify whether to sort numerically or lexicographically, and in ascending or descending order.
+
+Stability:
+The sort function preserves the relative order of elements with equal values.
+
+Context:
+It operates within the context of the mapping, meaning it sorts values based on the current context level.
+
+Example:
+If you have a list of employee names and want to sort them alphabetically, you would use the Sort
+function with a lexicographical and ascending order.
+

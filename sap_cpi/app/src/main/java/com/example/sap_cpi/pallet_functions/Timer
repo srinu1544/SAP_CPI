@@ -11,3 +11,14 @@ config : (General , scheduler)
 TODO - https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-timer-start-event?q=Timer+
 note : unable to config all the fields here please go though the link.
 
+
+Basic (RB) :      Advanced (RB) :
+Frequency (TV)
+
+Enter As  (DD) : (simple schedule, multiple schedule)
+
+
+Multiple Scheduler Details
+
+
+

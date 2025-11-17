@@ -83,6 +83,7 @@ Connection :
 -----------
    address (ET) :
       -> host & port name
+      -> EX :  https://<sap-system-host>/sap/opu/odata/sap/API_SALES_ORDER/OrderSet
 
    query (ET) :
        -> In this field you have enter the query
@@ -103,6 +104,53 @@ Connection :
       POST
       PUT
       Trace
+
+  🔹 1. GET
+  Purpose: Retrieve data from the target system.
+  Example: Fetch details from an external API (like getting order details from an ERP system).
+  Body: Not required.
+  Example URL: https://api.company.com/orders/1001
+
+  🔹 2. POST
+  Purpose: Send (create) data in the target system.
+  Example: Create a new order, send a message, or upload data to another API.
+  Body: Yes, you send data (XML, JSON, etc.) in the body.
+  Example: Send payload to https://api.company.com/createOrder
+
+  🔹 3. PUT
+  Purpose: Update or replace existing data in the target system.
+  Example: Update employee or product information in a remote service.
+  Body: Yes, similar to POST, but usually updates existing resource.
+  Example: https://api.company.com/employees/101
+
+  🔹 4. DELETE
+  Purpose: Remove a record or resource from the target system.
+  Example: Delete an order, file, or record.
+  Example: https://api.company.com/orders/1001
+
+  🔹 5. PATCH
+  Purpose: Partially update an existing record (unlike PUT which replaces the whole object).
+  Example: Update only one field (e.g., order status) without affecting other fields.
+  Example: https://api.company.com/orders/1001/status
+
+  🔹 6. HEAD
+  Purpose: Check metadata or availability of a resource (similar to GET but without body).
+  Example: Used for testing if a file or resource exists before downloading.
+  Example: https://api.company.com/files/report.csv
+
+  🔹 7. TRACE
+  Purpose: Debugging; shows the path that a request takes to reach the server.
+  Not commonly used in CPI; mainly for troubleshooting HTTP routing.
+
+  🔹 8. Dynamic
+  Purpose: Choose the HTTP method dynamically at runtime based on message content or property.
+  Example: If method is stored in a header/property like ${header.HTTP_METHOD}, CPI will use that.
+  Use Case: When you want a single iFlow to handle GET/POST/PUT based on conditions.
+
+
+
+
+
 Authentication (DD):
    basic
    OAuth2 client credentials

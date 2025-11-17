@@ -85,3 +85,19 @@ Proxy Type (DD) : (Internet, On-Premise)
    Select Manual to manually specify Proxy Host and Proxy Port (using the corresponding entry field).
    This option is only available if Edge has been selected as runtime.
    Select On-Premise if you are connecting to an on-premise SFTP server.
+
+   Authentication (DD) - (Public key, username/Password, Dual)
+
+   Credential Name (TF) :
+   -> Credential name in Security material
+
+   Timeout (in ms) (TF) :
+   -> default value is 1000
+
+
+   Maximum Reconnect Attempts :
+
+   Reconnect Delay (in ms)
+   1000
+   Automatically Disconnect
+   Enable Support for Deprecated Algorithms

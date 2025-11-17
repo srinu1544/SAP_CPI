@@ -1,0 +1,97 @@
+🌐 SAP CPI Partner Directory (PD) – పూర్తి వివరణ (Telugu లో)
+📌 Partner Directory అంటే ఏమిటి?
+Partner Directory అనేది B2B Integration Scenarios లో వాడతారు.
+వేర్వేరు Trading Partners (Vendors, Customers, Suppliers, Banks) కోసం మనం CPI లో వాడాల్సిన partner-specific సమాచారం (IDs, Certificates, URLs, Mapping Values) ను ఇక్కడ స్టోర్ చేస్తాము.
+ఇలా స్టోర్ చేస్తే iFlow లో values hardcode చేయకుండా, CPI రన్‌టైమ్ లో Partner Directory నుంచి dynamic గా తీసుకుని వాడుతుంది.
+
+📌 ఎందుకు వాడాలి?
+Suppose మీరు 10 vendors తో పనిచేస్తున్నారు.
+ప్రతి vendor కు వేర్వేరు AS2 ID, Certificate, Endpoint URL ఉంటాయి.
+మీరు 10 iFlows సృష్టించాల్సిన అవసరం లేదు.
+ఒకే iFlow సృష్టించి, partner-specific values ని Partner Directory నుంచి తీసుకోవచ్చు.
+👉 అంటే: Maintenance సులభం + Dynamic integration + Reusability.
+
+📌 Partner Directory లో Sections
+1️⃣ String Parameters
+ఇవి పార్ట్నర్ కి సంబంధించిన Text Values ను స్టోర్ చేయడానికి.
+Examples:
+AS2ID = VENDOR_1001_AS2
+EndpointURL = https://vendorapi.com/as2
+PartnerQualifier = DUNS
+➡️ వాడకం: iFlow లో Groovy లేదా Mapping ద్వారా ఈ values ఫెచ్ చేసి వాడవచ్చు.
+
+2️⃣ Binary Parameters
+ఇవి Files/Certificates/Keys స్టోర్ చేయడానికి వాడతారు.
+Examples:
+Vendor Certificate ( .cer file )
+Encryption Key ( .pfx file )
+Lookup CSV/XML file
+➡️ వాడకం: AS2/OFTP Adapters లో certificates validation, లేదా Mapping కోసం Lookup files.
+
+3️⃣ Alternative Partners
+ఒక Partner కి Multiple IDs ఉన్నప్పుడు వాడతారు.
+ఉదాహరణ:
+Main Partner ID: VENDOR_1001
+AS2 ID: AS2_VENDOR1001
+GLN: 1234567890123
+➡️ CPI ఎవరైనా ID తో message పంపినా → main partner VENDOR_1001 కి match చేస్తుంది.
+
+4️⃣ Authorized Users
+ఈ Partner కు సంబంధించిన entries ని ఎవరు access చేయగలరు, ఎవరు మార్చగలరు అని ఇక్కడ define చేస్తారు.
+ఉదాహరణ: కేవలం B2B Admin Team మాత్రమే certificates upload చేయగలరని control చేయవచ్చు.
+
+
+📌 ఎలా వాడతాం (Usage in CPI)?
+🔹 iFlow లో Usage:
+
+Groovy Script Example
+
+import com.sap.gateway.ip.core.customdev.util.Message
+import com.sap.it.api.pd.PartnerDirectoryService
+import com.sap.it.api.ITApiFactory
+
+def Message processData(Message message) {
+    def service = ITApiFactory.getApi(PartnerDirectoryService.class, null)
+
+    // Partner Directory నుంచి String Parameter fetch
+    def partnerID = "VENDOR_1001"
+    def paramID = "AS2ID"
+    def value = service.getStringParameter(partnerID, paramID)
+
+    message.setProperty("AS2_ID", value)
+    return message
+}
+
+
+Adapter Configurations లో
+AS2, SFTP, OFTP వంటివి PD లో స్టోర్ చేసిన certificates/IDs ఉపయోగిస్తాయి.
+
+B2B Scenarios లో
+EDI/EDIFACT/X12 messages లో Sender/Receiver Identification, Routing, Certificates, Mapping Values అన్నీ PD నుంచి వస్తాయి.
+
+📌 Real Example (End-to-End)
+Suppose మనకు ఒక Vendor ఉంది: VENDOR_1001
+String Parameters:
+AS2ID = VENDOR_AS2
+EndpointURL = https://vendor.com/as2
+
+Binary Parameters:
+Public Certificate → Vendor_1001.cer
+Alternative Partners:
+GLN = 1234567890123
+
+Authorized Users:
+కేవలం B2B_Admin మాత్రమే modify చేయగలరు.
+👉 ఇప్పుడు CPI లో ఒకే iFlow పెట్టి, ఎవరు message పంపినా CPI PD నుంచి values తీసుకుని process చేస్తుంది.
+
+✅ Summary in Telugu
+Partner Directory = B2B Integrations లో partner-specific సమాచారం కోసం centralized storage.
+String Parameters → Text values (IDs, URLs).
+Binary Parameters → Files (Certificates, Keys, Lookup).
+Alternative Partners → ఒక Partner కి Multiple IDs mapping.
+Authorized Users → ఎవరు access/modify చేయాలో control.
+
+వాడకం: iFlows, Adapters, B2B scenarios లో Dynamic Value Fetching.
+
+
+

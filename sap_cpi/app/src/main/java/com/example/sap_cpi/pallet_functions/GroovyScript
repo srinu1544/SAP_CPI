@@ -1,4 +1,4 @@
-Groovy script ->
+Groovy script -> (CPI) uses Groovy Runtime Version in CPI: 2.4.21
 ----------------------------------------------------------------------------------------------------
 In SAP Cloud Platform Integration (CPI), the Groovy Script pallet function allows you to integrate
 Groovy scripts into your integration flows for data transformations, logic execution, and custom
@@ -22,5 +22,6 @@ import com.sap.gateway.ip.core.customdev.util.Message;
 where can we use groovy script
 ------------------------------
 1. extracting attachments in invoice handling scenario
+
 
 

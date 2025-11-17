@@ -1,0 +1,71 @@
+capabilities of integration suite --- imp
+ TODO  - https://help.sap.com/docs/integration-suite/sap-integration-suite/capabilities
+ TODO - https://help.sap.com/docs/integration-suite/sap-integration-suite/activating-and-managing-capabilities
+
+SAP Integration Suite brings together the features and functionality of various capabilities such as Cloud Integration,
+API Management, Graph, Event Mesh, Integration Advisor, Trading Partner Management, OData Provisioning,
+Data Space Integration, Open Connectors, Integration Assessment, and Migration Assessment.
+
+this is from btp cockpit
+------------------------
+
+1. Select Capabilities
+Some capabilities of SAP Integration Suite require other capabilities.
+ When activating the capability, the prerequisite capabilities will automatically be co-activated.
+ To know more, see SAP note2903776
+
+ -> Build Integration Scenarios
+Discover, design, and operate scenarios for end-to-end process integration with Cloud Integration.
+
+ -> Manage APIs
+Discover, design, and govern APIs for API consumers with API Management.
+
+-> Implement Interfaces and Mappings
+Design interfaces and mappings using crowd sourcing and machine learning with Integration Advisor.
+
+-> Manage Trading Partners
+Design and operate B2B scenarios with Trading Partner Management.
+
+-> Access data in SAP Business Suite
+Access business data in SAP Business Suite with OData Provisioning.
+
+-> Extend Non-SAP Connectivity
+Connect to non-SAP cloud applications from your integration scenarios with Open Connectors.
+
+-> Manage and Provide Integration Technology Guidance
+Define, document, and govern your integration strategy powered by ISA-M with Integration Assessment.
+
+-> Assess Migration Scenarios
+Estimate the migration effort for SAP Process Orchestration scenarios with Migration Assessment.
+
+
+----------------------------------------------------------------------------------------------------
+What are the key components of sap cpi -- imp
+A.In SAP Cloud Platform Integration (CPI), CPI, API Management, Open Connectors, Trading Partner Management,
+  and Integration Advisor are key components of the SAP Integration Suite that facilitate the integration of
+  SAP and non-SAP systems. CPI is the core platform for connecting these systems, while the others are specialized
+  capabilities that enhance and streamline the integration process.
+
+  CPI (Cloud Platform Integration):
+  This is the foundational platform within SAP Integration Suite, enabling connectivity between SAP and non-SAP
+  cloud and on-premise applications. It serves as the middleware for data exchange and process orchestration.
+
+  API Management:
+  This capability allows for the creation, publication, and governance of APIs (Application Programming Interfaces).
+  It enables secure and scalable access to digital assets, promoting coinnovation among employees, partners, and
+  the developer community.
+
+  Open Connectors:
+  These are pre-built, standardized connectors that simplify integration with numerous third-party applications
+  and services, including popular SaaS applications. They provide normalized authentication, error handling,
+  and connectivity mechanisms, making integration faster and easier.
+
+  Trading Partner Management (TPM):
+  This capability manages business-to-business (B2B) interactions with external trading partners, streamlining
+  the management of B2B relationships, agreements, and data exchange. It helps define and configure electronic
+  data interchange protocols and standards for each trading partner.
+
+  Integration Advisor:
+  This tool provides a crowdsources, machine-learning approach to solving B2B, application-to-application (A2A),
+  and business-to-government (B2G) integration scenarios. It helps accelerate the development of business-oriented
+  interfaces and mappings, reducing development efforts

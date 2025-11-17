@@ -1,4 +1,4 @@
-ProcessDirect :
+ProcessDirect :   (sender , Receiver)
 ---------------
 The ProcessDirect adapter in SAP CPI facilitates direct, high-speed communication between integration
 flows within the same tenant, reducing latency and network overhead compared to traditional
@@ -6,3 +6,39 @@ adapters like HTTP or SOAP. It essentially enables integration flows to call eac
 as if they were internal functions, without the need for external communication.
 -> With out load balance
 ->  you cannot use multiple consumers with the same endpoint address in a single ProcessDirect adapter
+
+
+config :
+
+Receiver adapter config :  (General , Connection)
+-------------------------
+General : Name
+
+Connection :
+CONNECTION DETAILS
+Address (ET) :
+-> Address of the ProcessDirect sender adapter in the consumer integration flow you like to connect to.
+
+   Example:
+   /myConsumerIntegrationFlow
+
+Sender Adapter config : (General , Connection)
+-----------------------
+
+General : Name
+Connection :
+CONNECTION DETAILS
+Address (ET) :
+
+Address of the ProcessDirect sender adapter in the consumer integration flow.
+The producer integration flow uses this address to reach the sender adapter in the consumer integration flow.
+
+Example:
+/myConsumerIntegrationFlow
+
+
+
+
+
+
+

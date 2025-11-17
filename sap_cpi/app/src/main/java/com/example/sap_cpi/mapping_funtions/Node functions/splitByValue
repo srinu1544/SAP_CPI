@@ -1,0 +1,41 @@
+ splitByValue :
+ -------------
+ used to sort a collection of elements based on the values of a specific key.
+
+ In SAP CPI, the SplitByValue node function is used to create context changes in the source value
+ queue based on the values of a field. This function allows you to break down a single context into
+ multiple contexts, each containing a specific value or a group of values. Essentially, it splits
+  the data based on changes in a specific field's value.
+ Here's a more detailed explanation:
+
+ Purpose:
+ The primary purpose of SplitByValue is to create new contexts based on changes in the values of a specific field
+ within the source message.
+ It allows you to transform a single context into multiple contexts, effectively segmenting your data based on
+ value changes.
+
+ How it works:
+ SplitByValue analyzes the source value queue, identifying where the value of a specified field changes.
+ For each change in value, it inserts a context change into the queue.
+
+ This means the target structure will have a new context created for each distinct value or change
+ in value of the specified field.
+
+ Example:
+ Imagine you have a list of employees and you want to create separate contexts for each unique department
+ they belong to. You could use SplitByValue on the "department" field. The mapping runtime would then create
+ a new context for each department, allowing you to process employee data separately for each department.
+
+ Key features and options:
+
+ Each Value:
+ This option creates a new context for every distinct value encountered in the specified field.
+
+ Each Change:
+ This option creates a new context whenever the value of the specified field changes, even if
+ the new value is not entirely unique.
+
+ After Tag (without value):
+ This option creates a new context after each tag in the source structure, regardless of the tag's value.
+ In essence, SplitByValue is a powerful tool for creating context changes in your message mapping, enabling you to process data based on the values within the source message.
+

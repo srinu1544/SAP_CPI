@@ -1,0 +1,20 @@
+Presentation_5
+
+Node Functions :
+----------------
+
+ Queue Start →                         <root>
+ 3                                     <A>
+ 2                                      <item> 3 </item>
+ Context Change                         <item> 2 </item>
+ 10                                     </A>
+ 11                                     <A>
+ 43                                      <item> 10 </item>
+ 2                                       <item> 11 </item>
+ Context Change                          <item> 43 </item>
+ 7                                       <item> 2 </item>
+ Final Context Change                   </A>
+                                        <A>
+                                        <item> 7 </item>
+                                        </A>
+                                        </root>

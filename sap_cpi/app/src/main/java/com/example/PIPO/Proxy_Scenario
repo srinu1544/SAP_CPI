@@ -1,0 +1,76 @@
+SAP PO లో Proxy Scenario అంటే ఏమిటి?
+SAP Process Orchestration (PO) లో Proxy Scenario అనేది, SAP బ్యాకెండ్ సిస్టమ్ (ఉదా: SAP ECC లేదా S/4HANA) నుండి PI/PO ఇంటిగ్రేషన్ సర్వర్‌తో నేరుగా కమ్యూనికేట్ చేయడానికి ఉపయోగించే ఒక పద్ధతి. ఇందులో సాంప్రదాయిక అడాప్టర్లు (Adapters) అవసరం లేదు. బదులుగా, ABAP Proxy Classes ఉపయోగించి డేటా పంపబడుతుంది.
+
+ఈ పద్ధతి హై-వాల్యూమ్ డేటా ఎక్స్‌ఛేంజ్ కోసం చాలా పనితీరు (Performance) ని అందిస్తుంది మరియు సింక్రొనస్ (Synchronous) లేదా అసింక్రొనస్ (Asynchronous) రెండు రకాల కమ్యూనికేషన్‌ను సపోర్ట్ చేస్తుంది.
+
+ఇది XI Message Protocol ని ఉపయోగిస్తుంది — ఇది SAP యొక్క సొంత ఇంటిగ్రేషన్ ప్రోటోకాల్.
+
+🔧 Proxy Scenario ఎలా పని చేస్తుంది?
+1. ESR లో ఇంటర్‌ఫేస్‌లను డిఫైన్ చేయడం
+PI/PO సిస్టమ్ లోని Enterprise Services Repository (ESR) లో,
+Message Data Types (డేటా స్ట్రక్చర్),
+Message Types,
+Service Interfaces (ఇన్‌పుట్/అవుట్‌పుట్ ఫార్మాట్)
+వీటిని సృష్టిస్తారు.
+2. Proxy Classes జనరేట్ చేయడం
+ESR లో ఉన్న ఈ Service Interface ఆధారంగా,
+PI/PO సిస్టమ్ WSDL (Web Services Description Language) ఫైల్‌ను జనరేట్ చేస్తుంది.
+3. SAP బ్యాకెండ్ లో ABAP Proxies జనరేట్ చేయడం
+ఈ WSDL ని SAP ECC (లేదా S/4HANA) లో T-Code: SPROXY ఉపయోగించి ఇంపోర్ట్ చేస్తారు.
+అప్పుడు SAP సిస్టమ్ ABAP Proxy Classes (క్లాసెస్ & మెథడ్స్) ని ఆటోమేటిక్‌గా క్రియేట్ చేస్తుంది.
+4. Sender Logic ఇంప్లిమెంట్ చేయడం
+ఒక ABAP Program రాస్తారు.
+ఈ ప్రోగ్రామ్:
+SAP టేబుల్ నుండి డేటా తీసుకుంటుంది,
+Proxy Class యొక్క అవుట్‌పుట్ ఫీల్డ్స్ లో డేటా పెడుతుంది,
+తర్వాత Proxy Method ని కాల్ చేసి, మెసేజ్‌ని PI/PO కి పంపుతుంది.
+5. PI/PO తో కమ్యూనికేషన్
+Proxy Class నేరుగా PI/PO Integration Server తో కమ్యూనికేట్ అవుతుంది.
+Adapters (ఉదా: IDoc, RFC, File) అవసరం లేదు.
+అందువల్ల కమ్యూనికేషన్ వేగంగా, సౌకర్యంగా ఉంటుంది.
+✅ Proxy Scenario యొక్క ప్రధాన ప్రయోజనాలు
+1. ఉత్తమ పనితీరు (Superior Performance)
+హై-వాల్యూమ్ డేటా ఎక్స్‌ఛేంజ్ లో అడాప్టర్-ఆధారిత స్కీమాల కంటే
+చాలా వేగంగా
+పనిచేస్తుంది.
+2. నేరుగా కమ్యూనికేషన్
+SAP సిస్టమ్ నుండి PI/PO కి
+XI ప్రోటోకాల్
+ద్వారా నేరుగా కనెక్ట్ అవుతుంది.
+3. Sync & Async సపోర్ట్
+రెస్పాన్స్ తక్షణం కావాలా? (Sync) లేదా తర్వాత ప్రాసెస్ చేయాలా? (Async) —
+రెండింటినీ సపోర్ట్ చేస్తుంది
+.
+4. సరళమైన డెవలప్‌మెంట్
+డెవలపర్లు
+అడాప్టర్ కాన్ఫిగరేషన్
+గురించి ఆందోళన చెందాల్సిన అవసరం లేదు. వారు
+డేటా స్ట్రక్చర్ నింపడం
+మరియు
+మెథడ్ కాల్ చేయడం
+మీద దృష్టి పెడతారు.
+
+📝 ఉదాహరణ:
+మీరు SAP ECC లో ఉన్న Sales Orders ని బాహ్య సిస్టమ్ కి పంపాలనుకుంటున్నారు.
+
+ESR లో SalesOrder_Out అనే Service Interface క్రియేట్ చేస్తారు.
+WSDL జనరేట్ అవుతుంది.
+ECC లో SPROXY ఉపయోగించి, ZCL_SALES_ORDER_PROXY అనే ABAP Proxy Class క్రియేట్ అవుతుంది.
+ఒక ABAP Program లో:
+abap
+
+
+1
+2
+3
+DATA: lo_proxy TYPE REF TO zcl_sales_order_proxy.
+CREATE OBJECT lo_proxy.
+lo_proxy->send_sales_order( ls_order_data ).
+ఇది నేరుగా PI/PO కి మెసేజ్ పంపుతుంది — IDoc లేదా RFC అవసరం లేదు!
+⚠️ గమనిక:
+Proxy Scenarios SAP-to-SAP లేదా SAP-to-Non-SAP (via PO) ఇంటిగ్రేషన్ కోసం ఉపయోగపడతాయి.
+ఇవి SAP NetWeaver 7.0+ మరియు SAP PO/PI 7.1+ లో మాత్రమే సపోర్ట్ అవుతాయి.
+S/4HANA లో కూడా ఇవి పూర్తిగా సపోర్ట్ అవుతాయి.
+📌 సారాంశం (Summary):
+Proxy Scenario అనేది SAP బ్యాకెండ్ సిస్టమ్ నుండి PI/PO కి అడాప్టర్లు లేకుండా, ABAP Proxy Classes ఉపయోగించి వేగంగా, సురక్షితంగా డేటా పంపే పద్ధతి. ఇది హై-వాల్యూమ్, రియల్-టైమ్ ఇంటిగ్రేషన్ కోసం అత్యుత్తమమైన పరిష్కారం.
+

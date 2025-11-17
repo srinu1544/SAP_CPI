@@ -1,4 +1,37 @@
+Important abbreviations :
+1. ERP – Enterprise Resource Planning
+Purpose:
+Integrates core business processes like Finance, HR, Production, Sales into a single system.
+Examples: SAP ERP, Oracle ERP, Microsoft Dynamics
+
+2. CRM – Customer Relationship Management
+Purpose:
+Manages customer interactions, sales, marketing, and service to improve relationships and sales growth.
+Examples: SAP CRM, Salesforce, Zoho CRM
+
+3. SRM – Supplier Relationship Management
+Purpose:
+Focuses on managing relationships with suppliers for procurement, sourcing, and supplier collaboration.
+Examples: SAP SRM, Oracle Procurement
+
+4. SCM – Supply Chain Management
+Purpose:
+Manages the flow of goods, services, information, and finances across the entire supply chain network.
+Examples: SAP SCM, JDA, Oracle SCM
+
+5. PLM – Product Lifecycle Management
+Purpose:
+Manages the entire lifecycle of a product from idea, design, manufacturing, service, to disposal.
+Examples: SAP PLM, Siemens Teamcenter, PTC Windchill
+
+
+
+
+
+
+
 -A
+
  ALE (Application Link Enabling)
  AMQP (Advanced Message Queuing Protocol) -
  API (Application Programming Interface),
@@ -8,6 +41,8 @@
                                         including secure communications, data protection, and cybersecurity.
                                         It supports key sizes of 128-bit, 192-bit, and 256-bit, making it
                                         highly secure and efficient.
+ ADP = Application Data Provider
+
 
 
 
@@ -29,6 +64,8 @@
  CSRF (Cross-Site Request Forgery) - is a type of security attack where an attacker tricks a user into executing unauthorized
                                       actions on a web application where they are authenticated.
  CMS - cryptographic message syntax
+ CR	(Change Request) - 	A formal request to make a change in an existing system or project.
+ CD	(Change Document) - (Change Description/Change Deployment, depending on context)
 
 -D
  DS (Data Store),
@@ -39,6 +76,11 @@
                                      It's based on the discrete algorithm problem, which is another
                                      computationally difficult problem. DSA is often favored in
                                      situations where speed is a priority.
+
+ UDDI- Universal Description Discovery Integration
+ Universal Description → Stores information about web services.
+ Discovery → Helps applications find the right web service based on criteria.
+ Integration → Provides details (like WSDL URLs) so systems can integrate with those services.
 
 -E
  ERP - Enterprise Resource planing
@@ -114,6 +156,7 @@
  PSE – Personal Security Environment (for certificates)
  PGP - Pretty Good privacy
  PKCS - Public-Key Cryptography Standards
+ SLD – System Landscape Directory
 
 -Q
 
@@ -140,6 +183,8 @@
  SCP – SAP Cloud Platform (now called BTP)
  SSH - Secure Shell - (It is a cryptographic network protocol used for securely accessing
                        managing network devices, remote servers, and systems over an unsecured network.)
+ SIT — System Integration Testing.
+
 
 -T
  TID (Transaction ID),

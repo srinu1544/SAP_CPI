@@ -1,0 +1,290 @@
+
+                                            Questions only
+SAP Cloud Platform Integration (CPI / SAP Integration Suite) – Core Concepts
+What is SAP CPI (Cloud Platform Integration)? (imp)
+On which framework does SAP CPI work?
+What is an iFlow (Integration Flow) in SAP CPI?
+What are the basic components of an Integration Flow in SAP CPI?
+What are the five important services in SAP CPI?
+What is the architecture of SAP CPI?
+What are the capabilities of SAP CPI / Integration Suite?
+What deployment models are available in SAP CPI?
+Where can you find SAP CPI in the SAP BTP cockpit?
+What is the ES Repository in SAP CPI? (imp)
+🔹 Adapters & Connectivity
+What are adapters in SAP CPI?
+What adapters have you worked with?
+What is the JMS adapter used for in SAP CPI? (imp)
+What is the Process Direct Adapter in SAP CPI? (imp)
+What is the difference between JMS and Process Direct adapters? (IMP)
+What is the HTTP adapter vs API Management (API creation)?
+How do you configure the Mail adapter? What is the port for Mail?
+What are the ports for FTP, SFTP, and SAP CPI?
+What is the difference between FTP and SFTP?
+What is the difference between SFTP and FTPS?
+How do you configure SFTP/FTP adapter? What info is needed?
+How do you test SFTP connectivity?
+What are post-processing options in SFTP sender (e.g., move, delete, rename)?
+How do you pick all files from an SFTP folder?
+How do you place a file in the root (not subfolder) in SFTP receiver?
+What is public key-based authentication in SFTP? Where do you upload keys?
+What is SSH key in SFTP configuration? How do you get it?
+How do you configure the SOAP adapter? What details are needed?
+Difference between SOAP 1.x and SOAP RM?
+How do you get the WSDL for SOAP configuration?
+How do you configure the OData adapter? (imp)
+When to use OData vs REST vs SOAP in SuccessFactors adapter? (vvimp)
+What are the OData operations (GET, POST, PUT, PATCH, DELETE)?
+How do you filter data in an OData call?
+How do you handle OData batch processing in SAP CPI?
+How do you get XSD after an OData call for mapping?
+How do you fetch data from two OData entities (e.g., Orders + Products)?
+What is the Open Connectors feature? How does CPI integrate with it?
+What is the IDoc adapter? How do you configure it? (vvimp)
+How do you connect S/4HANA or ECC to CPI for IDoc processing (ALE settings)? (vvimp)
+What is the structure of an IDoc?
+What are common IDoc types? (vvimp)
+How do you handle different IDoc types in CPI? (vvimp)
+Difference between RFC and IDoc adapter in SAP CPI?
+What is an RFC system?
+🔹 Message Processing & Flow Control
+What are the different message exchange patterns in SAP CPI?
+Difference between synchronous and asynchronous processing in SAP CPI? (imp)
+How do you handle a Synchronous-to-Asynchronous bridge in SAP CPI?
+What is a Timer Event? How do you schedule a job (e.g., 1st of month at 12 PM)?
+What is a Load Balancer in SAP CPI? How does it work with JMS?
+What is a Message Broker?
+What is Quality of Service (QoS) in SAP CPI? (vvimp)
+If a producer iFlow fails in Process Direct, does the consumer also fail?
+Can you have multiple consumers in one Process Direct adapter?
+What is CSRF protection in HTTPS adapter?
+🔹 Splitting, Aggregation & Multicast
+What is a Splitter in SAP CPI?
+What types of splitters are available?
+Difference between General Splitter and Iterative Splitter?
+What is Parallel Multicast vs Sequential Multicast? (vvimp)
+What is the Parallel Multicast step used for?
+Can you access headers/properties from one branch in another after Sequential Multicast? If not, how?
+🔹 Mapping & Transformation
+What types of mappings are available in SAP CPI?
+When to use Graphical Mapping vs XSLT vs Groovy in mappings? (vvimp)
+What is Message Mapping in SAP CPI?
+Have you worked on Message Mapping? Which node functions?
+What node functions do you know? (e.g., Use One As Many, Split by Value, Format by Example)
+What is "Suppress" in Message Mapping?
+What to do if a required target node is missing in source?
+What to do if a target field has no value in source?
+What is Remove Context vs Collapse Context? (imp)
+What files can be uploaded in Message Mapping? What is an MMAP file?
+In which converter is namespace mapping available?
+What is XSLT Mapping used for?
+How do you migrate PI/PO mappings to SAP CPI?
+What is .SCA file?
+🔹 Scripting & Custom Logic
+Why is Groovy scripting used in SAP CPI?
+What types of Groovy scripts are used in SAP CPI?
+How do you use Groovy for error handling?
+How do you save JSON data in Content Modifier using Groovy? (vvimp)
+What is the difference between XmlParser and XmlSlurper in Groovy?
+How do you rate yourself in Groovy (out of 5)?
+In which scenarios did you use Groovy?
+🔹 Content Handling & Modifiers
+What is the Content Modifier? What are its source types?
+How do you use dynamic expressions in Content Modifier?
+How do you allow external headers into SAP CPI?
+What is the difference between Content Modifier and Content Enricher? (vvimp)
+What is the difference between Content Enricher and Request-Reply? (vvimp)
+What is the difference between Content Enricher and Request-Reply vs SEND?
+What aggregation algorithms are available in Content Enricher? (e.g., Combine, Enrich)
+What is Poll Enrich pattern?
+🔹 Data Store & Variables
+What is Data Store in SAP CPI?
+What Data Store operations are available (Write, Select, Get, Delete)?
+Difference between Select and Get in Data Store?
+How do you select/delete records in Data Store?
+What is Write Variable? What is its application?
+What is the default retention period of a variable?
+What is Global vs Local variable?
+🔹 Exception Handling & Monitoring
+How is exception handling implemented in SAP CPI?
+What is an Exception Subprocess?
+What are the OnFailure options in Value Mapping?
+What monitoring tools are available in SAP CPI?
+What are the different log levels? In which can you see the payload?
+What is Trace Mode? How long is trace data retained?
+What is an SAP Incident?
+🔹 Security & Authentication
+What is a Security Artifact in SAP CPI?
+What types of credentials can be created in Security Materials?
+How is OAuth 2.0 implemented in SAP CPI? (What version?)
+How do you get Client ID and Client Secret from BTP Cockpit?
+How is certificate-based authentication implemented?
+How do you download CPI certificates?
+What is Principal Propagation in SAP CPI?
+How is data encryption handled in SAP CPI?
+What is PGP Encryption/Decryption? How to configure?
+How do you handle sensitive data securely in SAP CPI?
+What is the Credential Store / SecureStore service in SAP BTP?
+🔹 Performance, Large Data & Encoding
+How do you handle large messages in SAP CPI?
+What is streaming of data?
+What is Zip compression vs GZIP?
+What is Zip Decompression?
+What are encoders and decoders? Why are they needed?
+What is a Record Marker in CSV?
+How do you convert JSON to XML in SAP CPI?
+How do you optimize SAP CPI performance?
+What is pagination in SAP CPI? How to handle paginated records?
+🔹 Integration Patterns & Advanced Concepts
+What integration patterns are supported in SAP CPI?
+How is Content-Based Routing implemented?
+How to achieve advanced content-based routing?
+What is correlation in SAP CPI?
+Difference between Message ID and Correlation ID?
+What is Transaction Handling? Why use it? What if not enabled?
+Can JMS and JDBC be handled together in one transaction?
+How do you establish retry mechanism using JMS?
+How do you retry after fixing a data issue in JMS?
+How do you design modular/reusable integration flows?
+What is an independent vs dependent iFlow?
+How do you call a local integration process?
+What is Looping Process Call?
+🔹 SAP BTP & Cloud Platform
+What is SAP BTP? What are its primary components?
+What is the role of SAP Integration Suite in SAP BTP?
+Difference between SAP BTP and SAP Cloud Platform?
+Difference between BTP and BTP Cockpit?
+What is a Global Account vs Subaccount in SAP BTP?
+Why have multiple subaccounts?
+Have you worked with BTP Cockpit?
+What is SAP Build? SAP Build Work Zone?
+What is SAP Business Scenario Recommendations (BSR)?
+What is SAP Discovery Center?
+What is SAP Cloud ALM?
+What is Transport Management Service (TMS) in SAP BTP?
+🔹 BTP Runtimes & Development
+Difference between NEO and Cloud Foundry environments? (imp)
+What is Kyma runtime? (imp)
+Difference between Cloud Foundry service instances and Kyma microservices?
+What is Cloud Foundry Multitenant Application Development?
+What is SAP Business Application Studio?
+Explain CAP (Cloud Application Programming) Model.
+Difference between CAP and RAP models?
+What is SAP Embedded Steampunk?
+What is Diego Cells?
+🔹 APIs, Events & Extensibility
+How does SAP CPI integrate with SAP API Management?
+How do you expose an iFlow as an API?
+How do you monitor API usage in API Management?
+What is SAP API Business Hub?
+What is SAP Event Mesh? How does it enable event-driven architecture?
+How does Event Mesh support dynamic scaling?
+How do you connect Event Mesh with third-party systems?
+What is SAP Graph? Role in multi-cloud?
+🔹 Migration & Comparison
+Differences between PI/PO and SAP CPI? (imp)
+Why migrate from PI/PO to CPI? (Advantages of CPI)
+Difference between On-Premise and Cloud systems? (imp)
+How do you migrate integration flows between environments?
+🔹 Miscellaneous Technical
+What is * (asterisk) used for in CPI?
+What is Location ID?
+What is NetWeaver?
+What is JD Edwards?
+What is SAP BW/4HANA?
+What is XHTML?
+What is SHA vs RSA?
+What are cloud service models (IaaS, PaaS, SaaS, FaaS)?
+Which cloud model does CPI/BTP belong to?
+Types of clouds (Public, Private, Hybrid)?
+What is SOA Manager?
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+part -4 (interview questions and important questions)
+----------------------------------------------------
+Q.difference bw NEO and cloud foundry
+Q.splitter - worked on splitters
+Q.odata configuration
+Q.architecture of sap cpi
+Q.capabilities of cpi
+Q.multicast -> parallel multicast and sequential multicast
+Q.oauth version
+Q.process direct adapter
+Q.sftp adapter
+Q.Node functions
+Q.Logs - types
+Q.difference between between fix value and value mapping ?
+Q.how to push the data to s4hana from sap cpi?
+Q.how to get data from s4hana and how to handle
+Q.what is event mesh? and how to connect with third party systems?
+Q.difference between btp and btp cockpit ?
+Q.difference between HTTP and SOAP?
+Q.difficulties faced in sap cpi
+Q.how to send employs data to s4hana?
+Q.what is looping process call?
+Q.how to go to folder in folder in SFTP?
+Q.In which log levels can see the payload?
+Q.how to trace the data in cloud connector?
+Q.what is Oauth 2.0
+Q.difference between general splitter and iterating splitter
+Q.difference between parallel  multicast and sequential multicast
+Q.what is the predefined artifacts in cpi
+Q.What are the capabilities of integration suite
+Q.how to migrate PIPO mappings to sap cpi
+Q.iDocs sending and receiving
+Q.odata sending and receiving
+Q.api management
+Q.Difference between xml parser and XmlSlurper
+Q.how to handle odata batch processing in sap cpi?
+Q.Groovy scripting in SAP CPI is used in various scenarios ?
+Q.Idoc types ?
+Q.how to send data to s4hana from cpi iflow
+Q.how to create private and public keys in sap cpi ?
+Q.In which case using Odata and soap in successfactors
+Q.how to handle odata batch processing in sap cpi?
+Q.what is MIG and MAG?
+Q.Difference between message id and correlation id
+Q.Btp cockpit instance and subscription
+Q.What are the Cloud service models
+Q.Cpi comes which cloud service
+Q.Btp comes which cloud service
+Q.Mostly which key we are used either public or private
+Q.Certificates
+Q.Different source types in property
+Q.What are the different types of events
+Q.Exception subprocess
+Q.3 party Third party system?
+Q.Difference between Exclusive and non Exclusive?
+Q.when can we use graphical,xslt,groovy in mapping?
+Q.type of splitters available in sap cpi ?
+Q.configuration of JMS
+Q.how to retries when data problem resolved in jms
+Q. json to xml converter config ?
+Q.Aggregation Algorithm  of content modifier?
+A. comine , enrich
+Q.Aggregation Algorithm  of aggregator?
+A.combine , combine in sequence
+Q.how to check attachment and if attachment not available in sftp i want to send mail in sap cpi how can i do this
+Q.How to schedule a process of every month 1st at 12 pm and 3 ph in sap cpi how
+Q.Where can we install cloud connector in sap
+Q.what is "suppress" in sap cpi in message mapping
+Q.What is location id ?
+Q.Types of mapping ?
+Q.how to download the cpi 3 certificates ? - noted
+Q.how to handle Idoc types in sap cpi? - noted -- vvimp
+Q.what is Quality of service in sap cpi? --noted -- vvimp
+Q.What is SAP incident? -- noted
+Q.Connection types in ALE Settings? -- noted -- vvimp
+Q.Which connection type is used for connect S4hana to cpi in ALE ?-- noted -- vvimp
+Q.Types of clouds (public , private etc)
+Q.SOA Manager
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

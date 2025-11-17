@@ -1,0 +1,40 @@
+sortByKey :
+----------
+In SAP Cloud Platform Integration (CPI), the sortByKey node function is used to sort a collection
+of elements based on the values of a specific key. It requires a key function or a key property
+to determine the order of sorting. This function is particularly useful when you need to sort
+data based on a particular field within a structured message, like sorting a list of objects by their name property.
+
+Functionality:
+
+Sorting by Key:
+sortByKey arranges the elements of a collection (like a list or queue) in a specific order determined
+by the values associated with a designated key.
+
+Key Specification:
+You need to provide either a key function (a function that extracts the key from each element) or
+a key property (a string representing the property name to use as the key) to guide the sorting process.
+
+Prerequisites:
+Typically, the collection you're sorting and the collection used as the basis for the key need to
+have the same number of elements.
+
+Example:
+Imagine you have a message with two arrays:
+Array 1: ["B", "D", "A", "E"]
+Array 2: [1, 2, 3, 4]
+If you use sortByKey on Array 2, using Array 1 as the key, the resulting order of Array 2
+would be: [3, 1, 2, 4]. This is because the elements in Array 2 are rearranged to match the
+sorted order of Array 1 (which would be ["A", "B", "C", "D"], if sorting alphabetically).
+
+Use Cases:
+
+Complex Sorting:
+It allows you to sort data based on specific criteria within a complex message structure.
+
+Data Transformation:
+It can be used to align data structures or rearrange elements based on a particular field.
+
+Maintaining Relationships:
+It helps preserve the relationship between elements in different arrays when sorting one based on the other.
+

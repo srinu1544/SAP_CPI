@@ -1,7 +1,5 @@
-package com.example.sap_cpi.Files
-
-/*
-WSDL (Web Services Description Language) - Key Points
+WSDL (Web Services Description Language)
+ Key Points
 🔹 Definition: WSDL is an XML-based language used to describe web services and how they can be accessed.
 🔹 Purpose: Defines the structure, operations, and communication format for SOAP-based web services.
 
@@ -72,8 +70,3 @@ Key Takeaways
 ✅ WSDL is used to describe and integrate SOAP web services.
 ✅ Defines operations, messages, and endpoints.
 ✅ Used in SAP CPI for SOAP-based integrations.
-
-
-
-
-*/

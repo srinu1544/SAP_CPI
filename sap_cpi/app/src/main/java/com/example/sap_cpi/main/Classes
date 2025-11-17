@@ -1,7 +1,5 @@
-package com.example.sap_cpi.others
-
-/*
-
+classes :
+---------
 class 1 -- completed (introduction)
 class 2 -- completed (introduction)
 class 3 -- completd (introduction)
@@ -18,13 +16,13 @@ class 13 -- completed (artifacts download , copy , versioning, revert , moving o
 class 14 -- completed(content modifier , header )
 class 15 -- completed (content modifier , property (xpath, number range, etc) , header) -- vvimp
 class 16 -- completd (new instance creation , again new iflow creation , property to header conversion and content modifier confugurations)
-class 17 -- completed (configure externalized parameters , configure , externalized ) -- vvimp
+
 class 18 -- completed  (csv to xml converter) - vvimp  -  notes prepare pending
 class 19 -- havae to start (converters )
 class 20 -- have to start (filters )
 class 21 completed (filter, message mapping, node functions (concat)) - filters not completed
 class 22 completed (message mapping , occurrences, mapping(basic) ) -- not imp
-class 23 completed (message mappings, functions ceil,and,or, floor, round, fixValue, current data,) - vvimp
+class 23 completed (messclass 17 -- completed (configure externalized parameters , configure , externalized ) -- vvimpage mappings, functions ceil,and,or, floor, round, fixValue, current data,) - vvimp
 class 24 completed (value mapping , occurrences)
 class 25 completed (node functions , change context , remove context , sort , splitbyvalue)
 class 26 completed (collapse context , remove context) - imp

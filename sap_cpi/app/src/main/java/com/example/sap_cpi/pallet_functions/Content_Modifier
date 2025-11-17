@@ -1,7 +1,10 @@
 
   Content Modifier ->
 ------------------------------------------------------------------------------------------------------------------------------
-You use the content modifier step to modify the content of incoming message by providing additional
+It got an access message container
+->
+
+You can use the content modifier step to modify the content of incoming message by providing additional
 information in the header or body of the message
 
 The Content Modifier is used to modify the content of a message by adding, updating, or deleting message headers,
@@ -33,9 +36,19 @@ Exchange property
 
 message Body
 ------------
+In Content Modifier, the message body part refers to the main payload of the message, containing the
+business-related data that needs to be transferred. It's the core content of the message that can be
+modified, enriched, or replaced during the integration process.
+
+Purpose:
+The message body holds the actual data being exchanged between systems.
+Modification:
+You can use the Content Modifier to transform, add, or remove data within the message body.
+
+
 
 config : (General, Message Header, Exchange Property, Message Body)
-
+-------
 General : Name
 
 Message Headers :

@@ -1,6 +1,13 @@
+presentation_1
+Presentation_6
+
 IDoc Adapter : (Intermediate Document)
+
+-> Idoc adapter is used to extract the data or get the messages form ecc or sap source systems
 -> (For SAP ECC/S4HANA integration)
 -> Used for SAP-to-SAP communication.
+
+
 
 IDOC Sender :
 ----------------------------------------------------------------------------------------------------
@@ -32,3 +39,13 @@ DESADV: Shipping notification.
 INFREC/INFREC01: Purchasing info record.
 ARTMAS/ARTMAS02: Article master.
 PRDCAT/PRDCAT01: Product catalog.
+
+ Connection Types in ALE
+ -------------------------
+  ABAP Connections                    --  3
+  HTTP Connections to External Server  -- G
+   HTTP Connections to ABAP System     -- H
+   Internal Connections                -- I
+   TCP/IP Connections                  -- T
+   WebSocket RFC                       -- W
+   Connections Using ABAP Driver       -- X

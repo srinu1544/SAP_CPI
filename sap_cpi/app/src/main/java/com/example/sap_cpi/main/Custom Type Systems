@@ -1,0 +1,70 @@
+custom Type System :
+---------------------
+
+
+
+Custom Codelists
+-------------------
+Collection of Global Custom Codelists
+This Type System can be used by customers to upload and use their own Custom Codelists.
+
+👉 ఇది Global Custom Codelists కలెక్షన్.
+దీన్ని ఉపయోగించి మీరు మీకు కావలసిన Custom Code lists (ఉదాహరణకు: దేశ కోడ్లు, కరెన్సీ కోడ్లు, స్టేటస్ కోడ్లు) అప్‌లోడ్ చేసి CPI లో వాడుకోవచ్చు.
+CPI డిఫాల్ట్‌గా ఇచ్చిన కోడ్లకు తోడు మీ బిజినెస్ అవసరానికి తగ్గట్టు మీ సొంత కోడ్ లిస్ట్ తయారు చేసుకోవచ్చు.
+
+Custom IDocs
+-------------
+Collection of Custom IDocs
+This Type System can be used by customers to upload and use their own Custom IDocs including extended SAP IDocs.
+
+👉 ఇది Custom IDocs Collection.
+SAP లో IDoc (Intermediate Document) అనేది ఒక స్టాండర్డ్ డేటా ఫార్మాట్.
+ఇక్కడ మీరు మీకు కావలసిన Custom IDocs లేదా Extended IDocs ని అప్‌లోడ్ చేసి వాడుకోవచ్చు.
+అంటే, స్టాండర్డ్ SAP IDoc లో ఫీల్డ్స్ సరిపోకపోతే, మీ బిజినెస్ అవసరానికి తగ్గట్టు కొత్త IDoc Extensions తయారు చేసుకుని CPI లో వాడుకోవచ్చు.
+
+Custom Messages
+---------------
+Collection of Custom Messages
+This Type System can be used by customers to upload and use their own Custom Messages.
+
+👉 ఇది Custom Messages Collection.
+CPI లో మీకు కావలసిన Custom Message Types అప్‌లోడ్ చేసుకోవడానికి ఇది ఉపయోగపడుతుంది.
+ఉదాహరణకు: ఒక స్పెషల్ ఫార్మాట్‌లో మెసేజ్ కావాలి అంటే, మీరు దానిని డిఫైన్ చేసి ఇక్కడ ఉంచి CPI లో Reuse చేయవచ్చు.
+
+Custom SOA messages
+--------------------
+Collection of Custom SOA messages
+This Type System can be used by customers to upload their own SOA messages.
+
+👉 ఇది Custom SOA (Service Oriented Architecture) Messages Collection.
+SOA ఆధారిత ఆర్కిటెక్చర్‌లో కస్టమైజ్డ్ మెసేజ్ ఫార్మాట్స్‌ని సపోర్ట్ చేయడానికి ఇది ఉపయోగపడుతుంది.
+ఉదాహరణకు: SAP PI/PO లో మీరు వాడిన Custom SOA Messages ను CPI లో కూడా యాడ్ చేసి వాడుకోవచ్చు.
+
+
+✅ సారాంశం (తెలుగులో)
+Custom Codelists → కస్టమ్ కోడ్లిస్ట్‌లను క్రియేట్ చేసి వాడుకోవడం.
+Custom IDocs → SAP IDoc లకు కస్టమ్ వెర్షన్‌లు / ఎక్స్టెన్షన్‌లు వాడుకోవడం.
+Custom Messages → కస్టమ్ మెసేజ్ టైప్స్ క్రియేట్ చేసి వాడుకోవడం.
+Custom SOA Messages → కస్టమ్ SOA మెసేజ్ ఫార్మాట్స్ వాడుకోవడం.
+
+
+Example :
+---------
+import com.sap.gateway.ip.core.customdev.util.Message
+import com.sap.it.api.codelist.CodeListService
+import com.sap.it.api.ITApiFactory
+
+def Message processData(Message message) {
+
+    // 1. Get CodeList Service instance
+    def codeListService = ITApiFactory.getApi(CodeListService.class, null)
+
+    // 2. Lookup Codelist value
+    // Parameters: (CodelistName, KeyValue, DefaultValue)
+    def countryCode = codeListService.getValue("CountryCodes", "INDIA", "DEFAULT")
+
+    // 3. Set property for later use in iFlow
+    message.setProperty("CountryCode", countryCode)
+
+    return message
+}

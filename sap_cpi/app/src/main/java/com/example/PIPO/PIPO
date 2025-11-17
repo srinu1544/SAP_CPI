@@ -1,0 +1,30 @@
+
+PIPO
+----
+refer
+asserts -> PIPO.docs
+
+Video references --
+https://www.youtube.com/@integrationhub581
+
+SAP PIPO :
+
+SAP PI/PO System Objects
+PI/PO is built on two main design areas:
+1) ESR (Enterprise Service Repository) → Design-time objects (what you want to build)
+2) ID (Integration Directory) → Configuration-time objects (how you want to connect)
+3) Runtime → Where execution happens (Adapter Engine, Integration Engine, Mapping Runtime, etc.)
+
+1. Enterprise Service Repository (ESR) Objects
+-----------------------------------------------
+These are design-time artifacts.
+Object	Purpose	Use Case
+Namespace -> 	Logical container for objects	Separate different business scenarios, e.g., urn:sales:order.
+Data Type ->	Defines structure of data (XSD schema)	Example: SalesOrder with fields OrderID, CustomerID.
+Message Type -> 	Based on Data Type, used for message exchange	SalesOrder_MT (request/response messages).
+Service Interface ->	Defines operations (Inbound / Outbound)	Outbound SI for sending order, Inbound SI for receiving invoice.
+Message Mapping	-> Source-to-target field mapping (graphical, Java, XSLT, etc.)	Map CustID → CustomerNumber.
+Operation Mapping -> Connects Service Interfaces with Message Mappings	SalesOrder_Out → SalesOrder_In using mapping.
+Imported Archive (JAR) -> Java code libraries Use custom Java functions in mappings.
+Imported WSDL/External Definition -> Use external schemas or WSDLs	Connect with external web service.
+Mapping Templates	-> Predefined mapping reusable logic	Reuse for multiple mappings.

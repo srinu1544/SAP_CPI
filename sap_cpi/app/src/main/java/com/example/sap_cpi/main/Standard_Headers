@@ -4,7 +4,7 @@ https://www.sprintegrate.com/cpi/sap-cpi-message-monitoring-standard-out-of-the-
 Standard headers
 -----------------
 SAP_Sender: Identifies the sender system
-SAP_Receiver: Identifies the receiving system
+SAP_Receiver : Identifies the receiving system
 SAP_MessageType: Identifies the message type
 SAP_ApplicationID: An XPath to read the business identifier
 
@@ -33,3 +33,9 @@ ArchivingSenderChannelMessages,
 ArchivingReceiverChannelMessages,
 ArchivingLogAttachments,
 ArchivingPersistedMessages
+
+
+custom headers
+--------------
+for response in xml
+content-type constant application/xml  --- give this in content modifier

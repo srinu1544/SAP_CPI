@@ -1,20 +1,5 @@
-package com.example.sap_cpi.pallet_functions
-
-import androidx.compose.foundation.layout.Column
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.sap_cpi.R
-import com.example.sap_cpi.ui.theme.image.LoadImage
-
-@Preview
-@Composable
-fun ContentEnricher(){
-    Column {
-        LoadImage(imageRes = R.drawable.image9)
-        LoadImage(imageRes = R.drawable.image8)
-    }
-}
-
+image9
+image8
 
 Content Enricher ->
 ------------------

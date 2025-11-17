@@ -9,10 +9,55 @@ smtp-mail.outlook.com:587
 
 
 gmail configuration
-Host Address: smtp.gmail.com
+Host Address: smtp.gmail.com:578
 Port: 587
 
 for reading email imap protocol
 imap.gmail.com:993
+
+configure :
+
+Setting up Gmail Account
+https://myaccount.google.com
+Navigate to the settings of your Gmail account and locate the Security tab. Within this section,
+activate the Two-Step verification feature. Once you have enabled it, an opportunity to configure
+application passwords will be presented to you. Proceed by selecting "App Passwords"
+
+
+go to monitor in cpi -> security material -> create user credentials
+fill all the details :
+Name
+Description
+Type
+User
+Password
+Repeat Password
+
+goto connectivity test
+-> SMTP ->
+
+
+configure  Mail sender adapter :
+--------------------------------
+
+-> if select mail sender side adapter needs to select one of these
+IMAP4
+POP3
+
+
+
+configure Mail Receiver adapter :
+--------------------------------
+
+Config : (General , Connection, Processing , Security)
+
+General : Name
+
+Connection :
+Address (ET) :
+Proxy Type (DD) : (Internet,On-premise)
+
+
+
 
 

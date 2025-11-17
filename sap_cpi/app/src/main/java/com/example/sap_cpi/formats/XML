@@ -1,0 +1,33 @@
+About xml :
+-----------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Employee>
+    <ID>1001</ID>   -- node
+    <Name>John Doe</Name>
+    <Department>IT</Department>
+    <Salary currency="USD">75000</Salary>
+</Employee>
+
+->
+<?xml ...?> → XML declaration (optional but recommended)
+<Employee> → Root element (every XML must have one root)
+<ID>, <Name>, etc. → Elements (contain data)
+currency="USD" → Attribute (metadata about an element)
+In XML, everything is a node — the entire document is represented as a tree of nodes (called the DOM: Document Object Model).
+
+
+
+✅ Rule: XML is case-sensitive, and tags must be properly nested and closed.
+
+🧩 Why XML is Used in SAP Integration (PI/PO, CPI)
+Standard format for message exchange between systems
+Used in:
+SOAP Web Services
+IDoc to XML conversion
+RFC to XML
+File-based interfaces (e.g., .xml files)
+Both SAP PI/PO and SAP CPI use XML as the internal message format (even if source/target is JSON, IDoc, etc.)
+💡 In CPI/PI, messages are converted to XML internally for processing (unless using JSON-only flows in CPI).
+
+🔧

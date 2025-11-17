@@ -1,0 +1,45 @@
+getProperty :
+-------------
+In SAP Cloud Platform Integration (CPI), the getProperty node function is used within message mappings
+to retrieve the value of an exchange property. It allows you to access and use these properties,
+which can be set elsewhere in the integration flow, during the message mapping process.
+
+Here's a more detailed explanation:
+
+Purpose:
+The getProperty function is primarily used to access and retrieve the value of an exchange property
+that has been set within the integration flow.
+
+This is particularly useful when you need to use the value of a property to transform or map data
+in the message mapping.
+
+How it works:
+You would typically use the getProperty function within the expression editor of a message mapping.
+The function takes the name of the exchange property as an argument.
+For example, if you have an exchange property named "quantity", you would use getProperty("quantity")
+in the expression to retrieve its value.
+
+Example:
+1. Setting the property:
+In your integration flow, you might have a step that sets an exchange property named "quantity" based on some logic.
+
+2. Retrieving and using the property:
+In the message mapping, you can use the getProperty("quantity") function to access the value of the "quantity" property.
+
+3. Mapping:
+You can then use this retrieved value to calculate a total price, for instance, by multiplying it with another
+value in the message.
+
+Benefits:
+Flexibility:
+Allows you to use dynamic values calculated elsewhere in the flow within your message mappings.
+
+Data transformation:
+Enables more complex data transformations by leveraging the values of exchange properties.
+
+Standard function:
+In recent versions of CPI, getProperty is a standard function, meaning you don't need to create custom scripts for it.
+In summary, the getProperty function in SAP CPI provides a way to access and utilize exchange property
+values within message mappings, enhancing the flexibility and power of your integration flows.
+
+

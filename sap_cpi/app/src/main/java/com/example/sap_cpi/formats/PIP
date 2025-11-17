@@ -1,0 +1,13 @@
+PIP (Partner Interface Process)
+--------------------------------
+
+What it is:
+PIPs are predefined business process templates designed by RosettaNet.
+They define how two business partners exchange information for a specific process (e.g., Purchase Order, Invoice).
+Each PIP has a standard flow, roles, message structure, and acknowledgement rules.
+Widely used in High-tech, Electronics, and Semiconductor industries.
+
+Key Points:
+Comes with standard XML schemas.
+Defines business process choreography (request, response, exception handling).
+Example: PIP3A4 → Purchase Order Request and Response.

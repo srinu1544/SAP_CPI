@@ -1,4 +1,47 @@
-package com.example.sap_cpi.pallet_functions.mapping_funtions.Node
+formatByExample :
+----------------
 
+In SAP CPI's graphical mapping, the formatByExample function is used to synchronize the structure
+and context of two queues. It takes the values from the first queue and applies the context structure
+of the second queue, effectively formatting the first queue's values according to the second queue's context.
+A key requirement is that both queues must have the same number of values, or it will trigger an exception.
+
+
+How it works:
+1. Input:
+The function takes two input queues: one containing the data values and the other containing the context information.
+
+2. Context Matching:
+The formatByExample function uses the context (structure) of the second queue to dictate the structure of the output.
+
+3. Value Replacement:
+The values from the first queue are then placed into the corresponding contexts of the output queue,
+effectively formatting the first queue's values based on the second queue's structure.
+
+4. Empty Values:
+Empty values in the first queue are ignored, and empty contexts in the second queue are still considered
+in the output structure.
+
+Example:
+Imagine you have two queues:
+Queue 1 (Values): ["A", "B", "C", "D", "E", "F"]
+Queue 2 (Context): (where '1', '2', and '3' represent different contexts)
+The formatByExample function will produce the following output:
+Output: [("A", 1), ("B", 2), ("C", 2), ("D", 3), ("E", 3), ("F", 3)]
+
+Key Considerations:
+Equal Length: Both input queues must have the same number of elements (excluding empty values).
+Context Preservation: The function uses the structure (contexts) of the second queue.
+Error Handling: If the lengths are unequal, an error will occur. It is important to ensure the queues have the same number of values, or map to a default value if needed.
+
+Use Cases:
+Data Synchronization:
+Synchronizing data across different structures or systems where one structure needs to be replicated in another.
+
+Contextual Formatting:
+Applying a specific context (e.g., hierarchical structure) to data coming from another source.
+
+Consistent Output:
+Ensuring a consistent output format across different scenarios by using a reference structure.
 
 

@@ -2,7 +2,9 @@ image25
 
 Iterating  Splitter ->
 -----------------------
+
 The iterating splitter is used to split a message into multiple parts on an iterative process or loop
+-> it discards preceding root elements
 -> it enables the repeated execution of a specific process or sub flow for each item or record in the input message
 -> it discards the main root element (enveloping element)
 -> It enables the repeated execution of a specific process or sub-flow for each item or record in the input
@@ -34,6 +36,11 @@ Grouping (ET) :
 Streaming (CB) :
             -> select this option if you want to stream the process of splitting a large composite messages into
              series of messages in small chunks
+
+             -> whole data make into chunks (pieces) and pieces put into the buffer
+             -> instead of whole file into buffer chunks in to buffer
+             -> reduce the out of memory problems
+
 
 Parallel processing (CB) : (not maintain order in delivery)
                           -> select this check box if you want to enable (parallel)

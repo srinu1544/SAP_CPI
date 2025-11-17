@@ -66,4 +66,17 @@ ${body.trim()}	Removes leading/trailing spaces
 ${header.OrderID.replaceAll('ORD', '')}	Replaces ORD in OrderID
 
 
+DATE Expressions :
+
+Simple Expression	Output Value
+
+${date:now:dd-MM-yyyy}
+${date:now:yyyyMMdd'T'HH:mm:ss}	20211201T03:34:48
+${date:now:yyyyMMdd}	20211201
+${date:now:yyyyMMdd HH:mm:ss}	20211201 15:34:48
+${date:now:yyyyMMdd HH:mm:ss.Sz}	20211201 15:34:48.54UTC
+${date:now:yyyyMMdd'T'HH:mm:ss.SSS Z}	20211201T15:34:48.054 +0000
+${date:now:yyyyMMdd HH:mm:ss.SSS aaa}	20211201 15:34:48.054 PM
+
+
 

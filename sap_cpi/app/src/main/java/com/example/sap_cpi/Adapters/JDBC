@@ -9,8 +9,78 @@ Triggering SQL queries from SAP applications
 JDBC URL format :
 jdbc:sqlserver://<virtualHost>:<virtualPort>;DatabaseName=<databaseName>;
 Oracle uses jdbc:oracle:thin:@<host>[:<port>]:<SID>
+EX :
+jdbc:postgresql://amber-palpatine.eks1.eu-west-1.aws.cratedb.net:5432/data-hot-0
 
---------------------------------------------------------------------------------------------------
+jdbc material configuration
+---------------------------
+monitor ->  Manage Security -> Jdbc material
+we have Jdbc data source -- Jdbc driver
+
+
+JDBC Data Source
+----------------
+Name:
+Description:
+Database Type (DD): (ASE Service,Postgre Sql(cloud), Postgre Sql(on-premise), SAP ASE Platform,
+                     SAP HANA Cloud, SAP HANA platform (on-premise))
+User:
+Password:
+Repeat Password:
+JDBC URL:
+
+now we can have deploy or cancel
+
+Jdbc driver
+-----------
+Database Type (DD): (Maria DB,Oracle, DB2, Microsoft sql server)
+JDBC Driver File: (choose file)
+
+now we can have deploy or cancel
+
+
+when can we use JDBC DATA SOURCE and JDBC DRIVER
+------------------------------------------------
+
+JDBC Data Source:
+-----------------
+-> Purpose:
+Provides a centralized and manageable way to access database connections within CPI integration flows.
+-> Functionality:
+Stores database connection parameters (like hostname, port, username, password, etc.), manages
+connection pooling, and allows for easier configuration and deployment.
+-> Example:
+A data source could be configured to point to an Oracle database, and the CPI integration flow
+would use the data source to establish a connection without needing to know the specific connection details.
+
+JDBC Driver:
+------------
+-> Purpose:
+Facilitates communication between your Java application (in this case, SAP CPI) and a specific database.
+-> Functionality:
+Implements the JDBC API, providing the necessary functions to connect to the database, execute SQL
+queries, and manage results.
+-> Example:
+A JDBC driver for Oracle or SQL Server would be specific to that database vendor.
+
+
+query examples :
+-----------------
+CREATE TABLE emprecord (empid int Not NuLL,emplastname VARCHAR(225) Not NuLL, empfirstname VARCHAR(225),empage int,PRIMARY KEY(empid));
+
+
+INSERT INTO "doc"."emprecord"
+(empid,emplastname,empfirstname,empage)
+values(456,'M','RAM',32)
+
+SELECT empid,emplastname,empfirstname,empage
+FROM "doc"."emprecord"
+LIMIT 100;
+
+SELECT * FROM "doc"."emprecord";
+
+
+----------------------------------------------------------------------------------------------------
 The JDBC adapter in SAP Cloud Platform Integration (CPI) enables integration flows to interact with database
 systems, allowing for data exchange and manipulation. Key points include connecting to various databases
 (cloud or on-premise), handling JDBC drivers and data sources, and supporting SQL operations and

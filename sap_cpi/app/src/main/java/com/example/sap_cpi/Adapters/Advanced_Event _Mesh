@@ -62,3 +62,47 @@ topics in SAP Integration Suite.
 config :
 TODO -- https://help.sap.com/docs/integration-suite/sap-integration-suite/configure-advanced-event-mesh-receiver-adapter
 
+
+Difference between Advance event mesh and Event mesh :   -- imp
+------------------------------------------------------
+SAP's Advanced Event Mesh (AEM) and Event Mesh (EM) are both solutions for event-driven architectures,
+but AEM is designed for more complex and scalable scenarios while EM is suitable for simpler, smaller-scale integrations.
+
+1. Complexity and Use Cases:
+AEM:
+Designed for more complex, large-scale event-driven architectures, offering broader deployment options
+(public, private, and on-premise) and handling larger payloads.
+
+EM:
+Focused on simpler, smaller-scale integrations within SAP Business Technology Platform (BTP),
+offering a more centralized approach with a lower price point.
+
+2. Event Governance:
+AEM: Prioritizes event management and governance for control and compliance.
+EM: While it supports event management, it's less focused on the comprehensive governance aspects of AEM.
+
+3. Data Volume and Storage:
+AEM: Handles much larger payloads (up to 30MB) and larger storage capacity (up to 6TB).
+EM: Has lower message size limits (1MB) and storage limits (10GB).
+
+4. Deployment and Management:
+AEM:
+Offers a broader range of deployment options, including public, private, and on-premises environments.
+EM:
+Primarily resides within SAP BTP and is centrally configured, lacking the distributed deployment options of AEM.
+
+5. Cost and Pricing:
+AEM:
+Generally has a higher price point due to its advanced features and capabilities.
+EM:
+Offers a more cost-effective solution for simpler scenarios, with pricing based on data throughput.
+
+6. Integration with SAP Systems:
+AEM:
+Integrates with various SAP event sources and can be used in conjunction with SAP Integration Suite.
+EM:
+Works out of the box with SAP event sources, simplifying integration for certain use cases.
+
+In essence: AEM is the more powerful and comprehensive solution for complex event-driven architectures,
+while EM provides a simpler and more cost-effective approach for smaller-scale integrations within BTP.
+

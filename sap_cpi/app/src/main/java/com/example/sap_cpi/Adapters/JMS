@@ -171,7 +171,7 @@ Maximun retry interval (in min) :
 
 Dead-letter Queue (CB):
            select this check box to place the message in the dead-letter queue if it cannot be processed after two retries.
------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 
 The JMS (Java Message Service) adapter in SAP Cloud Platform Integration (CPI) enables asynchronous '

@@ -1,13 +1,18 @@
-package com.example.sap_cpi.mapping_funtions.Conversions
+Presentation_6
 
-/* value mapping can create as a separate artifact
+
+value mapping can create as a separate artifact
 
 valueMapping ->
 ------------------------------------------------------------------------------------------------------------
+-> You create a value mapping artifact to act as a bi-directional look up table.
+-> Value mapping offers the distinct advantage of giving you bi-directional look up capabilities which
+is used quite often in productive mapping scenarios.
+-> You can also import CSV files exported from process integration (PI) systems in your value mapping.
+
 -> You create a value mapping artifact to act as a bi-directional look up table. Value mapping offers the distinct
 advantage of giving you bi-directional look up capabilities which is used quite often in productive mapping scenarios.
 You can also import CSV files exported from process integration (PI) systems in your value mapping.
 source agency , source identifier
 target agency , target identifier
 
-*/

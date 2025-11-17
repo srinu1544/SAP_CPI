@@ -7,3 +7,16 @@ XML document. It's a formal way to describe the legal building blocks of an XML 
 elements, attributes, data types, default values, and the order and number of elements. XSD is used
 to validate XML documents and ensure they adhere to the defined rules, guaranteeing consistency
 and reliability
+
+
+occerances
+----------
+if you want change Occurs in xsd must follow this format
+
+maxOccurs="unbounded"
+minOccers = "0"
+
+
+✔ minOccurs="1" → Mandatory field
+✔ minOccurs="0" → Optional field
+✔ maxOccurs="unbounded" → Multiple values allowed

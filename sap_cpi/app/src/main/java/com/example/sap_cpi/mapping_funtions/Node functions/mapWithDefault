@@ -1,0 +1,42 @@
+
+mapWithDefault :
+---------------
+used to provide a default value when a source element is missing or null in the input message
+
+
+Explanation:
+
+Purpose:
+The primary purpose of MapWithDefault is to handle scenarios where a source field is expected but
+might be absent. It allows you to define a default value that will be used if the source field is not found in the input.
+
+How it works:
+When a mapping is executed, the MapWithDefault function checks if the source element exists.
+If the source element is present, its value is passed to the target field. If the source element
+is missing, the default value specified in the function's properties is used instead.
+
+Use Cases:
+Mandatory fields:
+If a target field is mandatory but the corresponding source field might be missing,
+MapWithDefault can be used to provide a default value to avoid errors.
+
+Optional fields:
+If a source field is optional and its presence is not guaranteed, MapWithDefault can be used to
+assign a default value when the field is absent.
+
+Handling null values: When the source field exists but its value is null, MapWithDefault can be
+configured to replace the null value with a default value.
+
+Example:
+If the source field "ProductCategory" is mapped to the target field "Category" using MapWithDefault with
+a default value of "General", then:
+
+If "ProductCategory" exists and has a value (e.g., "Electronics"), "Electronics" will be mapped to "Category".
+If "ProductCategory" is missing or has a null value, "General" will be mapped to "Category".
+
+Node Functions:
+MapWithDefault is a node function, meaning it operates on nodes (elements) within the message structure.
+
+Alternatives:
+While MapWithDefault is useful for providing default values, other functions like ReplaceValue can
+be used for different scenarios, such as replacing empty values.

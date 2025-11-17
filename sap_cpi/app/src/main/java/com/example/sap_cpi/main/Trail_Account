@@ -1,5 +1,17 @@
-package com.example.sap_cpi.others
-/*
+
+select region
+In Integration suite -> add capabilities
+Graph available in AWS(US)
 
 
-*/
+how to create service keys :
+-----------------------------
+go to instances and subscriptions
+in instances
+create ->  SAP Process Integration Runtime
+after creation -> in ... three dots create service keys
+
+
+
+
+

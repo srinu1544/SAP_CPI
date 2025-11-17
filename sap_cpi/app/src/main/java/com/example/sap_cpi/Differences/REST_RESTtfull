@@ -1,0 +1,23 @@
+REST vs RESTFull
+---------------
+REST (Representational State Transfer)
+REST is a foundational architectural style or set of principles for building distributed hypermedia systems, like the World Wide Web itself.
+It defines a set of constraints that govern how a system should behave to achieve certain properties like scalability, simplicity, and reliability.
+The core idea is to treat data as resources, identifiable by unique URIs, that can be accessed and manipulated through their representations.
+Key REST principles
+Client-Server: Decoupling the user interface (client) from data storage (server) for independent development and evolution.
+Stateless: Each request from the client to the server contains all the information needed to understand and process the request, with no session state stored on the server.
+Cacheable: Responses indicate whether they can be cached to improve performance and reduce server load.
+Uniform Interface: A consistent way of interacting with resources using standard HTTP methods (like GET, POST, PUT, DELETE) and resource representations (like JSON or XML).
+Layered System: Allows for intermediate layers (like proxies and load balancers) without the client needing to know about them, enhancing scalability and security.
+Code on Demand (Optional): Servers can temporarily extend or customize client functionality by transferring executable code.
+
+RESTful
+"RESTful" is an adjective used to describe a web service or API that adheres to the principles and constraints of REST.
+Therefore, a RESTful API is an API that is designed and implemented according to the REST architectural style, making it easy to use, scalable, and adhering to standard web practices.
+
+In essence
+REST is the blueprint or architectural style.
+RESTful describes the implementation that follows that blueprint.
+While the terms are often used interchangeably, understanding the distinction can be helpful for clarity, particularly when discussing API design and implementation in a technical context.
+

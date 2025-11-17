@@ -1,24 +1,3 @@
-In SAP Cloud Integration (CPI), Message Implementation Guideline (MIG) defines the structure and
-content of a message, while Mapping Guideline (MAG) defines the mapping logic between two message
-structures. Essentially, a MIG describes what a message should look like, and a MAG describes how
-to transform one message structure into another.
-
-
-MIG (Message Implementation Guideline):
----------------------------------------
-Purpose:
-Provides a blueprint for message structure, including details like data types, attributes, and expected content.
-Usage:
-Used as a reference or source when creating mappings in SAP Integration Advisor.
-Example:
-Defining the structure of a purchase order message in XML format.
-Key Features:
-Specifies the message structure and content.
-Serves as a template for customizing message interfaces.
-Provides guidelines for implementing a customized message interface.
-Can be created using messages in a type system as a starting point.
-
-
 MAG (Mapping Guideline):
 ------------------------
 Purpose:
